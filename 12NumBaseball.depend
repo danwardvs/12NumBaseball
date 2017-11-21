@@ -1,0 +1,78 @@
+# depslib dependency file v1.0
+1496884496 source:c:\users\danny\documents\12numbaseball\src\init.cpp
+	"init.h"
+
+1494764976 c:\users\danny\documents\12numbaseball\include\init.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	"state.h"
+
+1494764976 c:\users\danny\documents\12numbaseball\include\state.h
+
+1494764977 source:c:\users\danny\documents\12numbaseball\src\joysticklistener.cpp
+	"joystickListener.h"
+
+1494764976 c:\users\danny\documents\12numbaseball\include\joysticklistener.h
+	<iostream>
+	<allegro5/allegro.h>
+
+1494764977 source:c:\users\danny\documents\12numbaseball\src\keylistener.cpp
+	"keyListener.h"
+
+1494764976 c:\users\danny\documents\12numbaseball\include\keylistener.h
+	<iostream>
+	<allegro5/allegro.h>
+
+1510700947 source:c:\users\danny\documents\12numbaseball\src\main.cpp
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<mouseListener.h>
+	<keyListener.h>
+	<joystickListener.h>
+	"init.h"
+	"state.h"
+	"menu.h"
+
+1494764976 c:\users\danny\documents\12numbaseball\include\mouselistener.h
+	<allegro5/allegro.h>
+
+1510700719 c:\users\danny\documents\12numbaseball\include\menu.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	"keyListener.h"
+	"joystickListener.h"
+	"tools.h"
+	"state.h"
+
+1503884958 c:\users\danny\documents\12numbaseball\include\tools.h
+	<string>
+	<math.h>
+	<sstream>
+	<iostream>
+	<fstream>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+
+1510700988 source:c:\users\danny\documents\12numbaseball\src\menu.cpp
+	"menu.h"
+
+1494764978 source:c:\users\danny\documents\12numbaseball\src\mouselistener.cpp
+	"mouseListener.h"
+
+1494764978 source:c:\users\danny\documents\12numbaseball\src\state.cpp
+	"state.h"
+
+1507575475 source:c:\users\danny\documents\12numbaseball\src\tools.cpp
+	"tools.h"
+

@@ -19,7 +19,8 @@ void menu::update(){
 void menu::draw(){
 
   // Background
-  al_clear_to_color( al_map_rgb(255,255,255));
+  al_clear_to_color(WHITE);
+
 
   myNiceCell.draw();
 }

@@ -7,11 +7,14 @@
 
 #include <string>
 #include <tools.h>
+#include <Font.h>
+#include <globals.h>
 
 class Cell
 {
   public:
     Cell();
+    Cell(int, int, int, int, ALLEGRO_COLOR, ALLEGRO_COLOR, std::string);
     virtual ~Cell();
     void draw();
 
@@ -21,6 +24,11 @@ class Cell
     int height;
     int x;
     int y;
+    int x_padding=3;
+    int y_padding=3;
+    std::string text;
+
+    Font font;
 
     ALLEGRO_COLOR outline_colour;
     ALLEGRO_COLOR cell_colour;

@@ -14,6 +14,8 @@ class Font
     Font();
     virtual ~Font();
     ALLEGRO_FONT *getSize(int newSize);
+    bool textWillFit(int, int, int,std::string);
+    ALLEGRO_FONT *getFirstFont(){return font[0];}
 
   protected:
 

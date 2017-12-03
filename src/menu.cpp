@@ -3,7 +3,7 @@
 
 // Init menu
 menu::menu(){
-
+  myFont.init("font/fantasque.ttf");
 }
 
 // Destory menu

@@ -32,7 +32,7 @@ class menu : public state{
   private:
 
     Cell myNiceCell;
-    Font myFont("font/fantasque.ttf");
+    Font myFont();
 
 };
 

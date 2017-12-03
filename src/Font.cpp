@@ -1,19 +1,10 @@
 #include "Font.h"
 
 
-
-Font::Font(std::string newPath)
-{
-  font[0] = al_load_ttf_font( newPath.c_str(), 4, 0);
-  font[1] = al_load_ttf_font( newPath.c_str(), 8, 0);
-  font[2] = al_load_ttf_font( newPath.c_str(), 12, 0);
-  font[3] = al_load_ttf_font( newPath.c_str(), 16, 0);
-  font[4] = al_load_ttf_font( newPath.c_str(), 24, 0);
-  font[5] = al_load_ttf_font( newPath.c_str(), 36, 0);
-  font[6] = al_load_ttf_font( newPath.c_str(), 54, 0);
-  font[7] = al_load_ttf_font( newPath.c_str(), 72, 0);
+Font::Font(){
 
 }
+
 
 Font::~Font()
 {
@@ -43,4 +34,17 @@ ALLEGRO_FONT *Font::getSize(int newSize){
   }
   ALLEGRO_FONT *newFont;
   return newFont;
+}
+
+void Font::init(std::string newPath)
+{
+  font[0] = al_load_ttf_font( newPath.c_str(), 4, 0);
+  font[1] = al_load_ttf_font( newPath.c_str(), 8, 0);
+  font[2] = al_load_ttf_font( newPath.c_str(), 12, 0);
+  font[3] = al_load_ttf_font( newPath.c_str(), 16, 0);
+  font[4] = al_load_ttf_font( newPath.c_str(), 24, 0);
+  font[5] = al_load_ttf_font( newPath.c_str(), 36, 0);
+  font[6] = al_load_ttf_font( newPath.c_str(), 54, 0);
+  font[7] = al_load_ttf_font( newPath.c_str(), 72, 0);
+
 }

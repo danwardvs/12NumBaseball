@@ -10,7 +10,7 @@
 class Font
 {
   public:
-    Font(std::string newPath);
+    void init(std::string newPath);
     Font();
     virtual ~Font();
     ALLEGRO_FONT *getSize(int newSize);

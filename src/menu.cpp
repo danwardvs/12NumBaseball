@@ -1,5 +1,6 @@
 #include "menu.h"
 
+
 // Init menu
 menu::menu(){
 
@@ -18,7 +19,9 @@ void menu::update(){
 void menu::draw(){
 
   // Background
-  al_clear_to_color( al_map_rgb(50,50,50));
+  al_clear_to_color( al_map_rgb(255,255,255));
+
+  myNiceCell.draw();
 
 
 

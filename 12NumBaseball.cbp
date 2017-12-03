@@ -13,6 +13,7 @@
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
@@ -36,6 +37,8 @@
 			<Add option="-lallegro_acodec" />
 			<Add option="-lBox2D" />
 		</Linker>
+		<Unit filename="include/Cell.h" />
+		<Unit filename="include/Font.h" />
 		<Unit filename="include/globals.h" />
 		<Unit filename="include/init.h" />
 		<Unit filename="include/joystickListener.h" />
@@ -48,6 +51,8 @@
 		<Unit filename="include/rapidxml_utils.hpp" />
 		<Unit filename="include/state.h" />
 		<Unit filename="include/tools.h" />
+		<Unit filename="src/Cell.cpp" />
+		<Unit filename="src/Font.cpp" />
 		<Unit filename="src/init.cpp" />
 		<Unit filename="src/joystickListener.cpp" />
 		<Unit filename="src/keyListener.cpp" />

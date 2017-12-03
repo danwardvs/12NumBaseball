@@ -10,11 +10,15 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
+#include <string>
 
 #include "keyListener.h"
 #include "joystickListener.h"
 #include "tools.h"
 #include "state.h"
+
+#include "Cell.h"
+#include "Font.h"
 
 // Menu
 class menu : public state{
@@ -27,6 +31,8 @@ class menu : public state{
 
   private:
 
+    Cell myNiceCell;
+    Font myFont("font/fantasque.ttf");
 
 };
 

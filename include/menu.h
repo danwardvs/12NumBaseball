@@ -30,10 +30,8 @@ class menu : public state{
     void draw();
 
   private:
-
     Cell myNiceCell;
-    Font myFont();
-
+    Font myFont;
 };
 
 #endif // MENU_H

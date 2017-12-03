@@ -22,9 +22,6 @@ void menu::draw(){
   al_clear_to_color( al_map_rgb(255,255,255));
 
   myNiceCell.draw();
-
-
-
 }
 
 

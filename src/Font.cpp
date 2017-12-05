@@ -40,6 +40,13 @@ ALLEGRO_FONT *Font::getSize(int newSize){
       return font[6];
     case 72:
       return font[7];
+    case 100:
+      return font[8];
+    case 150:
+      return font[9];
+    case 200:
+      return font[10];
+
 
 
   }
@@ -57,5 +64,10 @@ void Font::init(std::string newPath)
   font[5] = al_load_ttf_font( newPath.c_str(), 36, 0);
   font[6] = al_load_ttf_font( newPath.c_str(), 54, 0);
   font[7] = al_load_ttf_font( newPath.c_str(), 72, 0);
+  font[8] = al_load_ttf_font( newPath.c_str(), 100, 0);
+  font[9] = al_load_ttf_font( newPath.c_str(), 150, 0);
+  font[10] = al_load_ttf_font( newPath.c_str(), 200, 0);
+
+
 
 }

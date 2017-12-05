@@ -14,7 +14,7 @@ class Cell
 {
   public:
     Cell();
-    Cell(int, int, int, int, ALLEGRO_COLOR, ALLEGRO_COLOR,Font, std::string);
+    Cell(int, int, int, int, ALLEGRO_COLOR, ALLEGRO_COLOR,Font,int, std::string);
     virtual ~Cell();
     void draw();
     void setText(std::string newText){text=newText;}
@@ -26,8 +26,9 @@ class Cell
     int height;
     int x;
     int y;
-    int x_padding=3;
-    int y_padding=3;
+    int x_padding=5;
+    int y_padding=5;
+    int justification=LEFT;
     std::string text;
 
     Font font;

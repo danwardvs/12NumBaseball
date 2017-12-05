@@ -11,6 +11,7 @@
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
 #include <string>
+#include <vector>
 
 #include "keyListener.h"
 #include "joystickListener.h"
@@ -31,8 +32,12 @@ class menu : public state{
     void draw();
 
   private:
-    Cell myNiceCell;
-    Font myFont;
+
+    void generate_cells();
+
+    Font calibri_bold;
+    std::vector<Cell*> gameCells;
+
 };
 
 #endif // MENU_H

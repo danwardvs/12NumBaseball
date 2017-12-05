@@ -12,8 +12,10 @@ Font::~Font()
 }
 
 bool Font::textWillFit(int newSize, int newWidth, int newHeight, std::string newText){
-  if(al_get_text_width(getSize(newSize),newText.c_str())<=newWidth && al_get_font_line_height(getSize(newSize))<=newHeight)
+  if(al_get_text_width(getSize(newSize),newText.c_str())<=newWidth && al_get_font_line_height(getSize(newSize))<=newHeight){
      return true;
+  }
+
   return false;
 
 }

@@ -14,11 +14,13 @@ class Cell
 {
   public:
     Cell();
-    Cell(int, int, int, int, ALLEGRO_COLOR, ALLEGRO_COLOR, std::string);
+    Cell(int, int, int, int, ALLEGRO_COLOR, ALLEGRO_COLOR,Font, std::string);
     virtual ~Cell();
     void draw();
+    void setText(std::string newText){text=newText;}
 
   protected:
+
 
     int width;
     int height;

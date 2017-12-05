@@ -3,7 +3,8 @@
 
 // Init menu
 menu::menu(){
-  myFont.init("font/fantasque.ttf");
+  myFont.init("font/calibri.ttf");
+  myNiceCell = Cell(100,100,335,50,BLACK,WHITE,myFont,"Hello pooping world");
 }
 
 // Destory menu

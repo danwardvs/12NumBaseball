@@ -40,13 +40,16 @@ void Cell::draw(){
       int text_x;
       int text_y;
 
-      if(font.textWillFit(200,width-x_padding*2,height-y_padding*2,text))
+
+     if(font.textWillFit(300,width-x_padding*2,height-y_padding*2,text))
+        text_size=300;
+      else if(font.textWillFit(200,width-x_padding*2,height-y_padding*2,text))
         text_size=200;
-      if(font.textWillFit(150,width-x_padding*2,height-y_padding*2,text))
+      else if(font.textWillFit(150,width-x_padding*2,height-y_padding*2,text))
         text_size=150;
-      if(font.textWillFit(100,width-x_padding*2,height-y_padding*2,text))
+      else if(font.textWillFit(100,width-x_padding*2,height-y_padding*2,text))
         text_size=100;
-      if(font.textWillFit(72,width-x_padding*2,height-y_padding*2,text))
+      else if(font.textWillFit(72,width-x_padding*2,height-y_padding*2,text))
         text_size=72;
       else if(font.textWillFit(54,width-x_padding*2,height-y_padding*2,text))
         text_size=54;
@@ -70,15 +73,16 @@ void Cell::draw(){
 
       if(justification==CENTER){
         text_x=x+width/2;
-        text_y=(y+height/2)-al_get_font_line_height(font.getSize(text_size));
+        text_y=y+y_padding-(font.get_text_height(text_size,text)-height)/2;
       }
 
       if(justification==RIGHT){
         text_x=x+width-x_padding;
-        text_y=y+height/2;
+        text_y=y+y_padding;
       }
 
-      al_draw_textf(font.getSize(text_size),BLACK,text_x,text_y,justification,text.c_str());
+      al_draw_textf(font.getSize(text_size),BLACK,text_x,(text_y-font.get_text_offset_y(text_size,text)),justification,text.c_str());
+      //al_draw_justified_text(font.getSize(54),BLACK,x,x+1000,y,2000,0,"Hello world. This is a message.");
     }
 
 

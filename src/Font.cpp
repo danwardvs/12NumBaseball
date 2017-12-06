@@ -12,15 +12,59 @@ Font::~Font()
 }
 
 bool Font::textWillFit(int newSize, int newWidth, int newHeight, std::string newText){
-  if(al_get_text_width(getSize(newSize),newText.c_str())<=newWidth && al_get_font_line_height(getSize(newSize))<=newHeight){
+  int text_width=0;
+  int text_height=0;
+  int text_offset_x;
+  int text_offset_y;
+
+  al_get_text_dimensions(getSize(newSize),newText.c_str(),&text_offset_x,&text_offset_y,&text_width,&text_height);
+
+
+  if(text_width<=newWidth && text_height<=newHeight){
+      //td::cout<<al_get_font_line_height(getSize(newSize))<<"\n";
+
      return true;
-  }
+
+ }
 
   return false;
 
 }
+int Font::get_text_offset_x(int newSize, std::string newText){
+  int text_width=0;
+  int text_height=0;
+  int text_offset_x;
+  int text_offset_y;
 
+  al_get_text_dimensions(getSize(newSize),newText.c_str(),&text_offset_x,&text_offset_y,&text_width,&text_height);
 
+  return text_offset_x;
+
+}
+
+int Font::get_text_offset_y(int newSize, std::string newText){
+  int text_width=0;
+  int text_height=0;
+  int text_offset_x;
+  int text_offset_y;
+
+  al_get_text_dimensions(getSize(newSize),newText.c_str(),&text_offset_x,&text_offset_y,&text_width,&text_height);
+
+  return text_offset_y;
+
+}
+
+int Font::get_text_height(int newSize, std::string newText){
+  int text_width=0;
+  int text_height=0;
+  int text_offset_x;
+  int text_offset_y;
+
+  al_get_text_dimensions(getSize(newSize),newText.c_str(),&text_offset_x,&text_offset_y,&text_width,&text_height);
+
+  return text_height;
+
+}
 
 ALLEGRO_FONT *Font::getSize(int newSize){
   switch (newSize) {
@@ -46,6 +90,12 @@ ALLEGRO_FONT *Font::getSize(int newSize){
       return font[9];
     case 200:
       return font[10];
+    case 300:
+      return font[11];
+    case 400:
+      return font[12];
+     case 500:
+      return font[13];
 
 
 
@@ -67,6 +117,9 @@ void Font::init(std::string newPath)
   font[8] = al_load_ttf_font( newPath.c_str(), 100, 0);
   font[9] = al_load_ttf_font( newPath.c_str(), 150, 0);
   font[10] = al_load_ttf_font( newPath.c_str(), 200, 0);
+  font[11] = al_load_ttf_font( newPath.c_str(), 300, 0);
+
+
 
 
 

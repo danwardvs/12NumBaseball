@@ -17,6 +17,10 @@ class Font
     ALLEGRO_FONT *getSize(int newSize);
     bool textWillFit(int, int, int,std::string);
     ALLEGRO_FONT *getFirstFont(){return font[0];}
+    int get_text_offset_x(int,std::string);
+    int get_text_offset_y(int,std::string);
+    int get_text_height(int,std::string);
+
 
   protected:
 

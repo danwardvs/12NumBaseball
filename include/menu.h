@@ -14,6 +14,7 @@
 #include <vector>
 
 #include "keyListener.h"
+#include "mouseListener.h"
 #include "joystickListener.h"
 #include "tools.h"
 #include "state.h"

@@ -18,6 +18,10 @@ class Cell
     virtual ~Cell();
     void draw();
     void setText(std::string newText){text=newText;}
+    void setX(int newX){x=newX;}
+    void setY(int newY){y=newY;}
+    void setWidth(int newWidth){width=newWidth;}
+    void setHeight(int newHeight){height=newHeight;}
 
   protected:
 

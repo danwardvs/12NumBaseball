@@ -26,7 +26,7 @@
 	<iostream>
 	<allegro5/allegro.h>
 
-1510700947 source:c:\users\danny\documents\12numbaseball\src\main.cpp
+1512612389 source:c:\users\danny\documents\12numbaseball\src\main.cpp
 	<allegro5/allegro.h>
 	<allegro5/allegro_primitives.h>
 	<allegro5/allegro_image.h>
@@ -38,11 +38,12 @@
 	"init.h"
 	"state.h"
 	"menu.h"
+	"globals.h"
 
 1494764976 c:\users\danny\documents\12numbaseball\include\mouselistener.h
 	<allegro5/allegro.h>
 
-1512602250 c:\users\danny\documents\12numbaseball\include\menu.h
+1512612888 c:\users\danny\documents\12numbaseball\include\menu.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_font.h>
@@ -54,7 +55,7 @@
 	"joystickListener.h"
 	"tools.h"
 	"state.h"
-	"globals.h"
+	"Globals.h"
 	"Cell.h"
 	"Font.h"
 
@@ -70,7 +71,7 @@
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_audio.h>
 
-1512602448 source:c:\users\danny\documents\12numbaseball\src\menu.cpp
+1512612342 source:c:\users\danny\documents\12numbaseball\src\menu.cpp
 	"menu.h"
 
 1494764978 source:c:\users\danny\documents\12numbaseball\src\mouselistener.cpp
@@ -82,10 +83,10 @@
 1507575475 source:c:\users\danny\documents\12numbaseball\src\tools.cpp
 	"tools.h"
 
-1512602625 source:c:\users\danny\documents\12numbaseball\src\cell.cpp
+1512614108 source:c:\users\danny\documents\12numbaseball\src\cell.cpp
 	"Cell.h"
 
-1512602425 c:\users\danny\documents\12numbaseball\include\cell.h
+1512614108 c:\users\danny\documents\12numbaseball\include\cell.h
 	<allegro5/allegro5.h>
 	<allegro5/allegro_primitives.h>
 	<allegro5/allegro_font.h>
@@ -104,5 +105,10 @@
 	<allegro5/allegro_font.h>
 	<allegro5/allegro_ttf.h>
 
-1512436716 c:\users\danny\documents\12numbaseball\include\globals.h
+1512613145 c:\users\danny\documents\12numbaseball\include\globals.h
+
+1512612880 c:\users\danny\documents\12numbaseball\src\globals.h
+
+1512613145 source:c:\users\danny\documents\12numbaseball\src\globals.cpp
+	"Globals.h"
 

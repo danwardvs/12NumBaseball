@@ -17,6 +17,7 @@
 #include "init.h"
 #include "state.h"
 #include "menu.h"
+#include "globals.h"
 
 // Current state object
 state *currentState = nullptr;
@@ -114,6 +115,9 @@ void setup(){
 
   //al_set_new_display_flags(ALLEGRO_FULLSCREEN);
   display = al_create_display(1024, 768);
+  SCREEN_W = al_get_display_width(display);
+  std::cout<<SCREEN_W<<"\n";
+  SCREEN_H = al_get_display_height(display);
 
   if( !display)
     tools::abort_on_error( "Screen could not be created", "Error");

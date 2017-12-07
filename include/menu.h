@@ -18,7 +18,7 @@
 #include "joystickListener.h"
 #include "tools.h"
 #include "state.h"
-#include "globals.h"
+#include "Globals.h"
 
 #include "Cell.h"
 #include "Font.h"

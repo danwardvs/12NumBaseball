@@ -10,7 +10,9 @@ Cell::Cell()
   this -> outline_colour = al_map_rgba(0,0,0,255);
   this -> cell_colour = al_map_rgba(123,456,789,255);
 }
-Cell::Cell(int newX, int newY, int newWidth, int newHeight,ALLEGRO_COLOR newOutlineColour, ALLEGRO_COLOR newCellColour,Font newFont,int newJustification,std::string newText){
+Cell::Cell(int newX, int newY, int newWidth, int newHeight,ALLEGRO_COLOR newOutlineColour, ALLEGRO_COLOR newCellColour,
+           ALLEGRO_COLOR newFontColor,Font newFont,int newJustification,std::string newText){
+
   x=newX;
   y=newY;
   width=newWidth;
@@ -18,6 +20,7 @@ Cell::Cell(int newX, int newY, int newWidth, int newHeight,ALLEGRO_COLOR newOutl
   text=newText;
   outline_colour = newOutlineColour;
   cell_colour = newCellColour;
+  font_colour = newFontColor;
   font = newFont;
   justification=newJustification;
 
@@ -81,7 +84,7 @@ void Cell::draw(){
         text_y=y+y_padding;
       }
 
-      al_draw_textf(font.getSize(text_size),BLACK,text_x,(text_y-font.get_text_offset_y(text_size,text)),justification,text.c_str());
+      al_draw_textf(font.getSize(text_size),font_colour,text_x,(text_y-font.get_text_offset_y(text_size,text)),justification,text.c_str());
       //al_draw_justified_text(font.getSize(54),BLACK,x,x+1000,y,2000,0,"Hello world. This is a message.");
     }
 

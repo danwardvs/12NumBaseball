@@ -14,7 +14,7 @@ class Cell
 {
   public:
     Cell();
-    Cell(int, int, int, int, ALLEGRO_COLOR, ALLEGRO_COLOR,Font,int, std::string);
+    Cell(int, int, int, int, ALLEGRO_COLOR, ALLEGRO_COLOR,ALLEGRO_COLOR, Font,int, std::string);
     virtual ~Cell();
     void draw();
     void setText(std::string newText){text=newText;}
@@ -39,6 +39,7 @@ class Cell
 
     ALLEGRO_COLOR outline_colour;
     ALLEGRO_COLOR cell_colour;
+    ALLEGRO_COLOR font_colour;
 
 
 

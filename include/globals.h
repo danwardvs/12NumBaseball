@@ -21,6 +21,9 @@
 #define BLUE al_map_rgb(0,0,255)
 #define TRANSPARENT al_map_rgba(0,0,0,0)
 
+extern int SCREEN_H;
+extern int SCREEN_W;
+
 
 
 #endif // GLOBALS_H

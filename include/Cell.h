@@ -23,6 +23,7 @@ class Cell
     void setWidth(int newWidth){width=newWidth;}
     void setHeight(int newHeight){height=newHeight;}
 
+
   protected:
 
 

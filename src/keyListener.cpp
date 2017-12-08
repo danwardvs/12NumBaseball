@@ -2,11 +2,15 @@
 
 bool keyListener::key[ALLEGRO_KEY_MAX] = { false };
 bool keyListener::keyPressed[ALLEGRO_KEY_MAX] = { false};
+
 bool keyListener::keyReleased[ALLEGRO_KEY_MAX] = { false};
 bool keyListener::lastTicksKey[ALLEGRO_KEY_MAX] = { false};
 int keyListener::lastKeyPressed = -1;
+int keyListener::currentKeyPressed = -1;
+
 int keyListener::lastKeyReleased = -1;
 bool keyListener::anyKeyPressed=false;
+bool keyListener::numKeyPressed=false;
 
 // Constructor
 keyListener::keyListener(){
@@ -36,12 +40,21 @@ void keyListener::update(){
   lastKeyReleased = -1;
 
   anyKeyPressed=false;
+    numKeyPressed=false;
   // Check key just pressed
   for( int i = 0; i < ALLEGRO_KEY_MAX; i++){
     // Clear old values
     keyPressed[i] = false;
     keyReleased[i] = false;
 
+
+    if((i>=ALLEGRO_KEY_0 && i<=ALLEGRO_KEY_9) || (i>=ALLEGRO_KEY_PAD_0 && i<=ALLEGRO_KEY_PAD_9)){
+
+      if(key[i]){
+        //std::cout<<"in range\n";
+        numKeyPressed=true;
+      }
+    }
 
     if(key[i])
       anyKeyPressed=true;
@@ -53,6 +66,11 @@ void keyListener::update(){
     if( key[i] == true && lastTicksKey[i] == false){
       keyPressed[i] = true;
       lastKeyPressed = i;
+      //std::cout << "Key: " << i << " pressed. \n";
+    }
+
+    if( key[i] == true){
+      currentKeyPressed = i;
       //std::cout << "Key: " << i << " pressed. \n";
     }
 

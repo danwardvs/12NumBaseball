@@ -18,7 +18,7 @@
 #include "joystickListener.h"
 #include "tools.h"
 #include "state.h"
-#include "Globals.h"
+#include "globals.h"
 
 #include "Cell.h"
 #include "Font.h"
@@ -35,6 +35,10 @@ class menu : public state{
   private:
 
     void generate_cells();
+
+    int input_step=0;
+    int batter_number=1;
+    int pitcher_number=1;
 
     Font calibri_bold;
     std::vector<Cell*> gameCells;

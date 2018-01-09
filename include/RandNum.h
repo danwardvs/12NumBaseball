@@ -7,6 +7,8 @@
 #include <vector>
 #include <string>
 
+#include "tools.h"
+
 
 class RandNum
 {
@@ -14,12 +16,14 @@ class RandNum
     RandNum();
     virtual ~RandNum();
 
-    static void seed();
+    static void generate_seed();
+    static std::string getSeed(){return tools::toString(seed);}
     static int randInt(int newLowest, int newHighest);
 
   protected:
 
   private:
+    static long seed;
 };
 
 #endif // RANDNUM_H

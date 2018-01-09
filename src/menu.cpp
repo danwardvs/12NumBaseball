@@ -149,6 +149,7 @@ void menu::generate_cells(){
 
   gameCells.push_back(new Cell(5+width_6*2+20,0,width_6*2,200,BLACK,BLACK,RED,calibri_bold,CENTER,"112"));
 
+  gameCells.push_back(new Cell(0,SCREEN_H-25,90,25,BLACK,BLACK,RED,calibri_bold,LEFT,RandNum::getSeed()));
 
 
 

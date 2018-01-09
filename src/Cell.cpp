@@ -35,7 +35,7 @@ Cell::~Cell()
 void Cell::draw(){
 
     al_draw_filled_rectangle( x, y, x + width , y + height,cell_colour);
-    al_draw_rectangle( x+1, y+1, x + width, y + height, outline_colour,1);
+    al_draw_rectangle( x+2, y+2, x + width-2, y + height-2, outline_colour,4);
 
     if(font.getFirstFont()!=nullptr){
 

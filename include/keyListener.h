@@ -27,10 +27,11 @@ class keyListener
     static bool keyPressed[ALLEGRO_KEY_MAX];
     static bool keyReleased[ALLEGRO_KEY_MAX];
     static bool numKeyPressed;
+    static bool numKeyReleased;
 
     static int lastKeyPressed;
     static int lastKeyReleased;
-      static int currentKeyPressed;
+    static int currentKeyPressed;
 
   protected:
   private:

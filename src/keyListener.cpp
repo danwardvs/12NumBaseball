@@ -11,6 +11,8 @@ int keyListener::currentKeyPressed = -1;
 int keyListener::lastKeyReleased = -1;
 bool keyListener::anyKeyPressed=false;
 bool keyListener::numKeyPressed=false;
+bool keyListener::numKeyReleased=false;
+
 
 // Constructor
 keyListener::keyListener(){
@@ -40,7 +42,9 @@ void keyListener::update(){
   lastKeyReleased = -1;
 
   anyKeyPressed=false;
-    numKeyPressed=false;
+  numKeyPressed=false;
+  numKeyReleased=false;
+
   // Check key just pressed
   for( int i = 0; i < ALLEGRO_KEY_MAX; i++){
     // Clear old values
@@ -78,9 +82,18 @@ void keyListener::update(){
     if( key[i] == false && lastTicksKey[i] == true){
       keyReleased[i] = true;
       lastKeyReleased = i;
+
+      if((i>=ALLEGRO_KEY_0 && i<=ALLEGRO_KEY_9) || (i>=ALLEGRO_KEY_PAD_0 && i<=ALLEGRO_KEY_PAD_9)){
+
+        //std::cout<<"in range\n";
+        numKeyReleased=true;
+      }
+    }
+
+
       //std::cout << "Key: " << i << " released. \n";
     }
-  }
+
 
 
   // Get new values

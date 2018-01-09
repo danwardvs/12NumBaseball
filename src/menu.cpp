@@ -5,6 +5,7 @@
 menu::menu(){
   calibri_bold.init("font/calibri_bold.ttf");
   generate_cells();
+  input_step==0;
 }
 
 // Destory menu
@@ -13,26 +14,101 @@ menu::~menu(){
 }
 // Update animation and wait for input
 void menu::update(){
-  if(keyListener::numKeyPressed){
-  std::cout<<"yo\n";
-   // if(batter_number==0){
+  if(keyListener::numKeyReleased){
+
+
+    if(input_step==0){
+
       for(int i=27; i<36; i++){
-        batter_number=keyListener::currentKeyPressed-27;
+        batter_number=keyListener::lastKeyReleased-27;
+      }
+      if(batter_number==1){
+        input_step=1;
+      }else{
+        input_step=3;
+      }
+    }else if(input_step==1){
+
+
+      if(batter_number==1){
+        if(keyListener::keyReleased[ALLEGRO_KEY_0]){
+          batter_number=10;
+          input_step=3;
+        }
+        if(keyListener::keyReleased[ALLEGRO_KEY_1]){
+          batter_number=11;
+          input_step=3;
+        }
+        if(keyListener::keyReleased[ALLEGRO_KEY_2]){
+          batter_number=12;
+          input_step=3;
+        }
       }
 
+    }else if(input_step==3){
+        for(int i=27; i<36; i++){
+          pitcher_number=keyListener::lastKeyReleased-27;
+        }
+        if(pitcher_number==1){
+          input_step=4;
+      }else{
+        input_step=5;
+      }
+    }else if(input_step==4){
+
+
+        if(pitcher_number==1){
+          if(keyListener::keyReleased[ALLEGRO_KEY_0]){
+            pitcher_number=10;
+            input_step=5;
+          }
+          if(keyListener::keyReleased[ALLEGRO_KEY_1]){
+            pitcher_number=11;
+             input_step=5;
+          }
+          if(keyListener::keyReleased[ALLEGRO_KEY_2]){
+            pitcher_number=12;
+            input_step=5;
+          }
+        }
+      }
   }
-//    if(batter_number==1){
-//      if(keyListener::keyPressed[ALLEGRO_KEY_0])
-//        batter_number=10;
-//      if(keyListener::keyPressed[ALLEGRO_KEY_1])
-//        batter_number=11;
-//      if(keyListener::keyPressed[ALLEGRO_KEY_2])
-//        batter_number=12;
-//    }
+
+  if(keyListener::keyReleased[ALLEGRO_KEY_ENTER]){
+    if(input_step==1 || input_step==0)
+      input_step=3;
+    else if(input_step==3 || input_step==4)
+      input_step=5;
+  }
 
 
- // }
+  if(input_step==0 || input_step==1){
+    gameCells[0] -> setOutlineColour(GREEN);
+    gameCells[2] -> setOutlineColour(BLACK);
+    gameCells[4] -> setOutlineColour(BLACK);
+
+
+
+  }
+
+  if(input_step==3 || input_step==4){
+    gameCells[0] -> setOutlineColour(BLACK);
+    gameCells[2] -> setOutlineColour(GREEN);
+    gameCells[4] -> setOutlineColour(BLACK);
+
+
+  }
+  if(input_step==5){
+    gameCells[0] -> setOutlineColour(BLACK);
+    gameCells[2] -> setOutlineColour(BLACK);
+    gameCells[4] -> setOutlineColour(GREEN);
+
+  }
   gameCells[0] -> setText(tools::toString(batter_number));
+  gameCells[2] -> setText(tools::toString(pitcher_number));
+
+
+
 
 
 }

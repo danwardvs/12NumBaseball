@@ -22,6 +22,7 @@ class Cell
     void setY(int newY){y=newY;}
     void setWidth(int newWidth){width=newWidth;}
     void setHeight(int newHeight){height=newHeight;}
+    void setOutlineColour(ALLEGRO_COLOR n){outline_colour=n;}
 
 
   protected:

@@ -152,6 +152,7 @@ void setup(){
 
   // This is actually completely irrelevant other than making fun of Allan's PC when he runs this
   // Sorry, your PC is a very nice PC
+  // mfw Allan's PC is now superior
   std::cout<<"Running as "<<al_get_app_name()<<", with "<<al_get_ram_size()<<" MB RAM.\n";
 
 }

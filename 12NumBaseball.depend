@@ -192,7 +192,7 @@
 1511395778 /home/danwardvs/Documents/12NumBaseball/include/mouseListener.h
 	<allegro5/allegro.h>
 
-1512704091 /home/danwardvs/Documents/12NumBaseball/include/menu.h
+1515465548 /home/danwardvs/Documents/12NumBaseball/include/menu.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_font.h>
@@ -205,10 +205,11 @@
 	"tools.h"
 	"state.h"
 	"globals.h"
+	"RandNum.h"
 	"Cell.h"
 	"Font.h"
 
-1515462604 source:/home/danwardvs/Documents/12NumBaseball/src/menu.cpp
+1515463176 source:/home/danwardvs/Documents/12NumBaseball/src/menu.cpp
 	"menu.h"
 
 1511395778 source:/home/danwardvs/Documents/12NumBaseball/src/mouseListener.cpp
@@ -222,4 +223,14 @@
 
 1512701646 source:/home/danwardvs/Documents/12NumBaseball/src/Globals.cpp
 	"globals.h"
+
+1515464001 source:/home/danwardvs/Documents/12NumBaseball/src/RandNum.cpp
+	"RandNum.h"
+
+1515463985 /home/danwardvs/Documents/12NumBaseball/include/RandNum.h
+	<time.h>
+	<iostream>
+	<fstream>
+	<vector>
+	<string>
 

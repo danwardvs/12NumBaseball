@@ -19,6 +19,7 @@
 #include "tools.h"
 #include "state.h"
 #include "globals.h"
+#include "RandNum.h"
 
 #include "Cell.h"
 #include "Font.h"
@@ -39,6 +40,7 @@ class menu : public state{
     int input_step=0;
     int batter_number=1;
     int pitcher_number=1;
+    int result_number=1;
 
     Font calibri_bold;
     std::vector<Cell*> gameCells;

@@ -79,7 +79,12 @@ void menu::update(){
       input_step=3;
     else if(input_step==3 || input_step==4)
       input_step=5;
+    else if(input_step==5){
+      result_number=RandNum::randInt(1,122);
+    }
   }
+  if(keyListener::keyReleased[ALLEGRO_KEY_DELETE])
+    input_step=0;
 
 
   if(input_step==0 || input_step==1){
@@ -106,6 +111,8 @@ void menu::update(){
   }
   gameCells[0] -> setText(tools::toString(batter_number));
   gameCells[2] -> setText(tools::toString(pitcher_number));
+  gameCells[4] -> setText(tools::toString(result_number));
+
 
 
 

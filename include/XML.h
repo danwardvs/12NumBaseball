@@ -8,12 +8,14 @@
 #include "rapidxml.hpp"
 #include "rapidxml_utils.hpp"
 
+#include "tools.h"
+
 class XML
 {
   public:
     XML();
     virtual ~XML();
-    std::string load_xml(std::string newFilePath,int niceint);
+    std::string load_xml(std::string newFilePath,int niceint, int evennicerint);
 
   protected:
 

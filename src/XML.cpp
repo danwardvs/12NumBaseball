@@ -10,7 +10,7 @@ XML::~XML()
   //dtor
 }
 
-std::string XML::load_xml(std::string newFilePath,int newGeneratedNumber){
+std::string XML::load_xml(std::string newFilePath,int newGeneratedNumber, int newPitcherNumber){
 
     rapidxml::xml_document<> doc;
     rapidxml::xml_node<> * root_node;
@@ -32,13 +32,18 @@ std::string XML::load_xml(std::string newFilePath,int newGeneratedNumber){
       // Interate over the beers
       int generatedNumberResult = atoi(generated_node -> first_attribute("number") -> value());
 
-
       if(generatedNumberResult==newGeneratedNumber){
-        if( generated_node -> first_node("p1") != 0){
-          result = generated_node -> first_node("p1") -> value();
 
-          std::cout<<result<<"\n";
-        }
+      for(int i=1; i<13; i++){
+        std::string newNodeTag = "p" + tools::toString(i);
+        std::cout<<newNodeTag+"\n";
+        if(newPitcherNumber==i)
+          result = generated_node -> first_node(newNodeTag.c_str()) -> value();
+      }
+
+
+
+
       }
     }
 

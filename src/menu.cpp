@@ -83,7 +83,7 @@ void menu::update(){
     else if(input_step==5){
       result_number=RandNum::randInt(1,122);
       result_number=56;
-      result = xml_handler.load_xml("data/1b.xml",result_number);
+      result = xml_handler.load_xml("data/1b.xml",result_number,pitcher_number);
 
 
     }

@@ -13,6 +13,8 @@
 #include <string>
 #include <vector>
 
+
+
 #include "keyListener.h"
 #include "mouseListener.h"
 #include "joystickListener.h"
@@ -20,6 +22,7 @@
 #include "state.h"
 #include "globals.h"
 #include "RandNum.h"
+#include "XML.h"
 
 #include "Cell.h"
 #include "Font.h"
@@ -37,10 +40,14 @@ class menu : public state{
 
     void generate_cells();
 
+    XML xml_handler;
+
     int input_step=0;
     int batter_number=1;
     int pitcher_number=1;
     int result_number=1;
+
+    std::string result;
 
     Font calibri_bold;
     std::vector<Cell*> gameCells;

@@ -12,6 +12,7 @@ menu::menu(){
 menu::~menu(){
 
 }
+
 // Update animation and wait for input
 void menu::update(){
   if(keyListener::numKeyReleased){
@@ -81,6 +82,10 @@ void menu::update(){
       input_step=5;
     else if(input_step==5){
       result_number=RandNum::randInt(1,122);
+      result_number=56;
+      result = xml_handler.load_xml("data/1b.xml",result_number);
+
+
     }
   }
   if(keyListener::keyReleased[ALLEGRO_KEY_DELETE])
@@ -112,6 +117,9 @@ void menu::update(){
   gameCells[0] -> setText(tools::toString(batter_number));
   gameCells[2] -> setText(tools::toString(pitcher_number));
   gameCells[4] -> setText(tools::toString(result_number));
+
+  gameCells[6] -> setText(result);
+
 
 
 
@@ -150,6 +158,9 @@ void menu::generate_cells(){
   gameCells.push_back(new Cell(5+width_6*2+20,0,width_6*2,200,BLACK,BLACK,RED,calibri_bold,CENTER,"112"));
 
   gameCells.push_back(new Cell(0,SCREEN_H-25,90,25,BLACK,BLACK,RED,calibri_bold,LEFT,RandNum::getSeed()));
+
+  gameCells.push_back(new Cell(0,300,300,50,BLACK,WHITE,BLUE,calibri_bold,LEFT,"Storms mound"));
+
 
 
 

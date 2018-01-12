@@ -192,7 +192,7 @@
 1515169789 /home/danwardvs/Documents/12NumBaseball/include/mouseListener.h
 	<allegro5/allegro.h>
 
-1515609845 /home/danwardvs/Documents/12NumBaseball/include/menu.h
+1515798134 /home/danwardvs/Documents/12NumBaseball/include/menu.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_font.h>
@@ -206,10 +206,11 @@
 	"state.h"
 	"globals.h"
 	"RandNum.h"
+	"XML.h"
 	"Cell.h"
 	"Font.h"
 
-1515609845 source:/home/danwardvs/Documents/12NumBaseball/src/menu.cpp
+1515797106 source:/home/danwardvs/Documents/12NumBaseball/src/menu.cpp
 	"menu.h"
 
 1515169789 source:/home/danwardvs/Documents/12NumBaseball/src/mouseListener.cpp
@@ -234,4 +235,27 @@
 	<vector>
 	<string>
 	"tools.h"
+
+1515169789 /home/danwardvs/Documents/12NumBaseball/include/rapidxml.hpp
+	<cstdlib>
+	<cassert>
+	<new>
+	<exception>
+
+1515169789 /home/danwardvs/Documents/12NumBaseball/include/rapidxml_utils.hpp
+	"rapidxml.hpp"
+	<vector>
+	<string>
+	<fstream>
+	<stdexcept>
+
+1515797966 /home/danwardvs/Documents/12NumBaseball/include/XML.h
+	<string>
+	<fstream>
+	<iostream>
+	"rapidxml.hpp"
+	"rapidxml_utils.hpp"
+
+1515798134 source:/home/danwardvs/Documents/12NumBaseball/src/XML.cpp
+	"XML.h"
 

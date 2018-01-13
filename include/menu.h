@@ -46,7 +46,9 @@ class menu : public state{
     int batter_number=1;
     int pitcher_number=1;
     int result_number=1;
-    int bottom_number[9]={1,2,3,4,5,6};
+    int extra_number[9]={7,15,1,2,19,7};
+    int groundout_type;
+    int steal_throw_number;
 
     std::string result[9];
 

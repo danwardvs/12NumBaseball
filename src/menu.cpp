@@ -88,8 +88,11 @@ void menu::update(){
     else if(input_step==5){
       result_number=RandNum::randInt(1,122);
       for(int i=0; i<9; i++){
-        bottom_number[i]=RandNum::randInt(1,100);
+        extra_number[i]=RandNum::randInt(1,100);
       }
+      steal_throw_number= RandNum::randInt(1,122);
+      groundout_type=RandNum::randInt(1,3);
+
 
       //result_number=90;
       if(result_number<101){
@@ -156,7 +159,16 @@ void menu::update(){
     gameCells[i*2+6] -> setText(result[i]);
 
   for(int i=0; i<6; i++)
-      gameCells[i+23] -> setText(tools::toString(bottom_number[i]));
+      gameCells[i+23] -> setText(tools::toString(extra_number[i]));
+
+
+  gameCells[29] -> setText(tools::toString(extra_number[6]));
+  gameCells[31] -> setText(tools::toString(extra_number[7]));
+  gameCells[33] -> setText(tools::toString(extra_number[7]));
+  gameCells[34] -> setText(tools::toString(extra_number[8]));
+  gameCells[36] -> setText(tools::toString(steal_throw_number));
+  gameCells[38] -> setText(tools::toString(groundout_type));
+
 
 
 
@@ -203,36 +215,37 @@ void menu::generate_cells(){
   gameCells[4] -> setLineThickness(4);
 
 
-  gameCells.push_back(new Cell(SCREEN_W-90,SCREEN_H-75,90,25,BLACK,BLACK,RED,calibri,LEFT,RandNum::getSeed()));
+  gameCells.push_back(new Cell(SCREEN_W-90,SCREEN_H-height_16-25,90,25,BLACK,BLACK,RED,calibri,LEFT,RandNum::getSeed()));
 
 
   int slugging_height=height_16;
   int slugging_position=height_16*5+40;
 
-  gameCells.push_back(new Cell(20,height_16*4+20,400,height_16*2,BLACK,WHITE,BLUE,calibri,LEFT,"Storms mound"));
+  gameCells.push_back(new Cell(20,height_16*4+20,width_6*3,height_16*2,BLACK,WHITE,BLUE,calibri,LEFT,"Storms mound"));
 
   gameCells[6] -> setLineThickness(2);
 
 
+
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*1,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"1SL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*1,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Smacks it out of the park"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*1,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Smacks it out of the park"));
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*2,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"SSL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*2,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Over the fence"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*2,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Over the fence"));
 
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*3,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"3SL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*3,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Deep fly, triple"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*3,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Deep fly, triple"));
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*4,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"GSL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*4,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Easy double"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*4,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Easy double"));
 
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*5,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"5SL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*5,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Barely makes it to first"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*5,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Barely makes it to first"));
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*6,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"ASL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*6,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"m/18/woody"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*6,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"m/18/woody"));
 
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*7,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"7SL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*7,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Trips over bat, gets tagged out"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*7,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Trips over bat, gets tagged out"));
   gameCells.push_back(new Cell(0,slugging_position+slugging_height*8,50,slugging_height,BLACK,WHITE,BLACK,calibri,LEFT,"FSL"));
-  gameCells.push_back(new Cell(50,slugging_position+slugging_height*8,300,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Complete failure of a career"));
+  gameCells.push_back(new Cell(50,slugging_position+slugging_height*8,width_6*3,slugging_height,BLACK,WHITE,BLUE,calibri,LEFT,"Complete failure of a career"));
 
 
   gameCells.push_back(new Cell(0,SCREEN_H-height_16,width_6,height_16,BLACK,YELLOW,GROSS_YELLOW,calibri,CENTER,"55"));
@@ -241,6 +254,27 @@ void menu::generate_cells(){
   gameCells.push_back(new Cell(width_6*3,SCREEN_H-height_16,width_6,height_16,BLACK,YELLOW,GROSS_YELLOW,calibri,CENTER,"45"));
   gameCells.push_back(new Cell(width_6*4,SCREEN_H-height_16,width_6,height_16,BLACK,YELLOW,GROSS_YELLOW,calibri,CENTER,"45"));
   gameCells.push_back(new Cell(width_6*5,SCREEN_H-height_16,width_6,height_16,BLACK,YELLOW,GROSS_YELLOW,calibri,CENTER,"45"));
+
+  gameCells.push_back(new Cell(width_6*4+40,25,width_6-20,height_16*2,BLACK,YELLOW,BLACK,calibri,CENTER,"12 "));
+  gameCells.push_back(new Cell(width_6*4+40,0,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Fielder"));
+
+  gameCells.push_back(new Cell(width_6*5+20,25,width_6-20,height_16*2,BLACK,YELLOW,BLACK,calibri,CENTER,"12"));
+  gameCells.push_back(new Cell(width_6*5+20,0,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Run Adv. Steal WP. Error PB"));
+
+  gameCells.push_back(new Cell(width_6*5+20,50+height_16*2,width_6-20,height_16*2,BLACK,BLUE,WHITE,calibri,CENTER,"12"));
+  gameCells.push_back(new Cell(width_6*5+20,50+height_16*4,width_6-20,height_16*2,BLACK,BLUE,WHITE,calibri,CENTER,"12"));
+
+  gameCells.push_back(new Cell(width_6*5+20,25+height_16*2,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Double play"));
+
+  gameCells.push_back(new Cell(width_6*4+40,50+height_16*2,width_6-20,height_16*2,BLACK,GREEN,BLACK,calibri,CENTER,"12 "));
+  gameCells.push_back(new Cell(width_6*4+40,25+height_16*2,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Steals and throws"));
+
+  gameCells.push_back(new Cell(width_6*4+40,75+height_16*4,width_6-20,height_16*2-25,BLACK,GREEN,BLACK,calibri,CENTER,"12 "));
+  gameCells.push_back(new Cell(width_6*4+40,50+height_16*4,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Ground out type"));
+
+
+
+
 
 
 

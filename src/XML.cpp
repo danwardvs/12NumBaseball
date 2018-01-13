@@ -9,6 +9,35 @@ XML::~XML()
 {
   //dtor
 }
+std::string XML::load_special(int newGeneratedNumber){
+  // Since there is limited results, we're going to pretend like
+  // we load from a file, but actually just generate it from code.
+  // Don't tell anyone.
+  std::string result;
+
+  if(newGeneratedNumber<105)
+    result = "WP  (Wildness for Pitcher)";
+  else if(newGeneratedNumber==105)
+    result = "HBP (Wildness for Pitcher)";
+  else if(newGeneratedNumber==106)
+    result = "Balk  (AHR for Pitcher)";
+  else if(newGeneratedNumber==107 || newGeneratedNumber == 108)
+    result = "PO  (see Pick-Off Move chart)";
+  else if(newGeneratedNumber>108 && newGeneratedNumber<113)
+    result = "PB (Error chart for catcher)";
+  else if(newGeneratedNumber==113)
+    result = "INJ";
+  else if(newGeneratedNumber==114)
+    result = "Fan interference";
+  else if(newGeneratedNumber==117 || newGeneratedNumber == 118)
+    result = "K if FB";
+  else if(newGeneratedNumber==119 || newGeneratedNumber == 120)
+    result = "Batter's Specialty";
+  else if(newGeneratedNumber==121 || newGeneratedNumber==122)
+    result = "Long ball if fastball hitter";
+  return result;
+
+}
 
 std::string XML::load_xml(std::string newFilePath,int newGeneratedNumber, int newPitcherNumber){
 

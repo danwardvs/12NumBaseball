@@ -16,6 +16,7 @@ class XML
     XML();
     virtual ~XML();
     std::string load_xml(std::string newFilePath,int niceint, int evennicerint);
+    std::string load_special(int newnum);
 
   protected:
 

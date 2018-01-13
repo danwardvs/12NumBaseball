@@ -82,8 +82,10 @@ void menu::update(){
       input_step=5;
     else if(input_step==5){
       result_number=RandNum::randInt(1,122);
-      result_number=56;
-      result = xml_handler.load_xml("data/1b.xml",result_number,pitcher_number);
+      //result_number=56;
+
+      std::string newPath="data/" + tools::toString(batter_number) +"b.xml";
+      result = xml_handler.load_xml(newPath,result_number,pitcher_number);
 
 
     }

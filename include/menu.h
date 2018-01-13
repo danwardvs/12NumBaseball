@@ -47,7 +47,7 @@ class menu : public state{
     int pitcher_number=1;
     int result_number=1;
 
-    std::string result;
+    std::string result[9];
 
     Font calibri_bold;
     std::vector<Cell*> gameCells;

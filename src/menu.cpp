@@ -82,7 +82,7 @@ void menu::update(){
       input_step=5;
     else if(input_step==5){
       result_number=RandNum::randInt(1,122);
-      //result_number=56;
+      //result_number=117;
       if(result_number<101){
         std::string newPath="data/" + tools::toString(batter_number) +"b.xml";
         result = xml_handler.load_xml(newPath,result_number,pitcher_number);
@@ -165,6 +165,12 @@ void menu::generate_cells(){
   gameCells.push_back(new Cell(0,SCREEN_H-25,90,25,BLACK,BLACK,RED,calibri_bold,LEFT,RandNum::getSeed()));
 
   gameCells.push_back(new Cell(0,300,300,50,BLACK,WHITE,BLUE,calibri_bold,LEFT,"Storms mound"));
+  gameCells.push_back(new Cell(0,350,300,50,BLACK,WHITE,BLUE,calibri_bold,LEFT,"SSL"));
+  gameCells.push_back(new Cell(0,400,300,50,BLACK,WHITE,BLUE,calibri_bold,LEFT,"Smacks it out of the park"));
+
+
+
+
 
 
 

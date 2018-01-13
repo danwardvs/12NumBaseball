@@ -20,6 +20,8 @@
 #define GREEN al_map_rgb(0,255,0)
 #define BLUE al_map_rgb(0,0,255)
 #define TRANSPARENT al_map_rgba(0,0,0,0)
+#define YELLOW al_map_rgb(255,255,0)
+#define GROSS_YELLOW al_map_rgb(100,100,0)
 
 extern int SCREEN_H;
 extern int SCREEN_W;

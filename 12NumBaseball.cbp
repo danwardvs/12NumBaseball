@@ -41,6 +41,7 @@
 		<Unit filename="include/Cell.h" />
 		<Unit filename="include/Font.h" />
 		<Unit filename="include/RandNum.h" />
+		<Unit filename="include/XML.h" />
 		<Unit filename="include/globals.h" />
 		<Unit filename="include/init.h" />
 		<Unit filename="include/joystickListener.h" />
@@ -57,6 +58,7 @@
 		<Unit filename="src/Font.cpp" />
 		<Unit filename="src/Globals.cpp" />
 		<Unit filename="src/RandNum.cpp" />
+		<Unit filename="src/XML.cpp" />
 		<Unit filename="src/init.cpp" />
 		<Unit filename="src/joystickListener.cpp" />
 		<Unit filename="src/keyListener.cpp" />

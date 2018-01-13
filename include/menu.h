@@ -46,10 +46,12 @@ class menu : public state{
     int batter_number=1;
     int pitcher_number=1;
     int result_number=1;
+    int bottom_number[9]={1,2,3,4,5,6};
 
     std::string result[9];
 
     Font calibri_bold;
+    Font calibri;
     std::vector<Cell*> gameCells;
 
 };

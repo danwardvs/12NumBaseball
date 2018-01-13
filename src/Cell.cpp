@@ -9,6 +9,7 @@ Cell::Cell()
   text="";
   this -> outline_colour = al_map_rgba(0,0,0,255);
   this -> cell_colour = al_map_rgba(123,456,789,255);
+  line_thickness=1;
 }
 Cell::Cell(int newX, int newY, int newWidth, int newHeight,ALLEGRO_COLOR newOutlineColour, ALLEGRO_COLOR newCellColour,
            ALLEGRO_COLOR newFontColor,Font newFont,int newJustification,std::string newText){
@@ -35,7 +36,7 @@ Cell::~Cell()
 void Cell::draw(){
 
     al_draw_filled_rectangle( x, y, x + width , y + height,cell_colour);
-    al_draw_rectangle( x+2, y+2, x + width-2, y + height-2, outline_colour,4);
+    al_draw_rectangle( x+line_thickness/2, y+line_thickness/2, x + width-line_thickness/2, y + height-line_thickness/2, outline_colour,line_thickness);
 
     if(font.getFirstFont()!=nullptr){
 

@@ -23,6 +23,7 @@ class Cell
     void setWidth(int newWidth){width=newWidth;}
     void setHeight(int newHeight){height=newHeight;}
     void setOutlineColour(ALLEGRO_COLOR n){outline_colour=n;}
+    void setLineThickness(int nt){line_thickness=nt;}
 
 
   protected:
@@ -35,6 +36,7 @@ class Cell
     int x_padding=5;
     int y_padding=5;
     int justification=LEFT;
+    int line_thickness=1;
     std::string text;
 
     Font font;

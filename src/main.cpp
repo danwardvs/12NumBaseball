@@ -113,8 +113,8 @@ void setup(){
 
   // Aquire screen
 
-  //al_set_new_display_flags(ALLEGRO_FULLSCREEN);
-  display = al_create_display(1024, 600);
+  al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+  display = al_create_display(1024, 768);
   SCREEN_W = al_get_display_width(display);
   std::cout<<SCREEN_W<<"\n";
   SCREEN_H = al_get_display_height(display);
@@ -136,7 +136,7 @@ void setup(){
   al_start_timer(timer);
 
   // Window title
-  al_set_window_title(display,"Jumping Jimothy");
+  al_set_window_title(display,"12 Paper Baseball");
 
   std::cout<<" Sucesss.\n";
 

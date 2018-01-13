@@ -29,6 +29,8 @@ std::string XML::load_special(int newGeneratedNumber){
     result = "INJ";
   else if(newGeneratedNumber==114)
     result = "Fan interference";
+  else if(newGeneratedNumber==115 || newGeneratedNumber == 116)
+    result = "Pitcher's Specialty";
   else if(newGeneratedNumber==117 || newGeneratedNumber == 118)
     result = "K if FB";
   else if(newGeneratedNumber==119 || newGeneratedNumber == 120)

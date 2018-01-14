@@ -23,6 +23,7 @@
 #include "globals.h"
 #include "RandNum.h"
 #include "XML.h"
+#include "Time.h"
 
 #include "Cell.h"
 #include "Font.h"
@@ -49,6 +50,7 @@ class menu : public state{
     int extra_number[9]={7,15,1,2,19,7};
     int groundout_type;
     int steal_throw_number;
+    int total_numbers_generated=0;
 
     std::string result[9];
 

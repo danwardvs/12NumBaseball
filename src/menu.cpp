@@ -92,6 +92,7 @@ void menu::update(){
       }
       steal_throw_number= RandNum::randInt(1,122);
       groundout_type=RandNum::randInt(1,3);
+      total_numbers_generated++;
 
 
       //result_number=90;
@@ -167,8 +168,23 @@ void menu::update(){
   gameCells[33] -> setText(tools::toString(extra_number[7]));
   gameCells[34] -> setText(tools::toString(extra_number[8]));
   gameCells[36] -> setText(tools::toString(steal_throw_number));
-  gameCells[38] -> setText(tools::toString(groundout_type));
 
+  if(groundout_type==1){
+    gameCells[38] -> setCellColour(RED);
+    gameCells[38] -> setText("Hard one hop");
+  }else if(groundout_type==2){
+    gameCells[38] -> setCellColour(YELLOW);
+    gameCells[38] -> setText("Average grounder");
+
+  }else if(groundout_type==3){
+    gameCells[38] -> setCellColour(GREEN);
+    gameCells[38] -> setText("Slow roller");
+
+  }
+  std::string newTime = Time::getCurrentTime();
+  newTime.pop_back();
+  gameCells[40] -> setText(newTime);
+  gameCells[42] -> setText(tools::toString(total_numbers_generated));
 
 
 
@@ -215,7 +231,7 @@ void menu::generate_cells(){
   gameCells[4] -> setLineThickness(4);
 
 
-  gameCells.push_back(new Cell(SCREEN_W-90,SCREEN_H-height_16-25,90,25,BLACK,BLACK,RED,calibri,LEFT,RandNum::getSeed()));
+  gameCells.push_back(new Cell(SCREEN_W-90,SCREEN_H-height_16-25,90,25,BLACK,WHITE,BLACK,calibri,LEFT,RandNum::getSeed()));
 
 
   int slugging_height=height_16;
@@ -269,8 +285,13 @@ void menu::generate_cells(){
   gameCells.push_back(new Cell(width_6*4+40,50+height_16*2,width_6-20,height_16*2,BLACK,GREEN,BLACK,calibri,CENTER,"12 "));
   gameCells.push_back(new Cell(width_6*4+40,25+height_16*2,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Steals and throws"));
 
-  gameCells.push_back(new Cell(width_6*4+40,75+height_16*4,width_6-20,height_16*2-25,BLACK,GREEN,BLACK,calibri,CENTER,"12 "));
+  gameCells.push_back(new Cell(width_6*4+40,75+height_16*4,width_6-20,height_16*2-25,BLACK,GREEN,BLACK,calibri,CENTER,""));
   gameCells.push_back(new Cell(width_6*4+40,50+height_16*4,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Ground out type"));
+
+  gameCells.push_back(new Cell(SCREEN_W-180,SCREEN_H-height_16-50,180,25,BLACK,WHITE,BLACK,calibri,LEFT,"5 o'clock somewhere"));
+  gameCells.push_back(new Cell(SCREEN_W-130,SCREEN_H-height_16-25,40,25,BLACK,WHITE,BLACK,calibri,LEFT,"v1.0"));
+  gameCells.push_back(new Cell(SCREEN_W-180,SCREEN_H-height_16-25,50,25,BLACK,WHITE,BLACK,calibri,LEFT,"0"));
+
 
 
 

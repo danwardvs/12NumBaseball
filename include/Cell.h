@@ -23,6 +23,8 @@ class Cell
     void setWidth(int newWidth){width=newWidth;}
     void setHeight(int newHeight){height=newHeight;}
     void setOutlineColour(ALLEGRO_COLOR n){outline_colour=n;}
+    void setCellColour(ALLEGRO_COLOR i){cell_colour=i;}
+    void setFontColour(ALLEGRO_COLOR g){font_colour=g;}
     void setLineThickness(int nt){line_thickness=nt;}
 
 

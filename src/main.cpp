@@ -114,7 +114,7 @@ void setup(){
   // Aquire screen
 
   al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
-  display = al_create_display(1024, 768);
+  display = al_create_display(800,600);
   SCREEN_W = al_get_display_width(display);
   std::cout<<SCREEN_W<<"\n";
   SCREEN_H = al_get_display_height(display);

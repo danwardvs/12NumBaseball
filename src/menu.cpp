@@ -37,15 +37,15 @@ void menu::update(){
 
 
       if(batter_number==1){
-        if(keyListener::keyReleased[ALLEGRO_KEY_0]){
+        if(keyListener::keyReleased[ALLEGRO_KEY_0] || keyListener::keyReleased[ALLEGRO_KEY_PAD_0]){
           batter_number=10;
           input_step=3;
         }
-        if(keyListener::keyReleased[ALLEGRO_KEY_1]){
+        if(keyListener::keyReleased[ALLEGRO_KEY_1] || keyListener::keyReleased[ALLEGRO_KEY_PAD_1]){
           batter_number=11;
           input_step=3;
         }
-        if(keyListener::keyReleased[ALLEGRO_KEY_2]){
+        if(keyListener::keyReleased[ALLEGRO_KEY_2] || keyListener::keyReleased[ALLEGRO_KEY_PAD_2]){
           batter_number=12;
           input_step=3;
         }
@@ -64,15 +64,15 @@ void menu::update(){
 
 
         if(pitcher_number==1){
-          if(keyListener::keyReleased[ALLEGRO_KEY_0]){
+          if(keyListener::keyReleased[ALLEGRO_KEY_0] || keyListener::keyReleased[ALLEGRO_KEY_PAD_0]){
             pitcher_number=10;
             input_step=5;
           }
-          if(keyListener::keyReleased[ALLEGRO_KEY_1]){
+          if(keyListener::keyReleased[ALLEGRO_KEY_1] || keyListener::keyReleased[ALLEGRO_KEY_PAD_1]){
             pitcher_number=11;
              input_step=5;
           }
-          if(keyListener::keyReleased[ALLEGRO_KEY_2]){
+          if(keyListener::keyReleased[ALLEGRO_KEY_2] || keyListener::keyReleased[ALLEGRO_KEY_PAD_2]){
             pitcher_number=12;
             input_step=5;
           }
@@ -80,7 +80,7 @@ void menu::update(){
       }
   }
 
-  if(keyListener::keyReleased[ALLEGRO_KEY_ENTER]){
+  if(keyListener::keyPressed[ALLEGRO_KEY_ENTER] || keyListener::keyPressed[ALLEGRO_KEY_PAD_ENTER]){
     if(input_step==1 || input_step==0)
       input_step=3;
     else if(input_step==3 || input_step==4)
@@ -126,7 +126,7 @@ void menu::update(){
 
     }
   }
-  if(keyListener::keyReleased[ALLEGRO_KEY_DELETE])
+  if(keyListener::keyReleased[ALLEGRO_KEY_DELETE] || keyListener::keyReleased[ALLEGRO_KEY_BACKSPACE])
     input_step=0;
 
 
@@ -289,7 +289,7 @@ void menu::generate_cells(){
   gameCells.push_back(new Cell(width_6*4+40,50+height_16*4,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Ground out type"));
 
   gameCells.push_back(new Cell(SCREEN_W-180,SCREEN_H-height_16-50,180,25,BLACK,WHITE,BLACK,calibri,LEFT,"5 o'clock somewhere"));
-  gameCells.push_back(new Cell(SCREEN_W-130,SCREEN_H-height_16-25,40,25,BLACK,WHITE,BLACK,calibri,LEFT,"v1.0"));
+  gameCells.push_back(new Cell(SCREEN_W-130,SCREEN_H-height_16-25,40,25,BLACK,WHITE,BLACK,calibri,LEFT,"v1.1"));
   gameCells.push_back(new Cell(SCREEN_W-180,SCREEN_H-height_16-25,50,25,BLACK,WHITE,BLACK,calibri,LEFT,"0"));
 
 

@@ -797,7 +797,7 @@
         <p9>GO/1B UNLESS 1-F</p9>
         <p10>GO/E IF 1-R</p10>
         <p11>FLY OUT</p11>
-        <p12>FLY OUT, K POWER P</p12>
+        <p12>FLY OUT, K if Power, GO if Sinkerballer P</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "58">
         <p1>GO/1B UNLESS 8-F</p1>
@@ -810,8 +810,8 @@
         <p8>GO/1B UNLESS 1-F</p8>
         <p9>GO/E IF 1-R</p9>
         <p10>FLY OUT</p10>
-        <p11>FLY OUT, K POWER P</p11>
-        <p12>FLY OUT, K POWER P</p12>
+        <p11>FLY OUT, K if Power, GO if Sinkerballer P</p11>
+        <p12>FLY OUT, K if Power, GO if Sinkerballer P</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "59">
         <p1>GO/1B UNLESS 7-F</p1>
@@ -823,9 +823,9 @@
         <p7>GO/1B UNLESS 1-F</p7>
         <p8>GO/E IF 1-R</p8>
         <p9>FLY OUT</p9>
-        <p10>FLY OUT, K POWER P</p10>
-        <p11>FLY OUT, K POWER P</p11>
-        <p12>FLY OUT, K FIREBALLER</p12>
+        <p10>FLY OUT, K if Power, GO if Sinkerballer P</p10>
+        <p11>FLY OUT, K if Power, GO if Sinkerballer P</p11>
+        <p12>FLY OUT, K if Fireballer or Junkballer</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "60">
         <p1>GO/1B UNLESS 6-F</p1>
@@ -836,10 +836,10 @@
         <p6>GO/1B UNLESS 1-F</p6>
         <p7>GO/E IF 1-R</p7>
         <p8>FLY OUT</p8>
-        <p9>FLY OUT, K POWER P</p9>
-        <p10>FLY OUT, K POWER P</p10>
-        <p11>FLY OUT, K FIREBALLER</p11>
-        <p12>FLY OUT, K FIREBALLER</p12>
+        <p9>FLY OUT, K if Power, GO if Sinkerballer P</p9>
+        <p10>FLY OUT, K if Power, GO if Sinkerballer P</p10>
+        <p11>FLY OUT, K if Fireballer or Junkballer</p11>
+        <p12>FLY OUT, K if Fireballer or Junkballer</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "61">
         <p1>GO/1B UNLESS 5-F</p1>
@@ -849,10 +849,10 @@
         <p5>GO/1B UNLESS 1-F</p5>
         <p6>GO/E IF 1-R</p6>
         <p7>FLY OUT</p7>
-        <p8>FLY OUT, K POWER P</p8>
-        <p9>FLY OUT, K POWER P</p9>
-        <p10>FLY OUT, K FIREBALLER</p10>
-        <p11>FLY OUT, K FIREBALLER</p11>
+        <p8>FLY OUT, K if Power, GO if Sinkerballer P</p8>
+        <p9>FLY OUT, K if Power, GO if Sinkerballer P</p9>
+        <p10>FLY OUT, K if Fireballer or Junkballer</p10>
+        <p11>FLY OUT, K if Fireballer or Junkballer</p11>
         <p12>FLY OUT</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "62">
@@ -862,10 +862,10 @@
         <p4>GO/1B UNLESS 1-F</p4>
         <p5>GO/E IF 1-R</p5>
         <p6>FLY OUT</p6>
-        <p7>FLY OUT, K POWER P</p7>
-        <p8>FLY OUT, K POWER P</p8>
-        <p9>FLY OUT, K FIREBALLER</p9>
-        <p10>FLY OUT, K FIREBALLER</p10>
+        <p7>FLY OUT, K if Power, GO if Sinkerballer P</p7>
+        <p8>FLY OUT, K if Power, GO if Sinkerballer P</p8>
+        <p9>FLY OUT, K if Fireballer or Junkballer</p9>
+        <p10>FLY OUT, K if Fireballer or Junkballer</p10>
         <p11>FLY OUT</p11>
         <p12>FLY OUT</p12>
     </GeneratedNumber>
@@ -875,10 +875,10 @@
         <p3>GO/1B UNLESS 1-F</p3>
         <p4>GO/E IF 1-R</p4>
         <p5>FLY OUT</p5>
-        <p6>FLY OUT, K POWER P</p6>
-        <p7>FLY OUT, K POWER P</p7>
-        <p8>FLY OUT, K FIREBALLER</p8>
-        <p9>FLY OUT, K FIREBALLER</p9>
+        <p6>FLY OUT, K if Power, GO if Sinkerballer P</p6>
+        <p7>FLY OUT, K if Power, GO if Sinkerballer P</p7>
+        <p8>FLY OUT, K if Fireballer or Junkballer</p8>
+        <p9>FLY OUT, K if Fireballer or Junkballer</p9>
         <p10>FLY OUT</p10>
         <p11>FLY OUT</p11>
         <p12>FLY OUT</p12>
@@ -888,10 +888,10 @@
         <p2>GO/1B UNLESS 1-F</p2>
         <p3>GO/E IF 1-R</p3>
         <p4>FLY OUT</p4>
-        <p5>FLY OUT, K POWER P</p5>
-        <p6>FLY OUT, K POWER P</p6>
-        <p7>FLY OUT, K FIREBALLER</p7>
-        <p8>FLY OUT, K FIREBALLER</p8>
+        <p5>FLY OUT, K if Power, GO if Sinkerballer P</p5>
+        <p6>FLY OUT, K if Power, GO if Sinkerballer P</p6>
+        <p7>FLY OUT, K if Fireballer or Junkballer</p7>
+        <p8>FLY OUT, K if Fireballer or Junkballer</p8>
         <p9>FLY OUT</p9>
         <p10>FLY OUT</p10>
         <p11>FLY OUT</p11>
@@ -901,10 +901,10 @@
         <p1>GO/1B UNLESS 1-F</p1>
         <p2>GO/E IF 1-R</p2>
         <p3>FLY OUT</p3>
-        <p4>FLY OUT, K POWER P</p4>
-        <p5>FLY OUT, K POWER P</p5>
-        <p6>FLY OUT, K FIREBALLER</p6>
-        <p7>FLY OUT, K FIREBALLER</p7>
+        <p4>FLY OUT, K if Power, GO if Sinkerballer P</p4>
+        <p5>FLY OUT, K if Power, GO if Sinkerballer P</p5>
+        <p6>FLY OUT, K if Fireballer or Junkballer</p6>
+        <p7>FLY OUT, K if Fireballer or Junkballer</p7>
         <p8>FLY OUT</p8>
         <p9>FLY OUT</p9>
         <p10>FLY OUT</p10>
@@ -914,10 +914,10 @@
     <GeneratedNumber number = "66">
         <p1>GO/E IF 1-R</p1>
         <p2>FLY OUT</p2>
-        <p3>FLY OUT, K POWER P</p3>
-        <p4>FLY OUT, K POWER P</p4>
-        <p5>FLY OUT, K FIREBALLER</p5>
-        <p6>FLY OUT, K FIREBALLER</p6>
+        <p3>FLY OUT, K if Power, GO if Sinkerballer P</p3>
+        <p4>FLY OUT, K if Power, GO if Sinkerballer P</p4>
+        <p5>FLY OUT, K if Fireballer or Junkballer</p5>
+        <p6>FLY OUT, K if Fireballer or Junkballer</p6>
         <p7>FLY OUT</p7>
         <p8>FLY OUT</p8>
         <p9>FLY OUT</p9>
@@ -927,10 +927,10 @@
     </GeneratedNumber>
     <GeneratedNumber number = "67">
         <p1>FLY OUT</p1>
-        <p2>FLY OUT, K POWER P</p2>
-        <p3>FLY OUT, K POWER P</p3>
-        <p4>FLY OUT, K FIREBALLER</p4>
-        <p5>FLY OUT, K FIREBALLER</p5>
+        <p2>FLY OUT, K if Power, GO if Sinkerballer P</p2>
+        <p3>FLY OUT, K if Power, GO if Sinkerballer P</p3>
+        <p4>FLY OUT, K if Fireballer or Junkballer</p4>
+        <p5>FLY OUT, K if Fireballer or Junkballer</p5>
         <p6>FLY OUT</p6>
         <p7>FLY OUT</p7>
         <p8>FLY OUT</p8>
@@ -940,10 +940,10 @@
         <p12>Fly out/BB if 6+S ** AND Base Runner</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "68">
-        <p1>FLY OUT, K POWER P</p1>
-        <p2>FLY OUT, K POWER P</p2>
-        <p3>FLY OUT, K FIREBALLER</p3>
-        <p4>FLY OUT, K FIREBALLER</p4>
+        <p1>FLY OUT, K if Power, GO if Sinkerballer P</p1>
+        <p2>FLY OUT, K if Power, GO if Sinkerballer P</p2>
+        <p3>FLY OUT, K if Fireballer or Junkballer</p3>
+        <p4>FLY OUT, K if Fireballer or Junkballer</p4>
         <p5>FLY OUT</p5>
         <p6>FLY OUT</p6>
         <p7>FLY OUT</p7>
@@ -954,9 +954,9 @@
         <p12>FLY O/3B UNLESS 9/10-F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "69">
-        <p1>FLY OUT, K POWER P</p1>
-        <p2>FLY OUT, K FIREBALLER</p2>
-        <p3>FLY OUT, K FIREBALLER</p3>
+        <p1>FLY OUT, K if Power, GO if Sinkerballer P</p1>
+        <p2>FLY OUT, K if Fireballer or Junkballer</p2>
+        <p3>FLY OUT, K if Fireballer or Junkballer</p3>
         <p4>FLY OUT</p4>
         <p5>FLY OUT</p5>
         <p6>FLY OUT</p6>
@@ -965,11 +965,11 @@
         <p9>Fly out/BB if 4+S ** AND Base Runner</p9>
         <p10>Fly out/BB if 6+S ** AND Base Runner</p10>
         <p11>FLY O/3B UNLESS 9/10-F **</p11>
-        <p12>FLY O/2B UNLESS 7/8-F **</p12>
+        <p12>FLY O/2B UNLESS 8+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "70">
-        <p1>FLY OUT, K FIREBALLER</p1>
-        <p2>FLY OUT, K FIREBALLER</p2>
+        <p1>FLY OUT, K if Fireballer or Junkballer</p1>
+        <p2>FLY OUT, K if Fireballer or Junkballer</p2>
         <p3>FLY OUT</p3>
         <p4>FLY OUT</p4>
         <p5>FLY OUT</p5>
@@ -978,11 +978,11 @@
         <p8>Fly out/BB if 1+S ** AND Base Runner</p8>
         <p9>Fly out/BB if 6+S ** AND Base Runner</p9>
         <p10>FLY O/3B UNLESS 9/10-F **</p10>
-        <p11>FLY O/2B UNLESS 7/8-F **</p11>
-        <p12>FLY O/2B UNLESS 5/6-F **</p12>
+        <p11>FLY O/2B UNLESS 8+F **</p11>
+        <p12>FLY O/2B UNLESS 6+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "71">
-        <p1>FLY OUT, K FIREBALLER</p1>
+        <p1>FLY OUT, K if Fireballer or Junkballer</p1>
         <p2>FLY OUT</p2>
         <p3>FLY OUT</p3>
         <p4>FLY OUT</p4>
@@ -991,9 +991,9 @@
         <p7>Fly out/BB if 1+S ** AND Base Runner</p7>
         <p8>Fly out/BB if 4+S ** AND Base Runner</p8>
         <p9>FLY O/3B UNLESS 9/10-F **</p9>
-        <p10>FLY O/2B UNLESS 7/8-F **</p10>
-        <p11>FLY O/2B UNLESS 5/6-F **</p11>
-        <p12>FLY O/1B UNLESS 3/4-F **</p12>
+        <p10>FLY O/2B UNLESS 8+F **</p10>
+        <p11>FLY O/2B UNLESS 6+F **</p11>
+        <p12>FLY O/1B UNLESS 4+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "72">
         <p1>FLY OUT</p1>
@@ -1004,10 +1004,10 @@
         <p6>Fly out/BB if 1+S ** AND Base Runner</p6>
         <p7>Fly out/BB if 4+S ** AND Base Runner</p7>
         <p8>Fly out/BB if 6+S ** AND Base Runner</p8>
-        <p9>FLY O/2B UNLESS 7/8-F **</p9>
-        <p10>FLY O/2B UNLESS 5/6-F **</p10>
-        <p11>FLY O/1B UNLESS 3/4-F **</p11>
-        <p12>FLY O/1B UNLESS 1/2-F **</p12>
+        <p9>FLY O/2B UNLESS 8+F **</p9>
+        <p10>FLY O/2B UNLESS 6+F **</p10>
+        <p11>FLY O/1B UNLESS 4+F **</p11>
+        <p12>FLY O/1B UNLESS 2+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "73">
         <p1>FLY OUT</p1>
@@ -1018,9 +1018,9 @@
         <p6>Fly out/BB if 4+S ** AND Base Runner</p6>
         <p7>Fly out/BB if 6+S ** AND Base Runner</p7>
         <p8>FLY O/3B UNLESS 9/10-F **</p8>
-        <p9>FLY O/2B UNLESS 5/6-F **</p9>
-        <p10>FLY O/1B UNLESS 3/4-F **</p10>
-        <p11>FLY O/1B UNLESS 1/2-F **</p11>
+        <p9>FLY O/2B UNLESS 6+F **</p9>
+        <p10>FLY O/1B UNLESS 4+F **</p10>
+        <p11>FLY O/1B UNLESS 2+F **</p11>
         <p12>POSSIBLE ERROR</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "74">
@@ -1031,9 +1031,9 @@
         <p5>Fly out/BB if 4+S ** AND Base Runner</p5>
         <p6>Fly out/BB if 6+S ** AND Base Runner</p6>
         <p7>FLY O/3B UNLESS 9/10-F **</p7>
-        <p8>FLY O/2B UNLESS 7/8-F **</p8>
-        <p9>FLY O/1B UNLESS 3/4-F **</p9>
-        <p10>FLY O/1B UNLESS 1/2-F **</p10>
+        <p8>FLY O/2B UNLESS 8+F **</p8>
+        <p9>FLY O/1B UNLESS 4+F **</p9>
+        <p10>FLY O/1B UNLESS 2+F **</p10>
         <p11>POSSIBLE ERROR</p11>
         <p12>POSSIBLE ERROR</p12>
     </GeneratedNumber>
@@ -1044,9 +1044,9 @@
         <p4>Fly out/BB if 4+S ** AND Base Runner</p4>
         <p5>Fly out/BB if 6+S ** AND Base Runner</p5>
         <p6>FLY O/3B UNLESS 9/10-F **</p6>
-        <p7>FLY O/2B UNLESS 7/8-F **</p7>
-        <p8>FLY O/2B UNLESS 5/6-F **</p8>
-        <p9>FLY O/1B UNLESS 1/2-F **</p9>
+        <p7>FLY O/2B UNLESS 8+F **</p7>
+        <p8>FLY O/2B UNLESS 6+F **</p8>
+        <p9>FLY O/1B UNLESS 2+F **</p9>
         <p10>POSSIBLE ERROR</p10>
         <p11>POSSIBLE ERROR</p11>
         <p12>POSSIBLE ERROR</p12>
@@ -1057,9 +1057,9 @@
         <p3>Fly out/BB if 4+S ** AND Base Runner</p3>
         <p4>Fly out/BB if 6+S ** AND Base Runner</p4>
         <p5>FLY O/3B UNLESS 9/10-F **</p5>
-        <p6>FLY O/2B UNLESS 7/8-F **</p6>
-        <p7>FLY O/2B UNLESS 5/6-F **</p7>
-        <p8>FLY O/1B UNLESS 3/4-F **</p8>
+        <p6>FLY O/2B UNLESS 8+F **</p6>
+        <p7>FLY O/2B UNLESS 6+F **</p7>
+        <p8>FLY O/1B UNLESS 4+F **</p8>
         <p9>POSSIBLE ERROR</p9>
         <p10>POSSIBLE ERROR</p10>
         <p11>POSSIBLE ERROR</p11>
@@ -1070,10 +1070,10 @@
         <p2>Fly out/BB if 4+S ** AND Base Runner</p2>
         <p3>Fly out/BB if 6+S ** AND Base Runner</p3>
         <p4>FLY O/3B UNLESS 9/10-F **</p4>
-        <p5>FLY O/2B UNLESS 7/8-F **</p5>
-        <p6>FLY O/2B UNLESS 5/6-F **</p6>
-        <p7>FLY O/1B UNLESS 3/4-F **</p7>
-        <p8>FLY O/1B UNLESS 1/2-F **</p8>
+        <p5>FLY O/2B UNLESS 8+F **</p5>
+        <p6>FLY O/2B UNLESS 6+F **</p6>
+        <p7>FLY O/1B UNLESS 4+F **</p7>
+        <p8>FLY O/1B UNLESS 2+F **</p8>
         <p9>POSSIBLE ERROR</p9>
         <p10>POSSIBLE ERROR</p10>
         <p11>POSSIBLE ERROR</p11>
@@ -1083,10 +1083,10 @@
         <p1>Fly out/BB if 4+S ** AND Base Runner</p1>
         <p2>Fly out/BB if 6+S ** AND Base Runner</p2>
         <p3>FLY O/3B UNLESS 9/10-F **</p3>
-        <p4>FLY O/2B UNLESS 7/8-F **</p4>
-        <p5>FLY O/2B UNLESS 5/6-F **</p5>
-        <p6>FLY O/1B UNLESS 3/4-F **</p6>
-        <p7>FLY O/1B UNLESS 1/2-F **</p7>
+        <p4>FLY O/2B UNLESS 8+F **</p4>
+        <p5>FLY O/2B UNLESS 6+F **</p5>
+        <p6>FLY O/1B UNLESS 4+F **</p6>
+        <p7>FLY O/1B UNLESS 2+F **</p7>
         <p8>POSSIBLE ERROR</p8>
         <p9>POSSIBLE ERROR</p9>
         <p10>POSSIBLE ERROR</p10>
@@ -1096,10 +1096,10 @@
     <GeneratedNumber number = "79">
         <p1>Fly out/BB if 6+S ** AND Base Runner</p1>
         <p2>FLY O/3B UNLESS 9/10-F **</p2>
-        <p3>FLY O/2B UNLESS 7/8-F **</p3>
-        <p4>FLY O/2B UNLESS 5/6-F **</p4>
-        <p5>FLY O/1B UNLESS 3/4-F **</p5>
-        <p6>FLY O/1B UNLESS 1/2-F **</p6>
+        <p3>FLY O/2B UNLESS 8+F **</p3>
+        <p4>FLY O/2B UNLESS 6+F **</p4>
+        <p5>FLY O/1B UNLESS 4+F **</p5>
+        <p6>FLY O/1B UNLESS 2+F **</p6>
         <p7>POSSIBLE ERROR</p7>
         <p8>POSSIBLE ERROR</p8>
         <p9>POSSIBLE ERROR</p9>
@@ -1109,10 +1109,10 @@
     </GeneratedNumber>
     <GeneratedNumber number = "80">
         <p1>FLY O/3B UNLESS 9/10-F **</p1>
-        <p2>FLY O/2B UNLESS 7/8-F **</p2>
-        <p3>FLY O/2B UNLESS 5/6-F **</p3>
-        <p4>FLY O/1B UNLESS 3/4-F **</p4>
-        <p5>FLY O/1B UNLESS 1/2-F **</p5>
+        <p2>FLY O/2B UNLESS 8+F **</p2>
+        <p3>FLY O/2B UNLESS 6+F **</p3>
+        <p4>FLY O/1B UNLESS 4+F **</p4>
+        <p5>FLY O/1B UNLESS 2+F **</p5>
         <p6>POSSIBLE ERROR</p6>
         <p7>POSSIBLE ERROR</p7>
         <p8>POSSIBLE ERROR</p8>
@@ -1122,10 +1122,10 @@
         <p12>BB</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "81">
-        <p1>FLY O/2B UNLESS 7/8-F **</p1>
-        <p2>FLY O/2B UNLESS 5/6-F **</p2>
-        <p3>FLY O/1B UNLESS 3/4-F **</p3>
-        <p4>FLY O/1B UNLESS 1/2-F **</p4>
+        <p1>FLY O/2B UNLESS 8+F **</p1>
+        <p2>FLY O/2B UNLESS 6+F **</p2>
+        <p3>FLY O/1B UNLESS 4+F **</p3>
+        <p4>FLY O/1B UNLESS 2+F **</p4>
         <p5>POSSIBLE ERROR</p5>
         <p6>POSSIBLE ERROR</p6>
         <p7>POSSIBLE ERROR</p7>
@@ -1136,9 +1136,9 @@
         <p12>1B/2B UNLESS 9/10-F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "82">
-        <p1>FLY O/2B UNLESS 5/6-F **</p1>
-        <p2>FLY O/1B UNLESS 3/4-F **</p2>
-        <p3>FLY O/1B UNLESS 1/2-F **</p3>
+        <p1>FLY O/2B UNLESS 6+F **</p1>
+        <p2>FLY O/1B UNLESS 4+F **</p2>
+        <p3>FLY O/1B UNLESS 2+F **</p3>
         <p4>POSSIBLE ERROR</p4>
         <p5>POSSIBLE ERROR</p5>
         <p6>POSSIBLE ERROR</p6>
@@ -1147,11 +1147,11 @@
         <p9>BB</p9>
         <p10>BB</p10>
         <p11>1B/2B UNLESS 9/10-F **</p11>
-        <p12>1B/2B UNLESS 7/8-F **</p12>
+        <p12>1B/2B UNLESS 8+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "83">
-        <p1>FLY O/1B UNLESS 3/4-F **</p1>
-        <p2>FLY O/1B UNLESS 1/2-F **</p2>
+        <p1>FLY O/1B UNLESS 4+F **</p1>
+        <p2>FLY O/1B UNLESS 2+F **</p2>
         <p3>POSSIBLE ERROR</p3>
         <p4>POSSIBLE ERROR</p4>
         <p5>POSSIBLE ERROR</p5>
@@ -1160,11 +1160,11 @@
         <p8>BB</p8>
         <p9>BB</p9>
         <p10>1B/2B UNLESS 9/10-F **</p10>
-        <p11>1B/2B UNLESS 7/8-F **</p11>
-        <p12>1B/2B UNLESS 5/6-F **</p12>
+        <p11>1B/2B UNLESS 8+F **</p11>
+        <p12>1B/2B UNLESS 6+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "84">
-        <p1>FLY O/1B UNLESS 1/2-F **</p1>
+        <p1>FLY O/1B UNLESS 2+F **</p1>
         <p2>POSSIBLE ERROR</p2>
         <p3>POSSIBLE ERROR</p3>
         <p4>POSSIBLE ERROR</p4>
@@ -1173,9 +1173,9 @@
         <p7>BB</p7>
         <p8>1B/2B UNLESS 9/10-F **</p8>
         <p9>1B/2B UNLESS 9/10-F **</p9>
-        <p10>1B/2B UNLESS 7/8-F **</p10>
-        <p11>1B/2B UNLESS 5/6-F **</p11>
-        <p12>1B/2B UNLESS 3/4-F **</p12>
+        <p10>1B/2B UNLESS 8+F **</p10>
+        <p11>1B/2B UNLESS 6+F **</p11>
+        <p12>1B/2B UNLESS 4+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "85">
         <p1>POSSIBLE ERROR</p1>
@@ -1185,11 +1185,11 @@
         <p5>POSSIBLE ERROR</p5>
         <p6>BB</p6>
         <p7>1B/2B UNLESS 9/10-F **</p7>
-        <p8>1B/2B UNLESS 7/8-F **</p8>
-        <p9>1B/2B UNLESS 7/8-F **</p9>
-        <p10>1B/2B UNLESS 5/6-F **</p10>
-        <p11>1B/2B UNLESS 3/4-F **</p11>
-        <p12>1B/2B UNLESS 1/2-F **</p12>
+        <p8>1B/2B UNLESS 8+F **</p8>
+        <p9>1B/2B UNLESS 8+F **</p9>
+        <p10>1B/2B UNLESS 6+F **</p10>
+        <p11>1B/2B UNLESS 4+F **</p11>
+        <p12>1B/2B UNLESS 2+F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "86">
         <p1>POSSIBLE ERROR</p1>
@@ -1198,11 +1198,11 @@
         <p4>POSSIBLE ERROR</p4>
         <p5>BB</p5>
         <p6>1B/2B UNLESS 9/10-F **</p6>
-        <p7>1B/2B UNLESS 7/8-F **</p7>
-        <p8>1B/2B UNLESS 5/6-F **</p8>
-        <p9>1B/2B UNLESS 5/6-F **</p9>
-        <p10>1B/2B UNLESS 3/4-F **</p10>
-        <p11>1B/2B UNLESS 1/2-F **</p11>
+        <p7>1B/2B UNLESS 8+F **</p7>
+        <p8>1B/2B UNLESS 6+F **</p8>
+        <p9>1B/2B UNLESS 6+F **</p9>
+        <p10>1B/2B UNLESS 4+F **</p10>
+        <p11>1B/2B UNLESS 2+F **</p11>
         <p12>1B</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "87">
@@ -1211,11 +1211,11 @@
         <p3>POSSIBLE ERROR</p3>
         <p4>BB</p4>
         <p5>1B/2B UNLESS 9/10-F **</p5>
-        <p6>1B/2B UNLESS 7/8-F **</p6>
-        <p7>1B/2B UNLESS 5/6-F **</p7>
-        <p8>1B/2B UNLESS 3/4-F **</p8>
-        <p9>1B/2B UNLESS 3/4-F **</p9>
-        <p10>1B/2B UNLESS 1/2-F **</p10>
+        <p6>1B/2B UNLESS 8+F **</p6>
+        <p7>1B/2B UNLESS 6+F **</p7>
+        <p8>1B/2B UNLESS 4+F **</p8>
+        <p9>1B/2B UNLESS 4+F **</p9>
+        <p10>1B/2B UNLESS 2+F **</p10>
         <p11>1B</p11>
         <p12>1B</p12>
     </GeneratedNumber>
@@ -1224,11 +1224,11 @@
         <p2>POSSIBLE ERROR</p2>
         <p3>1B/2B UNLESS 9/10-F **</p3>
         <p4>1B/2B UNLESS 9/10-F **</p4>
-        <p5>1B/2B UNLESS 7/8-F **</p5>
-        <p6>1B/2B UNLESS 5/6-F **</p6>
-        <p7>1B/2B UNLESS 3/4-F **</p7>
-        <p8>1B/2B UNLESS 1/2-F **</p8>
-        <p9>1B/2B UNLESS 1/2-F **</p9>
+        <p5>1B/2B UNLESS 8+F **</p5>
+        <p6>1B/2B UNLESS 6+F **</p6>
+        <p7>1B/2B UNLESS 4+F **</p7>
+        <p8>1B/2B UNLESS 2+F **</p8>
+        <p9>1B/2B UNLESS 2+F **</p9>
         <p10>1B</p10>
         <p11>1B</p11>
         <p12>1B</p12>
@@ -1236,11 +1236,11 @@
     <GeneratedNumber number = "89">
         <p1>POSSIBLE ERROR</p1>
         <p2>1B/2B UNLESS 9/10-F **</p2>
-        <p3>1B/2B UNLESS 7/8-F **</p3>
-        <p4>1B/2B UNLESS 7/8-F **</p4>
-        <p5>1B/2B UNLESS 5/6-F **</p5>
-        <p6>1B/2B UNLESS 3/4-F **</p6>
-        <p7>1B/2B UNLESS 1/2-F **</p7>
+        <p3>1B/2B UNLESS 8+F **</p3>
+        <p4>1B/2B UNLESS 8+F **</p4>
+        <p5>1B/2B UNLESS 6+F **</p5>
+        <p6>1B/2B UNLESS 4+F **</p6>
+        <p7>1B/2B UNLESS 2+F **</p7>
         <p8>1B</p8>
         <p9>1B</p9>
         <p10>1B</p10>
@@ -1249,11 +1249,11 @@
     </GeneratedNumber>
     <GeneratedNumber number = "90">
         <p1>1B/2B UNLESS 9/10-F **</p1>
-        <p2>1B/2B UNLESS 7/8-F **</p2>
-        <p3>1B/2B UNLESS 5/6-F **</p3>
-        <p4>1B/2B UNLESS 5/6-F **</p4>
-        <p5>1B/2B UNLESS 3/4-F **</p5>
-        <p6>1B/2B UNLESS 1/2-F **</p6>
+        <p2>1B/2B UNLESS 8+F **</p2>
+        <p3>1B/2B UNLESS 6+F **</p3>
+        <p4>1B/2B UNLESS 6+F **</p4>
+        <p5>1B/2B UNLESS 4+F **</p5>
+        <p6>1B/2B UNLESS 2+F **</p6>
         <p7>1B</p7>
         <p8>1B</p8>
         <p9>1B</p9>
@@ -1262,11 +1262,11 @@
         <p12>1B</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "91">
-        <p1>1B/2B UNLESS 7/8-F **</p1>
-        <p2>1B/2B UNLESS 5/6-F **</p2>
-        <p3>1B/2B UNLESS 3/4-F **</p3>
-        <p4>1B/2B UNLESS 3/4-F **</p4>
-        <p5>1B/2B UNLESS 1/2-F **</p5>
+        <p1>1B/2B UNLESS 8+F **</p1>
+        <p2>1B/2B UNLESS 6+F **</p2>
+        <p3>1B/2B UNLESS 4+F **</p3>
+        <p4>1B/2B UNLESS 4+F **</p4>
+        <p5>1B/2B UNLESS 2+F **</p5>
         <p6>1B</p6>
         <p7>1B</p7>
         <p8>1B</p8>
@@ -1276,10 +1276,10 @@
         <p12>1B</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "92">
-        <p1>1B/2B UNLESS 5/6-F **</p1>
-        <p2>1B/2B UNLESS 3/4-F **</p2>
-        <p3>1B/2B UNLESS 1/2-F **</p3>
-        <p4>1B/2B UNLESS 1/2-F **</p4>
+        <p1>1B/2B UNLESS 6+F **</p1>
+        <p2>1B/2B UNLESS 4+F **</p2>
+        <p3>1B/2B UNLESS 2+F **</p3>
+        <p4>1B/2B UNLESS 2+F **</p4>
         <p5>1B</p5>
         <p6>1B</p6>
         <p7>1B</p7>
@@ -1290,8 +1290,8 @@
         <p12>1B</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "93">
-        <p1>1B/2B UNLESS 3/4-F **</p1>
-        <p2>1B/2B UNLESS 1/2-F **</p2>
+        <p1>1B/2B UNLESS 4+F **</p1>
+        <p2>1B/2B UNLESS 2+F **</p2>
         <p3>1B</p3>
         <p4>1B</p4>
         <p5>1B</p5>
@@ -1304,7 +1304,7 @@
         <p12>1/2 IF 1/2-R **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "94">
-        <p1>1B/2B UNLESS 1/2-F **</p1>
+        <p1>1B/2B UNLESS 2+F **</p1>
         <p2>1B</p2>
         <p3>1B</p3>
         <p4>1B</p4>

@@ -87,7 +87,6 @@ void menu::update(){
       input_step=5;
     else if(input_step==5){
       result_number=RandNum::randInt(1,130);
-      result_number=3;
       for(int i=0; i<9; i++){
         extra_number[i]=RandNum::randInt(1,100);
       }

@@ -32,7 +32,7 @@ std::string XML::load_special(int newGeneratedNumber){
   else if(newGeneratedNumber==115 || newGeneratedNumber == 116)
     result = "Pitcher's Specialty";
   else if(newGeneratedNumber==117 || newGeneratedNumber == 118)
-    result = "K if FB";
+    result = "K if Fireballer or Junkballer";
   else if(newGeneratedNumber==119 || newGeneratedNumber == 120)
     result = "Batter's Specialty";
   else if(newGeneratedNumber==121 || newGeneratedNumber==122)

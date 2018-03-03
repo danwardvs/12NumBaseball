@@ -37,6 +37,18 @@ std::string XML::load_special(int newGeneratedNumber){
     result = "Batter's Specialty";
   else if(newGeneratedNumber==121 || newGeneratedNumber==122)
     result = "Long ball if fastball hitter";
+  else if(newGeneratedNumber==123)
+    result = "1B/2B unless 2+F";
+  else if(newGeneratedNumber==124)
+    result = "1B/2B unless 4+F";
+  else if(newGeneratedNumber==125)
+    result = "1B/2B unless 6+F";
+  else if(newGeneratedNumber==126)
+    result = "1B/2B unless 8+F";
+  else if(newGeneratedNumber==127||newGeneratedNumber==128)
+    result = "K/BB if Junkballer";
+  else if(newGeneratedNumber==129||newGeneratedNumber==130)
+    result = "GO/FO if Flyballer";
   return result;
 
 }

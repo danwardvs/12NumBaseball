@@ -86,7 +86,8 @@ void menu::update(){
     else if(input_step==3 || input_step==4)
       input_step=5;
     else if(input_step==5){
-      result_number=RandNum::randInt(1,122);
+      result_number=RandNum::randInt(1,130);
+      result_number=3;
       for(int i=0; i<9; i++){
         extra_number[i]=RandNum::randInt(1,100);
       }
@@ -202,9 +203,11 @@ void menu::draw(){
   // Background
   al_clear_to_color(WHITE);
 
-   for(int i=0;i<gameCells.size(); i++){
+  for(int i=0;i<gameCells.size(); i++){
     gameCells[i] -> draw();
   }
+
+
 
 }
 
@@ -289,7 +292,7 @@ void menu::generate_cells(){
   gameCells.push_back(new Cell(width_6*4+40,50+height_16*4,width_6-20,25,BLACK,WHITE,BLACK,calibri,LEFT,"Ground out type"));
 
   gameCells.push_back(new Cell(SCREEN_W-180,SCREEN_H-height_16-50,180,25,BLACK,WHITE,BLACK,calibri,LEFT,"5 o'clock somewhere"));
-  gameCells.push_back(new Cell(SCREEN_W-130,SCREEN_H-height_16-25,40,25,BLACK,WHITE,BLACK,calibri,LEFT,"v1.1"));
+  gameCells.push_back(new Cell(SCREEN_W-130,SCREEN_H-height_16-25,40,25,BLACK,WHITE,BLACK,calibri,LEFT,"v1.2"));
   gameCells.push_back(new Cell(SCREEN_W-180,SCREEN_H-height_16-25,50,25,BLACK,WHITE,BLACK,calibri,LEFT,"0"));
 
 

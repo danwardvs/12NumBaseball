@@ -43,6 +43,8 @@ mouseListener m_listener;
 keyListener k_listener;
 joystickListener j_listener;
 
+ALLEGRO_BITMAP *gameBuffer;
+
 // Delete game state and free state resources
 void clean_up(){
   delete currentState;
@@ -113,8 +115,12 @@ void setup(){
 
   // Aquire screen
 
+  al_set_new_display_option(ALLEGRO_SAMPLE_BUFFERS, 4, ALLEGRO_SUGGEST);
+  al_set_new_display_option(ALLEGRO_SAMPLES, 8, ALLEGRO_REQUIRE);
+
   al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
   display = al_create_display(800,600);
+
   SCREEN_W = al_get_display_width(display);
   std::cout<<SCREEN_W<<"\n";
   SCREEN_H = al_get_display_height(display);
@@ -136,7 +142,7 @@ void setup(){
   al_start_timer(timer);
 
   // Window title
-  al_set_window_title(display,"12 Paper Baseball");
+  al_set_window_title(display,"12 Number Baseball");
 
   std::cout<<" Sucesss.\n";
 

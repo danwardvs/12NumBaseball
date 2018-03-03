@@ -936,7 +936,7 @@
         <p9>FLY OUT</p9>
         <p10>FLY OUT</p10>
         <p11>FLY OUT</p11>
-        <p12>FLY O/BB IF 1/2-S ** AND BASER</p12>
+        <p12>Fly out/BB if 1+S ** AND Base Runner</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "68">
         <p1>GO/E IF 1-R</p1>
@@ -949,8 +949,8 @@
         <p8>FLY OUT</p8>
         <p9>FLY OUT</p9>
         <p10>FLY OUT</p10>
-        <p11>FLY O/BB IF 1/2-S ** AND BASER</p11>
-        <p12>FLY O/BB IF 3/4-S ** AND BASER</p12>
+        <p11>Fly out/BB if 1+S ** AND Base Runner</p11>
+        <p12>Fly out/BB if 4+S ** AND Base Runner</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "69">
         <p1>FLY OUT</p1>
@@ -963,8 +963,8 @@
         <p8>FLY OUT</p8>
         <p9>FLY OUT</p9>
         <p10>FLY OUT</p10>
-        <p11>FLY O/BB IF 3/4-S ** AND BASER</p11>
-        <p12>FLY O/BB IF 5/6-S ** AND BASER</p12>
+        <p11>Fly out/BB if 4+S ** AND Base Runner</p11>
+        <p12>Fly out/BB if 6+S ** AND Base Runner</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "70">
         <p1>FLY OUT, K POWER P</p1>
@@ -975,9 +975,9 @@
         <p6>FLY OUT</p6>
         <p7>FLY OUT</p7>
         <p8>FLY OUT</p8>
-        <p9>FLY O/BB IF 1/2-S ** AND BASER</p9>
-        <p10>FLY O/BB IF 1/2-S ** AND BASER</p10>
-        <p11>FLY O/BB IF 5/6-S ** AND BASER</p11>
+        <p9>Fly out/BB if 1+S ** AND Base Runner</p9>
+        <p10>Fly out/BB if 1+S ** AND Base Runner</p10>
+        <p11>Fly out/BB if 6+S ** AND Base Runner</p11>
         <p12>FLY O/3B UNLESS 9/10-F **</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "71">
@@ -989,8 +989,8 @@
         <p6>FLY OUT</p6>
         <p7>FLY OUT</p7>
         <p8>FLY OUT</p8>
-        <p9>FLY O/BB IF 3/4-S ** AND BASER</p9>
-        <p10>FLY O/BB IF 3/4-S ** AND BASER</p10>
+        <p9>Fly out/BB if 4+S ** AND Base Runner</p9>
+        <p10>Fly out/BB if 4+S ** AND Base Runner</p10>
         <p11>FLY O/3B UNLESS 9/10-F **</p11>
         <p12>FLY O/2B UNLESS 7/8-F **</p12>
     </GeneratedNumber>
@@ -1002,9 +1002,9 @@
         <p5>FLY OUT</p5>
         <p6>FLY OUT</p6>
         <p7>FLY OUT</p7>
-        <p8>FLY O/BB IF 1/2-S ** AND BASER</p8>
-        <p9>FLY O/BB IF 5/6-S ** AND BASER</p9>
-        <p10>FLY O/BB IF 5/6-S ** AND BASER</p10>
+        <p8>Fly out/BB if 1+S ** AND Base Runner</p8>
+        <p9>Fly out/BB if 6+S ** AND Base Runner</p9>
+        <p10>Fly out/BB if 6+S ** AND Base Runner</p10>
         <p11>FLY O/2B UNLESS 7/8-F **</p11>
         <p12>FLY O/2B UNLESS 5/6-F **</p12>
     </GeneratedNumber>
@@ -1015,8 +1015,8 @@
         <p4>FLY OUT</p4>
         <p5>FLY OUT</p5>
         <p6>FLY OUT</p6>
-        <p7>FLY O/BB IF 1/2-S ** AND BASER</p7>
-        <p8>FLY O/BB IF 3/4-S ** AND BASER</p8>
+        <p7>Fly out/BB if 1+S ** AND Base Runner</p7>
+        <p8>Fly out/BB if 4+S ** AND Base Runner</p8>
         <p9>FLY O/3B UNLESS 9/10-F **</p9>
         <p10>FLY O/3B UNLESS 9/10-F **</p10>
         <p11>FLY O/2B UNLESS 5/6-F **</p11>
@@ -1028,9 +1028,9 @@
         <p3>FLY OUT</p3>
         <p4>FLY OUT</p4>
         <p5>FLY OUT</p5>
-        <p6>FLY O/BB IF 1/2-S ** AND BASER</p6>
-        <p7>FLY O/BB IF 3/4-S ** AND BASER</p7>
-        <p8>FLY O/BB IF 5/6-S ** AND BASER</p8>
+        <p6>Fly out/BB if 1+S ** AND Base Runner</p6>
+        <p7>Fly out/BB if 4+S ** AND Base Runner</p7>
+        <p8>Fly out/BB if 6+S ** AND Base Runner</p8>
         <p9>FLY O/2B UNLESS 7/8-F **</p9>
         <p10>FLY O/2B UNLESS 7/8-F **</p10>
         <p11>FLY O/1B UNLESS 3/4-F **</p11>
@@ -1041,9 +1041,9 @@
         <p2>FLY OUT</p2>
         <p3>FLY OUT</p3>
         <p4>FLY OUT</p4>
-        <p5>FLY O/BB IF 1/2-S ** AND BASER</p5>
-        <p6>FLY O/BB IF 3/4-S ** AND BASER</p6>
-        <p7>FLY O/BB IF 5/6-S ** AND BASER</p7>
+        <p5>Fly out/BB if 1+S ** AND Base Runner</p5>
+        <p6>Fly out/BB if 4+S ** AND Base Runner</p6>
+        <p7>Fly out/BB if 6+S ** AND Base Runner</p7>
         <p8>FLY O/3B UNLESS 9/10-F **</p8>
         <p9>FLY O/2B UNLESS 5/6-F **</p9>
         <p10>FLY O/2B UNLESS 5/6-F **</p10>
@@ -1054,9 +1054,9 @@
         <p1>FLY OUT</p1>
         <p2>FLY OUT</p2>
         <p3>FLY OUT</p3>
-        <p4>FLY O/BB IF 1/2-S ** AND BASER</p4>
-        <p5>FLY O/BB IF 3/4-S ** AND BASER</p5>
-        <p6>FLY O/BB IF 5/6-S ** AND BASER</p6>
+        <p4>Fly out/BB if 1+S ** AND Base Runner</p4>
+        <p5>Fly out/BB if 4+S ** AND Base Runner</p5>
+        <p6>Fly out/BB if 6+S ** AND Base Runner</p6>
         <p7>FLY O/3B UNLESS 9/10-F **</p7>
         <p8>FLY O/2B UNLESS 7/8-F **</p8>
         <p9>FLY O/1B UNLESS 3/4-F **</p9>
@@ -1067,9 +1067,9 @@
     <GeneratedNumber number = "77">
         <p1>FLY OUT</p1>
         <p2>FLY OUT</p2>
-        <p3>FLY O/BB IF 1/2-S ** AND BASER</p3>
-        <p4>FLY O/BB IF 3/4-S ** AND BASER</p4>
-        <p5>FLY O/BB IF 5/6-S ** AND BASER</p5>
+        <p3>Fly out/BB if 1+S ** AND Base Runner</p3>
+        <p4>Fly out/BB if 4+S ** AND Base Runner</p4>
+        <p5>Fly out/BB if 6+S ** AND Base Runner</p5>
         <p6>FLY O/3B UNLESS 9/10-F **</p6>
         <p7>FLY O/2B UNLESS 7/8-F **</p7>
         <p8>FLY O/2B UNLESS 5/6-F **</p8>
@@ -1080,9 +1080,9 @@
     </GeneratedNumber>
     <GeneratedNumber number = "78">
         <p1>FLY OUT</p1>
-        <p2>FLY O/BB IF 1/2-S ** AND BASER</p2>
-        <p3>FLY O/BB IF 3/4-S ** AND BASER</p3>
-        <p4>FLY O/BB IF 5/6-S ** AND BASER</p4>
+        <p2>Fly out/BB if 1+S ** AND Base Runner</p2>
+        <p3>Fly out/BB if 4+S ** AND Base Runner</p3>
+        <p4>Fly out/BB if 6+S ** AND Base Runner</p4>
         <p5>FLY O/3B UNLESS 9/10-F **</p5>
         <p6>FLY O/2B UNLESS 7/8-F **</p6>
         <p7>FLY O/2B UNLESS 5/6-F **</p7>
@@ -1093,9 +1093,9 @@
         <p12>POSSIBLE ERROR</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "79">
-        <p1>FLY O/BB IF 1/2-S ** AND BASER</p1>
-        <p2>FLY O/BB IF 3/4-S ** AND BASER</p2>
-        <p3>FLY O/BB IF 5/6-S ** AND BASER</p3>
+        <p1>Fly out/BB if 1+S ** AND Base Runner</p1>
+        <p2>Fly out/BB if 4+S ** AND Base Runner</p2>
+        <p3>Fly out/BB if 6+S ** AND Base Runner</p3>
         <p4>FLY O/3B UNLESS 9/10-F **</p4>
         <p5>FLY O/2B UNLESS 7/8-F **</p5>
         <p6>FLY O/2B UNLESS 5/6-F **</p6>
@@ -1107,8 +1107,8 @@
         <p12>POSSIBLE ERROR</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "80">
-        <p1>FLY O/BB IF 3/4-S ** AND BASER</p1>
-        <p2>FLY O/BB IF 5/6-S ** AND BASER</p2>
+        <p1>Fly out/BB if 4+S ** AND Base Runner</p1>
+        <p2>Fly out/BB if 6+S ** AND Base Runner</p2>
         <p3>FLY O/3B UNLESS 9/10-F **</p3>
         <p4>FLY O/2B UNLESS 7/8-F **</p4>
         <p5>FLY O/2B UNLESS 5/6-F **</p5>
@@ -1121,7 +1121,7 @@
         <p12>BB</p12>
     </GeneratedNumber>
     <GeneratedNumber number = "81">
-        <p1>FLY O/BB IF 5/6-S ** AND BASER</p1>
+        <p1>Fly out/BB if 6+S ** AND Base Runner</p1>
         <p2>FLY O/3B UNLESS 9/10-F **</p2>
         <p3>FLY O/2B UNLESS 7/8-F **</p3>
         <p4>FLY O/2B UNLESS 5/6-F **</p4>

@@ -9,99 +9,99 @@ int keyListener::lastKeyPressed = -1;
 int keyListener::currentKeyPressed = -1;
 
 int keyListener::lastKeyReleased = -1;
-bool keyListener::anyKeyPressed=false;
-bool keyListener::numKeyPressed=false;
-bool keyListener::numKeyReleased=false;
+bool keyListener::anyKeyPressed = false;
+bool keyListener::numKeyPressed = false;
+bool keyListener::numKeyReleased = false;
 
 
 // Constructor
-keyListener::keyListener(){
+keyListener::keyListener() {
 
 }
 
 // Destructor
-keyListener::~keyListener(){
+keyListener::~keyListener() {
 
 }
 
 // For allegro 5, we use events
-void keyListener::on_event( ALLEGRO_EVENT_TYPE event_type, int keycode){
+void keyListener::on_event(ALLEGRO_EVENT_TYPE event_type, int keycode) {
   // Key down
-  if( event_type == ALLEGRO_EVENT_KEY_DOWN){
+  if(event_type == ALLEGRO_EVENT_KEY_DOWN) {
     key[keycode] = true;
   }
-  else if( event_type == ALLEGRO_EVENT_KEY_UP){
+  else if(event_type == ALLEGRO_EVENT_KEY_UP) {
     key[keycode] = false;
   }
 }
 
 // Check those keys!
-void keyListener::update(){
+void keyListener::update() {
   // Reset last key
   lastKeyPressed = -1;
   lastKeyReleased = -1;
 
-  anyKeyPressed=false;
-  numKeyPressed=false;
-  numKeyReleased=false;
+  anyKeyPressed = false;
+  numKeyPressed = false;
+  numKeyReleased = false;
 
   // Check key just pressed
-  for( int i = 0; i < ALLEGRO_KEY_MAX; i++){
+  for(int i = 0; i < ALLEGRO_KEY_MAX; i++) {
     // Clear old values
     keyPressed[i] = false;
     keyReleased[i] = false;
 
 
-    if((i>=ALLEGRO_KEY_0 && i<=ALLEGRO_KEY_9) || (i>=ALLEGRO_KEY_PAD_0 && i<=ALLEGRO_KEY_PAD_9)){
+    if((i >= ALLEGRO_KEY_0 && i <= ALLEGRO_KEY_9) || (i >= ALLEGRO_KEY_PAD_0 && i <= ALLEGRO_KEY_PAD_9)) {
 
-      if(key[i]){
+      if(key[i]) {
         //std::cout<<"in range\n";
-        numKeyPressed=true;
+        numKeyPressed = true;
       }
     }
 
     if(key[i])
-      anyKeyPressed=true;
+      anyKeyPressed = true;
 
 
 
 
     // Pressed since last tick?
-    if( key[i] == true && lastTicksKey[i] == false){
+    if(key[i] == true && lastTicksKey[i] == false) {
       keyPressed[i] = true;
       lastKeyPressed = i;
       //std::cout << "Key: " << i << " pressed. \n";
     }
 
-    if( key[i] == true){
+    if(key[i] == true) {
       currentKeyPressed = i;
       //std::cout << "Key: " << i << " pressed. \n";
     }
 
     // Released since last tick?
-    if( key[i] == false && lastTicksKey[i] == true){
+    if(key[i] == false && lastTicksKey[i] == true) {
       keyReleased[i] = true;
       lastKeyReleased = i;
 
-      if((i>=ALLEGRO_KEY_0 && i<=ALLEGRO_KEY_9) || (i>=ALLEGRO_KEY_PAD_0 && i<=ALLEGRO_KEY_PAD_9)){
+      if((i >= ALLEGRO_KEY_0 && i <= ALLEGRO_KEY_9) || (i >= ALLEGRO_KEY_PAD_0 && i <= ALLEGRO_KEY_PAD_9)) {
 
         //std::cout<<"in range\n";
-        numKeyReleased=true;
+        numKeyReleased = true;
       }
     }
 
 
-      //std::cout << "Key: " << i << " released. \n";
-    }
+    //std::cout << "Key: " << i << " released. \n";
+  }
 
 
 
   // Get new values
-  for( int i = 0; i < ALLEGRO_KEY_MAX; i++){
+  for(int i = 0; i < ALLEGRO_KEY_MAX; i++) {
     // Key changed
-    if( lastTicksKey[i] != key[i]){
-        //std::cout << "Key: " << i << " was " << lastTicksKey[i] << " and became " << (bool)key[i] << "\n";
-        lastTicksKey[i] = key[i];
+    if(lastTicksKey[i] != key[i]) {
+      //std::cout << "Key: " << i << " was " << lastTicksKey[i] << " and became " << (bool)key[i] << "\n";
+      lastTicksKey[i] = key[i];
     }
   }
 }

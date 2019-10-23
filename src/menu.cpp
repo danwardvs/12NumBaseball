@@ -14,11 +14,6 @@ menu::menu() {
   input_step = 0;
 }
 
-// Destory menu
-menu::~menu() {
-
-}
-
 // Update animation and wait for input
 void menu::update() {
   if(keyListener::keyReleased[ALLEGRO_KEY_ESCAPE])
@@ -101,8 +96,6 @@ void menu::update() {
       groundout_type = helpers::random::randomInt(1, 3);
       total_numbers_generated++;
 
-
-      //result_number=90;
       if(result_number < 101) {
         std::string newPath = "data/" + std::to_string(batter_number) + "b.xml";
         result[0] = xml_handler.load_xml(newPath, result_number, pitcher_number);
@@ -131,8 +124,6 @@ void menu::update() {
           result[i] = "";
         }
       }
-
-
     }
   }
 
@@ -197,6 +188,7 @@ void menu::draw() {
   // Background
   al_clear_to_color(colors::WHITE);
 
+  // Draw cells
   for(unsigned int i = 0; i < gameCells.size(); i++) {
     gameCells[i] -> draw();
   }
@@ -282,6 +274,3 @@ void menu::generate_cells() {
   gameCells.push_back(new Cell(constants::screen::WIDTH - 130, constants::screen::HEIGHT - height_16 - 25, 40, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "v1.2"));
   gameCells.push_back(new Cell(constants::screen::WIDTH - 180, constants::screen::HEIGHT - height_16 - 25, 50, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "0"));
 }
-
-
-

@@ -48,7 +48,6 @@
 					<Add option="-lallegro_monolith-static" />
 					<Add option="-lfreetype" />
 					<Add option="-lharfbuzz" />
-					<Add option="-lfreetype" />
 					<Add option="-lwinpthread" />
 					<Add option="-lbz2" />
 					<Add option="-lusp10" />
@@ -88,7 +87,6 @@
 					<Add option="-lphysfs" />
 					<Add option="-lgcc" />
 					<Add option="-lstdc++" />
-					<Add option="-lwinpthread" />
 				</Linker>
 			</Target>
 		</Build>
@@ -131,7 +129,6 @@
 		<Unit filename="include/rapidxml/rapidxml_print.hpp" />
 		<Unit filename="include/rapidxml/rapidxml_utils.hpp" />
 		<Unit filename="include/state.h" />
-		<Unit filename="include/tools.h" />
 		<Unit filename="src/Cell.cpp" />
 		<Unit filename="src/XML.cpp" />
 		<Unit filename="src/constants/colors.cpp" />
@@ -147,7 +144,6 @@
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/menu.cpp" />
 		<Unit filename="src/state.cpp" />
-		<Unit filename="src/tools.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

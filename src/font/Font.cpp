@@ -9,13 +9,14 @@
  * \return void
  *
  */
-void Font::init(std::string path) {
+void Font::init(const std::string& path) {
   const std::set<int> sizes = { 4, 8, 12, 16, 24, 36, 54, 72, 100, 150, 200, 300 };
 
   for(auto fontSize : sizes) {
     fonts.insert(std::pair<int, ALLEGRO_FONT*>(fontSize, al_load_ttf_font(path.c_str(), fontSize, 0)));
   }
 }
+
 
 /** \brief Get font bounding box dimensions
  *
@@ -24,7 +25,7 @@ void Font::init(std::string path) {
  * \return FontDimensions the dimensions object of the font
  *
  */
-FontDimensions Font::getFontDimensions(int fontSize, std::string text) const {
+FontDimensions Font::getFontDimensions(int fontSize, const std::string& text) const {
   int _width = 0;
   int _height = 0;
   int _x = 0;
@@ -35,6 +36,82 @@ FontDimensions Font::getFontDimensions(int fontSize, std::string text) const {
   return FontDimensions(_x, _y, _width, _height);
 }
 
+
+/** \brief Get text x offset from origin
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int x position of font
+ *
+ */
+int Font::getTextOffsetX(int fontSize, const std::string& text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getX();
+}
+
+
+/** \brief Get text y offset from origin
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int y position of font
+ *
+ */
+int Font::getTextOffsetY(int fontSize, const std::string& text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getY();
+}
+
+
+/** \brief Get text height
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int height of font
+ *
+ */
+int Font::getTextHeight(int fontSize, const std::string& text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getHeight();
+}
+
+
+/** \brief Get text width
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int width of font
+ *
+ */
+int Font::getTextWidth(int fontSize, const std::string& text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getWidth();
+}
+
+
+/** \brief Get closest fitting font size
+ *
+ * \param width int
+ * \param height int
+ * \param text std::string
+ * \return int, size of closest fitting font
+ *
+ */
+int Font::getLargestFitting(int width, int height, const std::string& text) const {
+  int largest = 0;
+
+  for(auto tempFont : fonts) {
+    const int fontSize = tempFont.first;
+
+    if(fontSize > largest && textWillFit(fontSize, width, height, text)) {
+      largest = fontSize;
+    }
+  }
+
+  return largest;
+}
+
+
 /** \brief Check if text will fit in a given width and height
  *
  * \param fontSize int
@@ -44,58 +121,11 @@ FontDimensions Font::getFontDimensions(int fontSize, std::string text) const {
  * \return bool whether or not the font fits
  *
  */
-bool Font::textWillFit(int fontSize, int width, int height, std::string text) const {
+bool Font::textWillFit(int fontSize, int width, int height, const std::string& text) const {
   const FontDimensions _dimensions = getFontDimensions(fontSize, text);
   return _dimensions.getWidth() <= width && _dimensions.getHeight() <= height;
 }
 
-/** \brief Get text x offset from origin
- *
- * \param fontSize int
- * \param text std::string
- * \return int x position of font
- *
- */
-int Font::getTextOffsetX(int fontSize, std::string text) const {
-  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
-  return _dimensions.getX();
-}
-
-/** \brief Get text y offset from origin
- *
- * \param fontSize int
- * \param text std::string
- * \return int y position of font
- *
- */
-int Font::getTextOffsetY(int fontSize, std::string text) const {
-  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
-  return _dimensions.getY();
-}
-
-/** \brief Get text height
- *
- * \param fontSize int
- * \param text std::string
- * \return int height of font
- *
- */
-int Font::getTextHeight(int fontSize, std::string text) const {
-  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
-  return _dimensions.getHeight();
-}
-
-/** \brief Get text width
- *
- * \param fontSize int
- * \param text std::string
- * \return int width of font
- *
- */
-int Font::getTextWidth(int fontSize, std::string text) const {
-  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
-  return _dimensions.getWidth();
-}
 
 /** \brief Gets font by size, if none, returns nullptr
  *

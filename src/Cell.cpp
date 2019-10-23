@@ -41,20 +41,20 @@ void Cell::setHeight(int height) {
   this -> height = height;
 }
 
-void Cell::setOutlineColour(ALLEGRO_COLOR outline_colour) {
-  this -> outline_colour = outline_colour;
+void Cell::setOutlineColour(ALLEGRO_COLOR color) {
+  this -> outline_colour = color;
 }
 
-void Cell::setCellColour(ALLEGRO_COLOR cell_colour) {
-  this -> cell_colour = cell_colour;
+void Cell::setCellColour(ALLEGRO_COLOR color) {
+  this -> cell_colour = color;
 }
 
-void Cell::setFontColour(ALLEGRO_COLOR font_colour) {
-  this -> font_colour = font_colour;
+void Cell::setFontColour(ALLEGRO_COLOR color) {
+  this -> font_colour = color;
 }
 
-void Cell::setLineThickness(int line_thickness) {
-  this -> line_thickness = line_thickness;
+void Cell::setLineThickness(int thickness) {
+  this -> line_thickness = thickness;
 }
 
 void Cell::draw() {
@@ -62,35 +62,9 @@ void Cell::draw() {
   al_draw_rectangle(x + line_thickness / 2, y + line_thickness / 2, x + width - line_thickness / 2, y + height - line_thickness / 2, outline_colour, line_thickness);
 
   if(font.numSizes() > 0) {
-    int text_size = 12;
+    int text_size = font.getLargestFitting(width - x_padding * 2, height - y_padding * 2, text);
     int text_x = 0;
     int text_y = 0;
-
-
-    if(font.textWillFit(300, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 300;
-    else if(font.textWillFit(200, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 200;
-    else if(font.textWillFit(150, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 150;
-    else if(font.textWillFit(100, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 100;
-    else if(font.textWillFit(72, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 72;
-    else if(font.textWillFit(54, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 54;
-    else if(font.textWillFit(36, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 36;
-    else if(font.textWillFit(24, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 24;
-    else if(font.textWillFit(16, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 16;
-    else if(font.textWillFit(12, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 12;
-    else if(font.textWillFit(8, width - x_padding * 2, height - y_padding * 2, text))
-      text_size = 8;
-    else
-      text_size = 4;
 
     // Position text
     switch(justification) {

@@ -1,19 +1,16 @@
 #include "XML.h"
 
-XML::XML()
-{
-  //ctor
-}
+#include <fstream>
+#include <iostream>
 
-XML::~XML()
-{
-  //dtor
-}
+#include "rapidxml/rapidxml.hpp"
+#include "rapidxml/rapidxml_utils.hpp"
+
 std::string XML::load_special(int newGeneratedNumber) {
   // Since there is limited results, we're going to pretend like
   // we load from a file, but actually just generate it from code.
   // Don't tell anyone.
-  std::string result;
+  std::string result = "";
 
   if(newGeneratedNumber < 105)
     result = "WP  (Wildness for Pitcher)";
@@ -55,7 +52,6 @@ std::string XML::load_special(int newGeneratedNumber) {
 }
 
 std::string XML::load_xml(std::string newFilePath, int newGeneratedNumber, int newPitcherNumber) {
-
   rapidxml::xml_document<> doc;
   rapidxml::xml_node<>* root_node;
 
@@ -77,7 +73,6 @@ std::string XML::load_xml(std::string newFilePath, int newGeneratedNumber, int n
     int generatedNumberResult = atoi(generated_node -> first_attribute("number") -> value());
 
     if(generatedNumberResult == newGeneratedNumber) {
-
       for(int i = 1; i < 13; i++) {
         std::string newNodeTag = "p" + std::to_string(i);
         std::cout << newNodeTag + "\n";

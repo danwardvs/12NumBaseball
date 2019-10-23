@@ -23,7 +23,7 @@ class Font {
     virtual ~Font() {};
 
     // Initialize font
-    void init(std::string path);
+    void init(const std::string& path);
 
     // Get font by size
     ALLEGRO_FONT* getFont(int fontSize) const;
@@ -32,12 +32,15 @@ class Font {
     int numSizes() const;
 
     // Text sizing
-    FontDimensions getFontDimensions(int fontSize, std::string text) const;
-    int getTextOffsetX(int fontSize, std::string text) const;
-    int getTextOffsetY(int fontSize, std::string text) const;
-    int getTextHeight(int fontSize, std::string text) const;
-    int getTextWidth(int fontSize, std::string text) const;
-    bool textWillFit(int fontSize, int width, int height, std::string text) const;
+    FontDimensions getFontDimensions(int fontSize, const std::string& text) const;
+    int getTextOffsetX(int fontSize, const std::string& text) const;
+    int getTextOffsetY(int fontSize, const std::string& text) const;
+    int getTextHeight(int fontSize, const std::string& text) const;
+    int getTextWidth(int fontSize, const std::string& text) const;
+
+    // Autosize text
+    int getLargestFitting(int width, int height, const std::string& text) const;
+    bool textWillFit(int fontSize, int width, int height, const std::string& text) const;
 
   private:
     // Container for fonts

@@ -28,13 +28,12 @@
 class menu : public state {
   public:
     menu();
-    virtual ~menu();
+    virtual ~menu() {};
 
     void update();
     void draw();
 
   private:
-
     void generate_cells();
 
     XML xml_handler;

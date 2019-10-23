@@ -1,31 +1,47 @@
+/*
+ * Font
+ * Wrapper for allegro fonts that allows mutiple
+ *   sizes to be loaded.
+ * Allan Legemaate and Danny Van Stemp
+ * 22/10/2019
+ */
 #ifndef FONT_H
 #define FONT_H
 
 #include <string>
-#include <iostream>
+#include <map>
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
 
-class Font
-{
+#include "FontDimensions.h"
+
+class Font {
   public:
-    void init(std::string newPath);
-    Font();
-    virtual ~Font();
-    ALLEGRO_FONT *getSize(int newSize);
-    bool textWillFit(int, int, int,std::string);
-    ALLEGRO_FONT *getFirstFont(){return font[0];}
-    int get_text_offset_x(int,std::string);
-    int get_text_offset_y(int,std::string);
-    int get_text_height(int,std::string);
+    // Ctor/Dtor
+    Font() {};
+    virtual ~Font() {};
 
+    // Initialize font
+    void init(std::string path);
 
-  protected:
+    // Get font by size
+    ALLEGRO_FONT* getFont(int fontSize) const;
+
+    // Number of sizes loaded
+    int numSizes() const;
+
+    // Text sizing
+    FontDimensions getFontDimensions(int fontSize, std::string text) const;
+    int getTextOffsetX(int fontSize, std::string text) const;
+    int getTextOffsetY(int fontSize, std::string text) const;
+    int getTextHeight(int fontSize, std::string text) const;
+    int getTextWidth(int fontSize, std::string text) const;
+    bool textWillFit(int fontSize, int width, int height, std::string text) const;
 
   private:
-    ALLEGRO_FONT *font[12];
+    // Container for fonts
+    std::map<int, ALLEGRO_FONT*> fonts;
 };
 
 #endif // FONT_H

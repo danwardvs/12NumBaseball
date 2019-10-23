@@ -1,139 +1,123 @@
 #include "Font.h"
 
+#include <set>
 
-Font::Font() {
+#include <allegro5/allegro_ttf.h>
 
+/** \brief Initializes font with preset sizes
+ *
+ * \param path std::string
+ * \return void
+ *
+ */
+void Font::init(std::string path) {
+  const std::set<int> sizes = { 4, 8, 12, 16, 24, 36, 54, 72, 100, 150, 200, 300 };
+
+  for(auto fontSize : sizes) {
+    fonts.insert(std::pair<int, ALLEGRO_FONT*>(fontSize, al_load_ttf_font(path.c_str(), fontSize, 0)));
+  }
 }
 
+/** \brief Get font bounding box dimensions
+ *
+ * \param fontSize an integer representing the size of the font to check dimensions of
+ * \param text a string with the text to be checked against the dimensions
+ * \return FontDimensions the dimensions object of the font
+ *
+ */
+FontDimensions Font::getFontDimensions(int fontSize, std::string text) const {
+  int _width = 0;
+  int _height = 0;
+  int _x = 0;
+  int _y = 0;
 
-Font::~Font()
-{
-  //dtor
+  al_get_text_dimensions(getFont(fontSize), text.c_str(), &_x, &_y, &_width, &_height);
+
+  return FontDimensions(_x, _y, _width, _height);
 }
 
-bool Font::textWillFit(int newSize, int newWidth, int newHeight, std::string newText) {
-  int text_width = 0;
-  int text_height = 0;
-  int text_offset_x;
-  int text_offset_y;
+/** \brief Check if text will fit in a given width and height
+ *
+ * \param fontSize int
+ * \param width int
+ * \param height int
+ * \param text std::string
+ * \return bool whether or not the font fits
+ *
+ */
+bool Font::textWillFit(int fontSize, int width, int height, std::string text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getWidth() <= width && _dimensions.getHeight() <= height;
+}
 
-  al_get_text_dimensions(getSize(newSize), newText.c_str(), &text_offset_x, &text_offset_y, &text_width, &text_height);
+/** \brief Get text x offset from origin
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int x position of font
+ *
+ */
+int Font::getTextOffsetX(int fontSize, std::string text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getX();
+}
 
+/** \brief Get text y offset from origin
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int y position of font
+ *
+ */
+int Font::getTextOffsetY(int fontSize, std::string text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getY();
+}
 
-  if(text_width <= newWidth && text_height <= newHeight) {
-    //td::cout<<al_get_font_line_height(getSize(newSize))<<"\n";
+/** \brief Get text height
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int height of font
+ *
+ */
+int Font::getTextHeight(int fontSize, std::string text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getHeight();
+}
 
-    return true;
+/** \brief Get text width
+ *
+ * \param fontSize int
+ * \param text std::string
+ * \return int width of font
+ *
+ */
+int Font::getTextWidth(int fontSize, std::string text) const {
+  const FontDimensions _dimensions = getFontDimensions(fontSize, text);
+  return _dimensions.getWidth();
+}
 
+/** \brief Gets closest font by size, if none, returns nullptr
+ *
+ * \param fontSize int
+ * \return ALLEGRO_FONT* font object
+ *
+ */
+ALLEGRO_FONT* Font::getFont(int fontSize) const {
+  if(fonts.find(fontSize) != fonts.end()) {
+    return fonts.at(fontSize);
   }
 
-  return false;
-
-}
-int Font::get_text_offset_x(int newSize, std::string newText) {
-  int text_width = 0;
-  int text_height = 0;
-  int text_offset_x;
-  int text_offset_y;
-
-  al_get_text_dimensions(getSize(newSize), newText.c_str(), &text_offset_x, &text_offset_y, &text_width, &text_height);
-
-  return text_offset_x;
-
+  return nullptr;
 }
 
-int Font::get_text_offset_y(int newSize, std::string newText) {
-  int text_width = 0;
-  int text_height = 0;
-  int text_offset_x;
-  int text_offset_y;
 
-  al_get_text_dimensions(getSize(newSize), newText.c_str(), &text_offset_x, &text_offset_y, &text_width, &text_height);
-
-  return text_offset_y;
-
-}
-
-int Font::get_text_height(int newSize, std::string newText) {
-  int text_width = 0;
-  int text_height = 0;
-  int text_offset_x;
-  int text_offset_y;
-
-  al_get_text_dimensions(getSize(newSize), newText.c_str(), &text_offset_x, &text_offset_y, &text_width, &text_height);
-
-  return text_height;
-
-}
-
-ALLEGRO_FONT* Font::getSize(int newSize) {
-  switch(newSize) {
-    case 4:
-      return font[0];
-
-    case 8:
-      return font[1];
-
-    case 12:
-      return font[2];
-
-    case 16:
-      return font[3];
-
-    case 24:
-      return font[4];
-
-    case 36:
-      return font[5];
-
-    case 54:
-      return font[6];
-
-    case 72:
-      return font[7];
-
-    case 100:
-      return font[8];
-
-    case 150:
-      return font[9];
-
-    case 200:
-      return font[10];
-
-    case 300:
-      return font[11];
-
-    case 400:
-      return font[12];
-
-    case 500:
-    default:
-      return font[13];
-
-  }
-
-  ALLEGRO_FONT* newFont;
-  return newFont;
-}
-
-void Font::init(std::string newPath)
-{
-  font[0] = al_load_ttf_font(newPath.c_str(), 4, 0);
-  font[1] = al_load_ttf_font(newPath.c_str(), 8, 0);
-  font[2] = al_load_ttf_font(newPath.c_str(), 12, 0);
-  font[3] = al_load_ttf_font(newPath.c_str(), 16, 0);
-  font[4] = al_load_ttf_font(newPath.c_str(), 24, 0);
-  font[5] = al_load_ttf_font(newPath.c_str(), 36, 0);
-  font[6] = al_load_ttf_font(newPath.c_str(), 54, 0);
-  font[7] = al_load_ttf_font(newPath.c_str(), 72, 0);
-  font[8] = al_load_ttf_font(newPath.c_str(), 100, 0);
-  font[9] = al_load_ttf_font(newPath.c_str(), 150, 0);
-  font[10] = al_load_ttf_font(newPath.c_str(), 200, 0);
-  font[11] = al_load_ttf_font(newPath.c_str(), 300, 0);
-
-
-
-
-
+/** \brief Get the number of fonts currently loaded
+ *
+ * \return int, number of fonts
+ *
+ */
+int Font::numSizes() const {
+  return fonts.size();
 }

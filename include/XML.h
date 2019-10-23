@@ -5,17 +5,15 @@
 #include <fstream>
 #include <iostream>
 
-#include "rapidxml.hpp"
-#include "rapidxml_utils.hpp"
-
+#include "rapidxml/rapidxml.hpp"
+#include "rapidxml/rapidxml_utils.hpp"
 #include "tools.h"
 
-class XML
-{
+class XML {
   public:
     XML();
     virtual ~XML();
-    std::string load_xml(std::string newFilePath,int niceint, int evennicerint);
+    std::string load_xml(std::string newFilePath, int niceint, int evennicerint);
     std::string load_special(int newnum);
 
   protected:

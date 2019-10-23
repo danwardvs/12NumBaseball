@@ -1,45 +1,66 @@
 #include "Cell.h"
 
-Cell::Cell()
-{
-  x = 100;
-  y = 100;
-  width = 100;
-  height = 50;
-  text = "";
-  this -> outline_colour = al_map_rgba(0, 0, 0, 255);
-  this -> cell_colour = al_map_rgba(123, 456, 789, 255);
-  line_thickness = 1;
-}
-Cell::Cell(int newX, int newY, int newWidth, int newHeight, ALLEGRO_COLOR newOutlineColour, ALLEGRO_COLOR newCellColour,
-           ALLEGRO_COLOR newFontColor, Font newFont, int newJustification, std::string newText) {
-
-  x = newX;
-  y = newY;
-  width = newWidth;
-  height = newHeight;
-  text = newText;
-  outline_colour = newOutlineColour;
-  cell_colour = newCellColour;
-  font_colour = newFontColor;
-  font = newFont;
-  justification = newJustification;
-
+Cell::Cell() :
+  Cell(100, 100, 100, 50, al_map_rgba(0, 0, 0, 255), al_map_rgba(123, 456, 789, 255), al_map_rgba(0, 0, 0, 255), Font(), LEFT, "") {
 
 }
 
-Cell::~Cell()
-{
-  //dtor
+Cell::Cell(int x, int y, int newWidth, int newHeight, ALLEGRO_COLOR outlineColor, ALLEGRO_COLOR cellColor,
+           ALLEGRO_COLOR fontColor, Font font, int justification, std::string text) {
+  this -> x = x;
+  this -> y = y;
+  this -> width = newWidth;
+  this -> height = newHeight;
+  this -> text = text;
+  this -> outline_colour = outlineColor;
+  this -> cell_colour = cellColor;
+  this -> font_colour = fontColor;
+  this -> font = font;
+  this -> justification = justification;
+  this -> line_thickness = 1;
+}
+
+void Cell::setText(std::string text) {
+  this -> text = text;
+}
+
+void Cell::setX(int x) {
+  this -> x = x;
+}
+
+void Cell::setY(int y) {
+  this -> y = y;
+}
+
+void Cell::setWidth(int width) {
+  this -> width = width;
+}
+
+void Cell::setHeight(int height) {
+  this -> height = height;
+}
+
+void Cell::setOutlineColour(ALLEGRO_COLOR outline_colour) {
+  this -> outline_colour = outline_colour;
+}
+
+void Cell::setCellColour(ALLEGRO_COLOR cell_colour) {
+  this -> cell_colour = cell_colour;
+}
+
+void Cell::setFontColour(ALLEGRO_COLOR font_colour) {
+  this -> font_colour = font_colour;
+}
+
+void Cell::setLineThickness(int line_thickness) {
+  this -> line_thickness = line_thickness;
 }
 
 void Cell::draw() {
-
   al_draw_filled_rectangle(x, y, x + width, y + height, cell_colour);
   al_draw_rectangle(x + line_thickness / 2, y + line_thickness / 2, x + width - line_thickness / 2, y + height - line_thickness / 2, outline_colour, line_thickness);
 
-  if(font.getFirstFont() != nullptr) {
-
+  if(font.numSizes() > 0) {
     int text_size = 12;
     int text_x = 0;
     int text_y = 0;
@@ -70,25 +91,26 @@ void Cell::draw() {
     else
       text_size = 4;
 
-    if(justification == LEFT) {
-      text_x = x + x_padding;
-      text_y = y + y_padding;
+    // Position text
+    switch(justification) {
+      case RIGHT:
+        text_x = x + width - x_padding;
+        text_y = y + y_padding;
+        break;
+
+      case CENTER:
+        text_x = x + width / 2;
+        text_y = y + y_padding - (font.getTextHeight(text_size, text) - height) / 2;
+        break;
+
+      default:
+      case LEFT:
+        text_x = x + x_padding;
+        text_y = y + y_padding;
+        break;
     }
 
-    if(justification == CENTER) {
-      text_x = x + width / 2;
-      text_y = y + y_padding - (font.get_text_height(text_size, text) - height) / 2;
-    }
-
-    if(justification == RIGHT) {
-      text_x = x + width - x_padding;
-      text_y = y + y_padding;
-    }
-
-    al_draw_textf(font.getSize(text_size), font_colour, text_x, (text_y - font.get_text_offset_y(text_size, text)), justification, text.c_str());
-    //al_draw_justified_text(font.getSize(54),BLACK,x,x+1000,y,2000,0,"Hello world. This is a message.");
+    // Draw text to screen
+    al_draw_textf(font.getFont(text_size), font_colour, text_x, (text_y - font.getTextOffsetY(text_size, text)), justification, text.c_str());
   }
-
-
-
 }

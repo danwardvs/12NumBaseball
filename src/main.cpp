@@ -113,18 +113,15 @@ void setup() {
   al_init_ttf_addon();
 
   // Aquire screen
-  al_set_new_display_option(ALLEGRO_SAMPLE_BUFFERS, 4, ALLEGRO_SUGGEST);
-  al_set_new_display_option(ALLEGRO_SAMPLES, 8, ALLEGRO_REQUIRE);
-
-  al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+  al_set_new_display_flags(ALLEGRO_WINDOWED);
   display = al_create_display(800, 600);
 
   SCREEN_W = al_get_display_width(display);
-  std::cout << SCREEN_W << "\n";
   SCREEN_H = al_get_display_height(display);
 
-  if(!display)
+  if(!display) {
     tools::abort_on_error("Screen could not be created", "Error");
+  }
 
   // Timer
   timer = al_create_timer(1.0 / MAX_FPS);
@@ -169,35 +166,47 @@ void update() {
   ALLEGRO_EVENT ev;
   al_wait_for_event(event_queue, &ev);
 
-  // Timer
-  if(ev.type == ALLEGRO_EVENT_TIMER) {
-    // Change state (if needed)
-    change_state();
+  switch(ev.type)  {
+    // Timer
+    case ALLEGRO_EVENT_TIMER:
+      // Change state (if needed)
+      change_state();
 
-    // Update listeners
-    m_listener.update();
-    k_listener.update();
-    j_listener.update();
+      // Update listeners
+      m_listener.update();
+      k_listener.update();
+      j_listener.update();
 
-    // Update state
-    currentState -> update();
-  }
-  // Exit
-  else if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-    closing = true;
-  }
-  // Keyboard
-  else if(ev.type == ALLEGRO_EVENT_KEY_DOWN || ev.type == ALLEGRO_EVENT_KEY_UP) {
-    k_listener.on_event(ev.type, ev.keyboard.keycode);
-  }
-  // Joystick
-  else if(ev.type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN || ev.type == ALLEGRO_EVENT_JOYSTICK_BUTTON_UP) {
-    j_listener.on_event(ev.type, ev.joystick.button);
-  }
-  // Joystick plugged or unplugged
-  else if(ev.type == ALLEGRO_EVENT_JOYSTICK_CONFIGURATION) {
-    al_reconfigure_joysticks();
-    joystick_enabled = (al_get_num_joysticks() > 0);
+      // Update state
+      currentState -> update();
+      break;
+
+    // Exit
+    case ALLEGRO_EVENT_DISPLAY_CLOSE:
+      closing = true;
+      break;
+
+    // Keyboard
+    case ALLEGRO_EVENT_KEY_DOWN:
+    case ALLEGRO_EVENT_KEY_UP:
+      k_listener.on_event(ev.type, ev.keyboard.keycode);
+      break;
+
+    // Joystick
+    case ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN:
+    case ALLEGRO_EVENT_JOYSTICK_BUTTON_UP:
+      j_listener.on_event(ev.type, ev.joystick.button);
+      break;
+
+    // Joystick plugged or unplugged
+    case ALLEGRO_EVENT_JOYSTICK_CONFIGURATION:
+      al_reconfigure_joysticks();
+      joystick_enabled = (al_get_num_joysticks() > 0);
+      break;
+
+    // Other
+    default:
+      break;
   }
 
   // Drawing
@@ -225,8 +234,6 @@ void update() {
 
     // FPS = average
     fps = fps_total / 100;
-    // al_set_window_title(display,tools::convertIntToString(fps).c_str());
-
   }
 }
 
@@ -235,7 +242,7 @@ int main() {
   // Basic init
   setup();
 
-  //Set the current state ID
+  // Set the current state ID
   stateID = STATE_INIT;
   currentState = new init();
 

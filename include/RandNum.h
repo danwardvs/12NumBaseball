@@ -1,8 +1,6 @@
 #ifndef RANDNUM_H
 #define RANDNUM_H
 
-#include <time.h>
-#include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
@@ -10,14 +8,15 @@
 #include "tools.h"
 
 
-class RandNum
-{
+class RandNum {
   public:
     RandNum();
     virtual ~RandNum();
 
     static void generate_seed();
-    static std::string getSeed(){return tools::toString(seed);}
+    static std::string getSeed() {
+      return tools::toString(seed);
+    }
     static int randInt(int newLowest, int newHighest);
 
   protected:

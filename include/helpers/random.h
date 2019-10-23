@@ -13,7 +13,7 @@ namespace helpers {
   namespace random {
     extern int seed;
     extern std::mt19937 rng;
-    int randomInt (int low, int high);
+    int randomInt(int low, int high);
   }
 }
 

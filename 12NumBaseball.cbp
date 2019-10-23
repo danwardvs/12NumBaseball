@@ -112,8 +112,9 @@
 			<Add directory="include" />
 		</Compiler>
 		<Unit filename="include/Cell.h" />
-		<Unit filename="include/RandNum.h" />
 		<Unit filename="include/XML.h" />
+		<Unit filename="include/constants/colors.h" />
+		<Unit filename="include/constants/justifications.h" />
 		<Unit filename="include/font/Font.h" />
 		<Unit filename="include/font/FontDimensions.h" />
 		<Unit filename="include/globals.h" />
@@ -132,11 +133,11 @@
 		<Unit filename="include/state.h" />
 		<Unit filename="include/tools.h" />
 		<Unit filename="src/Cell.cpp" />
-		<Unit filename="src/Globals.cpp" />
-		<Unit filename="src/RandNum.cpp" />
 		<Unit filename="src/XML.cpp" />
+		<Unit filename="src/constants/colors.cpp" />
 		<Unit filename="src/font/Font.cpp" />
 		<Unit filename="src/font/FontDimensions.cpp" />
+		<Unit filename="src/globals.cpp" />
 		<Unit filename="src/helpers/loaders.cpp" />
 		<Unit filename="src/helpers/random.cpp" />
 		<Unit filename="src/helpers/time.cpp" />

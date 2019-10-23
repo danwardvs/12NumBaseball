@@ -37,7 +37,7 @@ class Font {
     int getTextOffsetY(int fontSize, std::string text) const;
     int getTextHeight(int fontSize, std::string text) const;
     int getTextWidth(int fontSize, std::string text) const;
- bool textWillFit(int fontSize, int width, int height, std::string text) const;
+    bool textWillFit(int fontSize, int width, int height, std::string text) const;
 
   private:
     // Container for fonts

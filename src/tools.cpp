@@ -20,30 +20,8 @@ void tools::abort_on_error(std::string message, std::string title) {
   exit(-1);
 }
 
-// Load sample if exits, or throw error
-ALLEGRO_SAMPLE *tools::load_sample_ex(std::string file) {
-
-  std::cout << "Loading sound " << file << ".";
-
-  // Check if file exists
-  std::ifstream f(file.c_str());
-
-  if(!f.good())
-    abort_on_error(std::string("Cannot find sample " + file + "\nYour file is gone and there's nothing I can do. Sorry."), "File Not Found");
-
-  // Attempt to load
-  ALLEGRO_SAMPLE *temp_sample = nullptr;
-
-  if(!(temp_sample = al_load_sample(file.c_str())))
-    abort_on_error(std::string("There was an error loading " + file + "\nOh no :("), "Loading Error");
-
-  std::cout << " Success.\n";
-
-  return temp_sample;
-}
-
 // Load bitmap if exits, or throw error
-ALLEGRO_BITMAP * tools::load_bitmap_ex(std::string file) {
+ALLEGRO_BITMAP* tools::load_bitmap_ex(std::string file) {
 
   std::cout << "Loading bitmap " << file << ".";
 
@@ -54,7 +32,7 @@ ALLEGRO_BITMAP * tools::load_bitmap_ex(std::string file) {
     abort_on_error(std::string("Cannot find image " + file + "\nYour file is gone and there's nothing I can do. Sorry."), "File Not Found");
 
   // Attempt to load
-  ALLEGRO_BITMAP *temp_image = nullptr;
+  ALLEGRO_BITMAP* temp_image = nullptr;
 
   if(!(temp_image = al_load_bitmap(file.c_str())))
     abort_on_error(std::string("There was an error loading " + file + "... \nSorry..."), "Loading Error");

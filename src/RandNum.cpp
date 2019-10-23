@@ -23,7 +23,7 @@ int RandNum::randInt(int newLowest, int newHighest) {
 }
 
 void RandNum::generate_seed() {
-  seed = time(NULL);
+  seed = time(nullptr);
   srand(seed);
 
   // Discard first entry

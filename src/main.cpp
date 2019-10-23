@@ -20,7 +20,7 @@
 #include "globals.h"
 
 // Current state object
-state *currentState = nullptr;
+state* currentState = nullptr;
 
 // FPS system variables
 int fps;
@@ -36,14 +36,14 @@ bool joystick_enabled = false;
 // Allegro events
 ALLEGRO_EVENT_QUEUE* event_queue = nullptr;
 ALLEGRO_TIMER* timer = nullptr;
-ALLEGRO_DISPLAY *display = nullptr;
+ALLEGRO_DISPLAY* display = nullptr;
 
 // Input listener wrapper classes
 mouseListener m_listener;
 keyListener k_listener;
 joystickListener j_listener;
 
-ALLEGRO_BITMAP *gameBuffer;
+ALLEGRO_BITMAP* gameBuffer;
 
 // Delete game state and free state resources
 void clean_up() {
@@ -112,13 +112,7 @@ void setup() {
   // Font
   al_init_ttf_addon();
 
-  // Audio
-  al_install_audio();
-  al_init_acodec_addon();
-  al_reserve_samples(20);
-
   // Aquire screen
-
   al_set_new_display_option(ALLEGRO_SAMPLE_BUFFERS, 4, ALLEGRO_SUGGEST);
   al_set_new_display_option(ALLEGRO_SAMPLES, 8, ALLEGRO_REQUIRE);
 

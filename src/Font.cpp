@@ -66,7 +66,7 @@ int Font::get_text_height(int newSize, std::string newText) {
 
 }
 
-ALLEGRO_FONT *Font::getSize(int newSize) {
+ALLEGRO_FONT* Font::getSize(int newSize) {
   switch(newSize) {
     case 4:
       return font[0];
@@ -113,7 +113,7 @@ ALLEGRO_FONT *Font::getSize(int newSize) {
 
   }
 
-  ALLEGRO_FONT *newFont;
+  ALLEGRO_FONT* newFont;
   return newFont;
 }
 

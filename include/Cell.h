@@ -9,6 +9,7 @@
 
 #include "tools.h"
 #include "font/Font.h"
+#include "constants/justifications.h"
 #include "globals.h"
 
 class Cell {
@@ -45,7 +46,7 @@ class Cell {
     int y;
     int x_padding = 5;
     int y_padding = 5;
-    int justification = LEFT;
+    int justification = justification::LEFT;
     int line_thickness = 1;
     std::string text;
 
@@ -56,4 +57,4 @@ class Cell {
     ALLEGRO_COLOR font_colour;
 };
 
-#endif // CELL_H
+#endif

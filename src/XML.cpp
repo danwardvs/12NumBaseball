@@ -85,16 +85,9 @@ std::string XML::load_xml(std::string newFilePath, int newGeneratedNumber, int n
         if(newPitcherNumber == i)
           result = generated_node -> first_node(newNodeTag.c_str()) -> value();
       }
-
-
-
-
     }
   }
 
   return result;
-
-
-
 }
 

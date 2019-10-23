@@ -4,7 +4,6 @@
  * Calls state machine update and draw functions
  * 2017/11/14
  */
-#include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_audio.h>
@@ -18,6 +17,7 @@
 #include "state.h"
 #include "menu.h"
 #include "globals.h"
+#include "constants/colors.h"
 
 #include "helpers/loaders.h"
 
@@ -141,6 +141,9 @@ void setup() {
   // Window title
   al_set_window_title(display, "12 Number Baseball");
 
+  // Init colors
+  colors::init();
+
   std::cout << " Sucesss.\n";
 
 
@@ -157,9 +160,6 @@ void setup() {
   // Sorry, your PC is a very nice PC
   // mfw Allan's PC is now superior
   std::cout << "Running as " << al_get_app_name() << ", with " << al_get_ram_size() << " MB RAM.\n";
-
-  RandNum::generate_seed();
-
 }
 
 // Handle events

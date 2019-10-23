@@ -4,6 +4,9 @@
  * Allan Legemaate
  * 22/10/2019
  */
+#ifndef LOADERS_H
+#define LOADERS_H
+
 #include <string>
 
 #include <allegro5/allegro.h>
@@ -15,3 +18,5 @@ namespace helpers {
     void abort_on_error(std::string message, std::string title);
   }
 }
+
+#endif

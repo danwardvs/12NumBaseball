@@ -4,6 +4,9 @@
  * Allan Legemaate
  * 22/10/2019
  */
+#ifndef TIME_H
+#define TIME_H
+
 #include <string>
 
 namespace helpers {
@@ -11,3 +14,5 @@ namespace helpers {
     std::string getCurrentTime();
   }
 }
+
+#endif

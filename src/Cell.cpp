@@ -1,7 +1,8 @@
 #include "Cell.h"
+#include "constants/justifications.h"
 
 Cell::Cell() :
-  Cell(100, 100, 100, 50, al_map_rgba(0, 0, 0, 255), al_map_rgba(123, 456, 789, 255), al_map_rgba(0, 0, 0, 255), Font(), LEFT, "") {
+  Cell(100, 100, 100, 50, al_map_rgba(0, 0, 0, 255), al_map_rgba(123, 456, 789, 255), al_map_rgba(0, 0, 0, 255), Font(), justification::LEFT, "") {
 
 }
 
@@ -93,18 +94,18 @@ void Cell::draw() {
 
     // Position text
     switch(justification) {
-      case RIGHT:
+      case justification::RIGHT:
         text_x = x + width - x_padding;
         text_y = y + y_padding;
         break;
 
-      case CENTER:
+      case justification::CENTER:
         text_x = x + width / 2;
         text_y = y + y_padding - (font.getTextHeight(text_size, text) - height) / 2;
         break;
 
       default:
-      case LEFT:
+      case justification::LEFT:
         text_x = x + x_padding;
         text_y = y + y_padding;
         break;

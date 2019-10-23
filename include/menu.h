@@ -17,7 +17,6 @@
 #include "input/mouseListener.h"
 #include "input/joystickListener.h"
 
-#include "tools.h"
 #include "state.h"
 #include "helpers/random.h"
 #include "XML.h"

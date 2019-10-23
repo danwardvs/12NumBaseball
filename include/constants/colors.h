@@ -4,6 +4,7 @@
  * Allan Legemaate
  * 22/10/2019
  */
+
 #ifndef COLORS_H
 #define COLORS_H
 

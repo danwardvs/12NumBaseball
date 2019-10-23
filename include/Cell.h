@@ -7,7 +7,6 @@
 
 #include <string>
 
-#include "tools.h"
 #include "font/Font.h"
 #include "constants/justifications.h"
 

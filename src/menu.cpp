@@ -104,7 +104,7 @@ void menu::update() {
 
       //result_number=90;
       if(result_number < 101) {
-        std::string newPath = "data/" + tools::toString(batter_number) + "b.xml";
+        std::string newPath = "data/" + std::to_string(batter_number) + "b.xml";
         result[0] = xml_handler.load_xml(newPath, result_number, pitcher_number);
 
         if(result_number > 83) {
@@ -158,22 +158,22 @@ void menu::update() {
     gameCells[4] -> setOutlineColour(colors::GREEN);
   }
 
-  gameCells[0] -> setText(tools::toString(batter_number));
-  gameCells[2] -> setText(tools::toString(pitcher_number));
-  gameCells[4] -> setText(tools::toString(result_number));
+  gameCells[0] -> setText(std::to_string(batter_number));
+  gameCells[2] -> setText(std::to_string(pitcher_number));
+  gameCells[4] -> setText(std::to_string(result_number));
 
   for(int i = 0; i < 9; i++)
     gameCells[i * 2 + 6] -> setText(result[i]);
 
   for(int i = 0; i < 6; i++)
-    gameCells[i + 23] -> setText(tools::toString(extra_number[i]));
+    gameCells[i + 23] -> setText(std::to_string(extra_number[i]));
 
 
-  gameCells[29] -> setText(tools::toString(extra_number[6]));
-  gameCells[31] -> setText(tools::toString(extra_number[7]));
-  gameCells[33] -> setText(tools::toString(extra_number[7]));
-  gameCells[34] -> setText(tools::toString(extra_number[8]));
-  gameCells[36] -> setText(tools::toString(steal_throw_number));
+  gameCells[29] -> setText(std::to_string(extra_number[6]));
+  gameCells[31] -> setText(std::to_string(extra_number[7]));
+  gameCells[33] -> setText(std::to_string(extra_number[7]));
+  gameCells[34] -> setText(std::to_string(extra_number[8]));
+  gameCells[36] -> setText(std::to_string(steal_throw_number));
 
   if(groundout_type == 1) {
     gameCells[38] -> setCellColour(colors::RED);
@@ -189,7 +189,7 @@ void menu::update() {
   std::string newTime = helpers::time::getCurrentTime();
   newTime.pop_back();
   gameCells[40] -> setText(newTime);
-  gameCells[42] -> setText(tools::toString(total_numbers_generated));
+  gameCells[42] -> setText(std::to_string(total_numbers_generated));
 }
 
 // Draw images to screen

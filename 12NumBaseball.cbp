@@ -115,9 +115,9 @@
 		<Unit filename="include/XML.h" />
 		<Unit filename="include/constants/colors.h" />
 		<Unit filename="include/constants/justifications.h" />
+		<Unit filename="include/constants/screen.h" />
 		<Unit filename="include/font/Font.h" />
 		<Unit filename="include/font/FontDimensions.h" />
-		<Unit filename="include/globals.h" />
 		<Unit filename="include/helpers/loaders.h" />
 		<Unit filename="include/helpers/random.h" />
 		<Unit filename="include/helpers/time.h" />
@@ -137,7 +137,6 @@
 		<Unit filename="src/constants/colors.cpp" />
 		<Unit filename="src/font/Font.cpp" />
 		<Unit filename="src/font/FontDimensions.cpp" />
-		<Unit filename="src/globals.cpp" />
 		<Unit filename="src/helpers/loaders.cpp" />
 		<Unit filename="src/helpers/random.cpp" />
 		<Unit filename="src/helpers/time.cpp" />
@@ -153,6 +152,15 @@
 			<code_completion />
 			<envvars />
 			<debugger />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build extract_all="1" extract_private="1" extract_static="1" />
+				<doxyfile_warnings warn_if_undocumented="1" />
+				<doxyfile_output />
+				<doxyfile_dot class_diagrams="1" />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

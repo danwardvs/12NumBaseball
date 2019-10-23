@@ -79,7 +79,7 @@ std::string XML::load_xml(std::string newFilePath, int newGeneratedNumber, int n
     if(generatedNumberResult == newGeneratedNumber) {
 
       for(int i = 1; i < 13; i++) {
-        std::string newNodeTag = "p" + tools::toString(i);
+        std::string newNodeTag = "p" + std::to_string(i);
         std::cout << newNodeTag + "\n";
 
         if(newPitcherNumber == i)

@@ -7,7 +7,6 @@
 
 #include "rapidxml/rapidxml.hpp"
 #include "rapidxml/rapidxml_utils.hpp"
-#include "tools.h"
 
 class XML {
   public:

@@ -10,14 +10,16 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 
-#include <mouseListener.h>
-#include <keyListener.h>
-#include <joystickListener.h>
+#include "input/mouseListener.h"
+#include "input/keyListener.h"
+#include "input/joystickListener.h"
 
 #include "init.h"
 #include "state.h"
 #include "menu.h"
 #include "globals.h"
+
+#include "helpers/loaders.h"
 
 // Current state object
 state* currentState = nullptr;
@@ -95,7 +97,7 @@ void setup() {
 
   // Init allegro
   if(!al_init())
-    tools::abort_on_error("Allegro could not initilize", "Error");
+    helpers::loaders::abort_on_error("Allegro could not initilize", "Error");
 
   // Window title
   al_set_window_title(display, "Loading...");
@@ -120,7 +122,7 @@ void setup() {
   SCREEN_H = al_get_display_height(display);
 
   if(!display) {
-    tools::abort_on_error("Screen could not be created", "Error");
+    helpers::loaders::abort_on_error("Screen could not be created", "Error");
   }
 
   // Timer

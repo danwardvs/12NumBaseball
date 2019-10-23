@@ -10,9 +10,7 @@
 #define CENTER 1
 #define RIGHT 2
 
-#define PI 3.14159263
-#define DEGTORAD 0.0174532925199432957f
-#define RADTODEG 57.295779513082320876f
+
 
 #define BLACK al_map_rgb(0,0,0)
 #define WHITE al_map_rgb(255,255,255)

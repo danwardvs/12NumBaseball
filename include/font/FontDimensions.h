@@ -9,18 +9,23 @@
 
 class FontDimensions  {
   public:
+    // Constructor
     FontDimensions(int x, int y, int width, int height);
 
+    // Position getters
     int getX() const;
     int getY() const;
+
+    // Dimension getters
     int getWidth() const;
     int getHeight() const;
 
   private:
-    const int x;
-    const int y;
-    const int width;
-    const int height;
+    // Position
+    const int x, y;
+
+    // Dimensions
+    const int width, height;
 };
 
 #endif

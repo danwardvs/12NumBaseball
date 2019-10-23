@@ -1,5 +1,5 @@
 #include "menu.h"
-
+#include "helpers/time.h"
 
 // Init menu
 menu::menu() {
@@ -195,17 +195,10 @@ void menu::update() {
 
   }
 
-  std::string newTime = Time::getCurrentTime();
+  std::string newTime = helpers::time::getCurrentTime();
   newTime.pop_back();
   gameCells[40] -> setText(newTime);
   gameCells[42] -> setText(tools::toString(total_numbers_generated));
-
-
-
-
-
-
-
 }
 
 // Draw images to screen

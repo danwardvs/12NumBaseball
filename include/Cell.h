@@ -6,9 +6,10 @@
 #include <allegro5/allegro_font.h>
 
 #include <string>
-#include <tools.h>
-#include <Font.h>
-#include <globals.h>
+
+#include "tools.h"
+#include "font/Font.h"
+#include "globals.h"
 
 class Cell {
   public:

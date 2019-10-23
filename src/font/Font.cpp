@@ -1,7 +1,6 @@
-#include "Font.h"
+#include "font/Font.h"
 
 #include <set>
-
 #include <allegro5/allegro_ttf.h>
 
 /** \brief Initializes font with preset sizes
@@ -98,10 +97,10 @@ int Font::getTextWidth(int fontSize, std::string text) const {
   return _dimensions.getWidth();
 }
 
-/** \brief Gets closest font by size, if none, returns nullptr
+/** \brief Gets font by size, if none, returns nullptr
  *
  * \param fontSize int
- * \return ALLEGRO_FONT* font object
+ * \return ALLEGRO font object or nullptr
  *
  */
 ALLEGRO_FONT* Font::getFont(int fontSize) const {

@@ -13,18 +13,18 @@
 #include <string>
 #include <vector>
 
-#include "keyListener.h"
-#include "mouseListener.h"
-#include "joystickListener.h"
+#include "input/keyListener.h"
+#include "input/mouseListener.h"
+#include "input/joystickListener.h"
+
 #include "tools.h"
 #include "state.h"
 #include "globals.h"
 #include "RandNum.h"
 #include "XML.h"
-#include "CurrentTime.h"
 
 #include "Cell.h"
-#include "Font.h"
+#include "font/Font.h"
 
 // Menu
 class menu : public state {

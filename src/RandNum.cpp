@@ -4,16 +4,6 @@
 
 long RandNum::seed = 0;
 
-RandNum::RandNum()
-{
-  //ctor
-}
-
-RandNum::~RandNum()
-{
-  //dtor
-}
-
 int RandNum::randInt(int newLowest, int newHighest) {
   int lowest = newLowest, highest = newHighest;
   int range = (highest - lowest) + 1;

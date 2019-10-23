@@ -10,7 +10,6 @@
 #include "tools.h"
 #include "font/Font.h"
 #include "constants/justifications.h"
-#include "globals.h"
 
 class Cell {
   public:

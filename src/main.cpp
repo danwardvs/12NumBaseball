@@ -9,17 +9,18 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 
+#include "init.h"
+#include "state.h"
+#include "menu.h"
+
 #include "input/mouseListener.h"
 #include "input/keyListener.h"
 #include "input/joystickListener.h"
 
-#include "init.h"
-#include "state.h"
-#include "menu.h"
-#include "globals.h"
-#include "constants/colors.h"
-
 #include "helpers/loaders.h"
+
+#include "constants/colors.h"
+#include "constants/screen.h"
 
 // Current state object
 state* currentState = nullptr;
@@ -116,10 +117,7 @@ void setup() {
 
   // Aquire screen
   al_set_new_display_flags(ALLEGRO_WINDOWED);
-  display = al_create_display(800, 600);
-
-  SCREEN_W = al_get_display_width(display);
-  SCREEN_H = al_get_display_height(display);
+  display = al_create_display(constants::screen::WIDTH, constants::screen::HEIGHT);
 
   if(!display) {
     helpers::loaders::abort_on_error("Screen could not be created", "Error");

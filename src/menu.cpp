@@ -1,7 +1,10 @@
 #include "menu.h"
+
 #include "helpers/time.h"
+
 #include "constants/colors.h"
 #include "constants/justifications.h"
+#include "constants/screen.h"
 
 // Init menu
 menu::menu() {
@@ -200,10 +203,10 @@ void menu::draw() {
 }
 
 void menu::generate_cells() {
-  int width_6 = SCREEN_W / 6;
-  int height_16 = SCREEN_H / 16;
+  int width_6 = constants::screen::WIDTH / 6;
+  int height_16 = constants::screen::HEIGHT / 16;
 
-  std::cout << SCREEN_W;
+  std::cout << constants::screen::WIDTH;
 
   gameCells.push_back(new Cell(0, 0, width_6, height_16 * 4, colors::BLACK, colors::WHITE, colors::BLACK, calibri_bold, justification::CENTER, "7"));
   gameCells[0] -> setLineThickness(4);
@@ -219,7 +222,7 @@ void menu::generate_cells() {
   gameCells[4] -> setLineThickness(4);
 
 
-  gameCells.push_back(new Cell(SCREEN_W - 90, SCREEN_H - height_16 - 25, 90, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, std::to_string(helpers::random::seed)));
+  gameCells.push_back(new Cell(constants::screen::WIDTH - 90, constants::screen::HEIGHT - height_16 - 25, 90, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, std::to_string(helpers::random::seed)));
 
 
   int slugging_height = height_16;
@@ -251,12 +254,12 @@ void menu::generate_cells() {
   gameCells.push_back(new Cell(50, slugging_position + slugging_height * 8, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Complete failure of a career"));
 
 
-  gameCells.push_back(new Cell(0, SCREEN_H - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "55"));
-  gameCells.push_back(new Cell(width_6, SCREEN_H - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "100"));
-  gameCells.push_back(new Cell(width_6 * 2, SCREEN_H - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
-  gameCells.push_back(new Cell(width_6 * 3, SCREEN_H - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
-  gameCells.push_back(new Cell(width_6 * 4, SCREEN_H - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
-  gameCells.push_back(new Cell(width_6 * 5, SCREEN_H - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
+  gameCells.push_back(new Cell(0, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "55"));
+  gameCells.push_back(new Cell(width_6, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "100"));
+  gameCells.push_back(new Cell(width_6 * 2, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
+  gameCells.push_back(new Cell(width_6 * 3, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
+  gameCells.push_back(new Cell(width_6 * 4, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
+  gameCells.push_back(new Cell(width_6 * 5, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
 
   gameCells.push_back(new Cell(width_6 * 4 + 40, 25, width_6 - 20, height_16 * 2, colors::BLACK, colors::YELLOW, colors::BLACK, calibri, justification::CENTER, "12 "));
   gameCells.push_back(new Cell(width_6 * 4 + 40, 0, width_6 - 20, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "Fielder"));
@@ -275,9 +278,9 @@ void menu::generate_cells() {
   gameCells.push_back(new Cell(width_6 * 4 + 40, 75 + height_16 * 4, width_6 - 20, height_16 * 2 - 25, colors::BLACK, colors::GREEN, colors::BLACK, calibri, justification::CENTER, ""));
   gameCells.push_back(new Cell(width_6 * 4 + 40, 50 + height_16 * 4, width_6 - 20, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "Ground out type"));
 
-  gameCells.push_back(new Cell(SCREEN_W - 180, SCREEN_H - height_16 - 50, 180, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "5 o'clock somewhere"));
-  gameCells.push_back(new Cell(SCREEN_W - 130, SCREEN_H - height_16 - 25, 40, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "v1.2"));
-  gameCells.push_back(new Cell(SCREEN_W - 180, SCREEN_H - height_16 - 25, 50, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "0"));
+  gameCells.push_back(new Cell(constants::screen::WIDTH - 180, constants::screen::HEIGHT - height_16 - 50, 180, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "5 o'clock somewhere"));
+  gameCells.push_back(new Cell(constants::screen::WIDTH - 130, constants::screen::HEIGHT - height_16 - 25, 40, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "v1.2"));
+  gameCells.push_back(new Cell(constants::screen::WIDTH - 180, constants::screen::HEIGHT - height_16 - 25, 50, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "0"));
 }
 
 

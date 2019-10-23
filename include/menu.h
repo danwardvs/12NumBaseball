@@ -19,7 +19,6 @@
 
 #include "tools.h"
 #include "state.h"
-#include "globals.h"
 #include "helpers/random.h"
 #include "XML.h"
 

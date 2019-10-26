@@ -14,13 +14,10 @@
 
 class keyListener {
   public:
-    keyListener();
-    virtual ~keyListener();
-
     static bool anyKeyPressed;
 
-    void on_event(ALLEGRO_EVENT_TYPE event_type, int keycode);
-    void update();
+    static void on_event(ALLEGRO_EVENT_TYPE event_type, int keycode);
+    static void update();
 
     static bool key[ALLEGRO_KEY_MAX];
     static bool keyPressed[ALLEGRO_KEY_MAX];
@@ -32,7 +29,6 @@ class keyListener {
     static int lastKeyReleased;
     static int currentKeyPressed;
 
-  protected:
   private:
     static bool lastTicksKey[ALLEGRO_KEY_MAX];
 };

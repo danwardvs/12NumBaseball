@@ -8,6 +8,7 @@
 #define RANDOM_H
 
 #include <random>
+#include <string>
 
 namespace helpers {
   namespace random {

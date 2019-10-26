@@ -1,10 +1,15 @@
 #include "menu.h"
 
+#include <algorithm>
+#include <stdexcept>
+
 #include "helpers/time.h"
 
 #include "constants/colors.h"
 #include "constants/justifications.h"
 #include "constants/screen.h"
+
+#include "loaders/layout.h"
 
 // Init menu
 menu::menu() {
@@ -16,9 +21,11 @@ menu::menu() {
 
 // Update animation and wait for input
 void menu::update() {
+  // Exit game
   if(keyListener::keyReleased[ALLEGRO_KEY_ESCAPE])
     set_next_state(STATE_EXIT);
 
+  // Num key related operations
   if(keyListener::numKeyReleased) {
     if(input_step == 0) {
       for(int i = 27; i < 36; i++) {
@@ -80,6 +87,7 @@ void menu::update() {
     }
   }
 
+  // Submit entry
   if(keyListener::keyPressed[ALLEGRO_KEY_ENTER] || keyListener::keyPressed[ALLEGRO_KEY_PAD_ENTER]) {
     if(input_step == 1 || input_step == 0)
       input_step = 3;
@@ -127,150 +135,121 @@ void menu::update() {
     }
   }
 
-  if(keyListener::keyReleased[ALLEGRO_KEY_DELETE] || keyListener::keyReleased[ALLEGRO_KEY_BACKSPACE])
+  // Restart input sequence
+  if(keyListener::keyReleased[ALLEGRO_KEY_DELETE] || keyListener::keyReleased[ALLEGRO_KEY_BACKSPACE]) {
     input_step = 0;
+  }
 
-
+  // Top section
   if(input_step == 0 || input_step == 1) {
-    gameCells[0] -> setOutlineColour(colors::GREEN);
-    gameCells[2] -> setOutlineColour(colors::BLACK);
-    gameCells[4] -> setOutlineColour(colors::BLACK);
+    findCell("batter_number").setBorderColor(colors::GREEN);
+    findCell("pitcher_number").setBorderColor(colors::BLACK);
+    findCell("third_number").setBorderColor(colors::BLACK);
   }
 
   if(input_step == 3 || input_step == 4) {
-    gameCells[0] -> setOutlineColour(colors::BLACK);
-    gameCells[2] -> setOutlineColour(colors::GREEN);
-    gameCells[4] -> setOutlineColour(colors::BLACK);
+    findCell("batter_number").setBorderColor(colors::BLACK);
+    findCell("pitcher_number").setBorderColor(colors::GREEN);
+    findCell("third_number").setBorderColor(colors::BLACK);
   }
 
   if(input_step == 5) {
-    gameCells[0] -> setOutlineColour(colors::BLACK);
-    gameCells[2] -> setOutlineColour(colors::BLACK);
-    gameCells[4] -> setOutlineColour(colors::GREEN);
+    findCell("batter_number").setBorderColor(colors::BLACK);
+    findCell("pitcher_number").setBorderColor(colors::BLACK);
+    findCell("third_number").setBorderColor(colors::GREEN);
   }
 
-  gameCells[0] -> setText(std::to_string(batter_number));
-  gameCells[2] -> setText(std::to_string(pitcher_number));
-  gameCells[4] -> setText(std::to_string(result_number));
+  findCell("batter_number").setText(std::to_string(batter_number));
+  findCell("pitcher_number").setText(std::to_string(pitcher_number));
+  findCell("third_number").setText(std::to_string(result_number));
 
-  for(int i = 0; i < 9; i++)
-    gameCells[i * 2 + 6] -> setText(result[i]);
+  // Slugger section
+  findCell("main_display").setText(result[0]);
+  findCell("slugger_1").setText(result[1]);
+  findCell("slugger_2").setText(result[2]);
+  findCell("slugger_3").setText(result[3]);
+  findCell("slugger_4").setText(result[4]);
+  findCell("slugger_5").setText(result[5]);
+  findCell("slugger_6").setText(result[6]);
+  findCell("slugger_7").setText(result[7]);
+  findCell("slugger_8").setText(result[8]);
 
-  for(int i = 0; i < 6; i++)
-    gameCells[i + 23] -> setText(std::to_string(extra_number[i]));
+  // Bottom section
+  findCell("bottom_1").setText(extra_number[0]);
+  findCell("bottom_2").setText(extra_number[1]);
+  findCell("bottom_3").setText(extra_number[2]);
+  findCell("bottom_4").setText(extra_number[3]);
+  findCell("bottom_5").setText(extra_number[4]);
+  findCell("bottom_6").setText(extra_number[5]);
 
+  // Right section
+  findCell("fielder").setText(extra_number[6]);
+  findCell("run_adv_steal").setText(extra_number[7]);
+  findCell("double_play_1").setText(extra_number[7]);
+  findCell("double_play_2").setText(extra_number[8]);
+  findCell("steals").setText(steal_throw_number);
 
-  gameCells[29] -> setText(std::to_string(extra_number[6]));
-  gameCells[31] -> setText(std::to_string(extra_number[7]));
-  gameCells[33] -> setText(std::to_string(extra_number[7]));
-  gameCells[34] -> setText(std::to_string(extra_number[8]));
-  gameCells[36] -> setText(std::to_string(steal_throw_number));
-
-  if(groundout_type == 1) {
-    gameCells[38] -> setCellColour(colors::RED);
-    gameCells[38] -> setText("Hard one hop");
+  // Ground out
+  if(groundout_type == 1 || true) {
+    findCell("ground_out").setCellColor(colors::RED);
+    findCell("ground_out").setText("Hard one hop");
   } else if(groundout_type == 2) {
-    gameCells[38] -> setCellColour(colors::YELLOW);
-    gameCells[38] -> setText("Average grounder");
+    findCell("ground_out").setCellColor(colors::YELLOW);
+    findCell("ground_out").setText("Average grounder");
   } else if(groundout_type == 3) {
-    gameCells[38] -> setCellColour(colors::GREEN);
-    gameCells[38] -> setText("Slow roller");
+    findCell("ground_out").setCellColor(colors::GREEN);
+    findCell("ground_out").setText("Slow roller");
   }
 
+  // Dashboard
   std::string newTime = helpers::time::getCurrentTime();
   newTime.pop_back();
-  gameCells[40] -> setText(newTime);
-  gameCells[42] -> setText(std::to_string(total_numbers_generated));
+  findCell("dashboard_time").setText(newTime);
+  findCell("dashboard_seed").setText(std::to_string(total_numbers_generated));
 }
 
 // Draw images to screen
 void menu::draw() {
   // Background
-  al_clear_to_color(colors::WHITE);
+  al_clear_to_color(al_map_rgb(255, 255, 255));
 
   // Draw cells
-  for(unsigned int i = 0; i < gameCells.size(); i++) {
-    gameCells[i] -> draw();
+  for(auto& cell : cells) {
+    cell.draw();
   }
 }
 
+// Find cell by id
+Cell& menu::findCell(const std::string& id) {
+  // Find
+  auto it = std::find_if(cells.begin(), cells.end(), [&id](const Cell & obj) {
+    return !obj.getId().compare(id);
+  });
+
+  // Exception handling
+  if(it == cells.end()) {
+    throw std::runtime_error("Could not find cell by id " + id + ".");
+  }
+
+  return *it;
+}
+
+// Load cells from file
 void menu::generate_cells() {
-  int width_6 = constants::screen::WIDTH / 6;
-  int height_16 = constants::screen::HEIGHT / 16;
+  // Load in all screens
+  auto cells_md = loaders::layout::readLayout("data/layout/main_display.json");
+  auto cells_sd = loaders::layout::readLayout("data/layout/sub_display.json");
+  auto cells_td = loaders::layout::readLayout("data/layout/top_display.json");
+  auto cells_bd = loaders::layout::readLayout("data/layout/bottom_display.json");
+  auto cells_dbd = loaders::layout::readLayout("data/layout/dashboard_display.json");
+  auto cells_sld = loaders::layout::readLayout("data/layout/slugger_display.json");
 
-  std::cout << constants::screen::WIDTH;
-
-  gameCells.push_back(new Cell(0, 0, width_6, height_16 * 4, colors::BLACK, colors::WHITE, colors::BLACK, calibri_bold, justification::CENTER, "7"));
-  gameCells[0] -> setLineThickness(4);
-  gameCells.push_back(new Cell(0, 0, 150, 75, colors::TRANSPARENT, colors::TRANSPARENT, colors::BLACK, calibri, justification::LEFT, "Batter Number"));
-
-
-  gameCells.push_back(new Cell(width_6, 0, width_6, height_16 * 4, colors::BLACK, colors::WHITE, colors::BLACK, calibri_bold, justification::CENTER, "12"));
-  gameCells[2] -> setLineThickness(4);
-  gameCells.push_back(new Cell(width_6, 0, 150, 75, colors::TRANSPARENT, colors::TRANSPARENT, colors::BLACK, calibri, justification::LEFT, "Pitcher Number"));
-
-  gameCells.push_back(new Cell(5 + width_6 * 2 + 20, 0, width_6 * 2, height_16 * 4, colors::BLACK, colors::BLACK, colors::RED, calibri_bold, justification::CENTER, "112"));
-
-  gameCells[4] -> setLineThickness(4);
-
-
-  gameCells.push_back(new Cell(constants::screen::WIDTH - 90, constants::screen::HEIGHT - height_16 - 25, 90, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, std::to_string(helpers::random::seed)));
-
-
-  int slugging_height = height_16;
-  int slugging_position = height_16 * 5 + 40;
-
-  gameCells.push_back(new Cell(20, height_16 * 4 + 20, width_6 * 3, height_16 * 2, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Storms mound"));
-
-  gameCells[6] -> setLineThickness(2);
-
-
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 1, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "1SL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 1, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Smacks it out of the park"));
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 2, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "SSL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 2, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Over the fence"));
-
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 3, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "3SL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 3, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Deep fly, triple"));
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 4, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "GSL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 4, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Easy double"));
-
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 5, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "5SL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 5, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Barely makes it to first"));
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 6, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "ASL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 6, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "m/18/woody"));
-
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 7, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "7SL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 7, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Trips over bat, gets tagged out"));
-  gameCells.push_back(new Cell(0, slugging_position + slugging_height * 8, 50, slugging_height, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "FSL"));
-  gameCells.push_back(new Cell(50, slugging_position + slugging_height * 8, width_6 * 3, slugging_height, colors::BLACK, colors::WHITE, colors::BLUE, calibri, justification::LEFT, "Complete failure of a career"));
-
-
-  gameCells.push_back(new Cell(0, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "55"));
-  gameCells.push_back(new Cell(width_6, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "100"));
-  gameCells.push_back(new Cell(width_6 * 2, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
-  gameCells.push_back(new Cell(width_6 * 3, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
-  gameCells.push_back(new Cell(width_6 * 4, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
-  gameCells.push_back(new Cell(width_6 * 5, constants::screen::HEIGHT - height_16, width_6, height_16, colors::BLACK, colors::YELLOW, colors::GROSS_YELLOW, calibri, justification::CENTER, "45"));
-
-  gameCells.push_back(new Cell(width_6 * 4 + 40, 25, width_6 - 20, height_16 * 2, colors::BLACK, colors::YELLOW, colors::BLACK, calibri, justification::CENTER, "12 "));
-  gameCells.push_back(new Cell(width_6 * 4 + 40, 0, width_6 - 20, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "Fielder"));
-
-  gameCells.push_back(new Cell(width_6 * 5 + 20, 25, width_6 - 20, height_16 * 2, colors::BLACK, colors::YELLOW, colors::BLACK, calibri, justification::CENTER, "12"));
-  gameCells.push_back(new Cell(width_6 * 5 + 20, 0, width_6 - 20, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "Run Adv. Steal WP. Error PB"));
-
-  gameCells.push_back(new Cell(width_6 * 5 + 20, 50 + height_16 * 2, width_6 - 20, height_16 * 2, colors::BLACK, colors::BLUE, colors::WHITE, calibri, justification::CENTER, "12"));
-  gameCells.push_back(new Cell(width_6 * 5 + 20, 50 + height_16 * 4, width_6 - 20, height_16 * 2, colors::BLACK, colors::BLUE, colors::WHITE, calibri, justification::CENTER, "12"));
-
-  gameCells.push_back(new Cell(width_6 * 5 + 20, 25 + height_16 * 2, width_6 - 20, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "Double play"));
-
-  gameCells.push_back(new Cell(width_6 * 4 + 40, 50 + height_16 * 2, width_6 - 20, height_16 * 2, colors::BLACK, colors::GREEN, colors::BLACK, calibri, justification::CENTER, "12 "));
-  gameCells.push_back(new Cell(width_6 * 4 + 40, 25 + height_16 * 2, width_6 - 20, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "Steals and throws"));
-
-  gameCells.push_back(new Cell(width_6 * 4 + 40, 75 + height_16 * 4, width_6 - 20, height_16 * 2 - 25, colors::BLACK, colors::GREEN, colors::BLACK, calibri, justification::CENTER, ""));
-  gameCells.push_back(new Cell(width_6 * 4 + 40, 50 + height_16 * 4, width_6 - 20, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "Ground out type"));
-
-  gameCells.push_back(new Cell(constants::screen::WIDTH - 180, constants::screen::HEIGHT - height_16 - 50, 180, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "5 o'clock somewhere"));
-  gameCells.push_back(new Cell(constants::screen::WIDTH - 130, constants::screen::HEIGHT - height_16 - 25, 40, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "v1.2"));
-  gameCells.push_back(new Cell(constants::screen::WIDTH - 180, constants::screen::HEIGHT - height_16 - 25, 50, 25, colors::BLACK, colors::WHITE, colors::BLACK, calibri, justification::LEFT, "0"));
+  // Append to cells
+  cells.clear();
+  cells.insert(cells.end(), cells_md.begin(), cells_md.end());
+  cells.insert(cells.end(), cells_sd.begin(), cells_sd.end());
+  cells.insert(cells.end(), cells_td.begin(), cells_td.end());
+  cells.insert(cells.end(), cells_bd.begin(), cells_bd.end());
+  cells.insert(cells.end(), cells_dbd.begin(), cells_dbd.end());
+  cells.insert(cells.end(), cells_sld.begin(), cells_sld.end());
 }

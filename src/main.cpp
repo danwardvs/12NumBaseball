@@ -40,18 +40,7 @@ bool joystick_enabled = false;
 ALLEGRO_EVENT_QUEUE* event_queue = nullptr;
 ALLEGRO_TIMER* timer = nullptr;
 ALLEGRO_DISPLAY* display = nullptr;
-
-// Input listener wrapper classes
-mouseListener m_listener;
-keyListener k_listener;
-joystickListener j_listener;
-
 ALLEGRO_BITMAP* gameBuffer;
-
-// Delete game state and free state resources
-void clean_up() {
-  delete currentState;
-}
 
 // Change game screen
 void change_state() {
@@ -139,11 +128,7 @@ void setup() {
   // Window title
   al_set_window_title(display, "12 Number Baseball");
 
-  // Init colors
-  colors::init();
-
-  std::cout << " Sucesss.\n";
-
+  std::cout << " Sucesss." << std::endl;
 
   // Probably never going to be relevant but pretty cool anyways
   uint32_t version = al_get_allegro_version();
@@ -152,12 +137,12 @@ void setup() {
   int revision = (version >> 8) & 255;
   int release = version & 255;
 
-  std::cout << "Allegro version " << major << "." << minor << "." << revision << "." << release << "\n";
+  std::cout << "Allegro version " << major << "." << minor << "." << revision << "." << release << std::endl;
 
   // This is actually completely irrelevant other than making fun of Allan's PC when he runs this
   // Sorry, your PC is a very nice PC
   // mfw Allan's PC is now superior
-  std::cout << "Running as " << al_get_app_name() << ", with " << al_get_ram_size() << " MB RAM.\n";
+  std::cout << "Running as " << al_get_app_name() << ", with " << al_get_ram_size() << " MB RAM." << std::endl;
 }
 
 // Handle events
@@ -173,9 +158,9 @@ void update() {
       change_state();
 
       // Update listeners
-      m_listener.update();
-      k_listener.update();
-      j_listener.update();
+      mouseListener::update();
+      keyListener::update();
+      joystickListener::update();
 
       // Update state
       currentState -> update();
@@ -189,13 +174,13 @@ void update() {
     // Keyboard
     case ALLEGRO_EVENT_KEY_DOWN:
     case ALLEGRO_EVENT_KEY_UP:
-      k_listener.on_event(ev.type, ev.keyboard.keycode);
+      keyListener::on_event(ev.type, ev.keyboard.keycode);
       break;
 
     // Joystick
     case ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN:
     case ALLEGRO_EVENT_JOYSTICK_BUTTON_UP:
-      j_listener.on_event(ev.type, ev.joystick.button);
+      joystickListener::on_event(ev.type, ev.joystick.button);
       break;
 
     // Joystick plugged or unplugged

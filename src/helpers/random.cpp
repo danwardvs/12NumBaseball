@@ -19,4 +19,3 @@ int helpers::random::randomInt(int low, int high) {
   std::uniform_int_distribution<int> dist6(low, high); // distribution in range [1, 6]
   return dist6(rng);
 }
-

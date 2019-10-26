@@ -13,17 +13,6 @@ bool keyListener::anyKeyPressed = false;
 bool keyListener::numKeyPressed = false;
 bool keyListener::numKeyReleased = false;
 
-
-// Constructor
-keyListener::keyListener() {
-
-}
-
-// Destructor
-keyListener::~keyListener() {
-
-}
-
 // For allegro 5, we use events
 void keyListener::on_event(ALLEGRO_EVENT_TYPE event_type, int keycode) {
   // Key down

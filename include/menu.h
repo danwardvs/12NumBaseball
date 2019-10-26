@@ -30,8 +30,10 @@ class menu : public state {
     menu();
     virtual ~menu() {};
 
-    void update();
-    void draw();
+    void update() override;
+    void draw() override;
+
+    Cell& findCell(const std::string& id);
 
   private:
     void generate_cells();
@@ -43,15 +45,15 @@ class menu : public state {
     int pitcher_number = 1;
     int result_number = 1;
     int extra_number[9] = {7, 15, 1, 2, 19, 7};
-    int groundout_type;
-    int steal_throw_number;
+    int groundout_type = 0;
+    int steal_throw_number = 0;
     int total_numbers_generated = 0;
 
     std::string result[9];
 
     Font calibri_bold;
     Font calibri;
-    std::vector<Cell*> gameCells;
+    std::vector<Cell> cells;
 
 };
 

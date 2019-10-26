@@ -1,91 +1,181 @@
 #include "Cell.h"
-#include "constants/justifications.h"
 
-Cell::Cell() :
-  Cell(100, 100, 100, 50, al_map_rgba(0, 0, 0, 255), al_map_rgba(123, 456, 789, 255), al_map_rgba(0, 0, 0, 255), Font(), justification::LEFT, "") {
+#include <algorithm>
+#include <allegro5/allegro_primitives.h>
 
+#include "helpers/color.h"
+#include "constants/screen.h"
+
+Font Cell::defaultFont;
+
+// Constructor
+Cell::Cell(const std::string& id) {
+  // Set id
+  this -> id = id;
+
+  // Set default values
+  // Layout
+  this -> setX(0);
+  this -> setY(0);
+  this -> setWidth(100);
+  this -> setHeight(100);
+  this -> setPadding(5, 5);
+
+  //  Formatting
+  this -> setBorderWidth(1);
+  this -> setBorderColor("#000000");
+  this -> setCellColor("#FFFFFF");
+  this -> setFontColor("#000000");
+  this -> setJustification("center");
+
+  // Content
+  this -> setText("");
+
+  // Load default font
+  if(defaultFont.numSizes() == 0)  {
+    defaultFont.init("font/calibri_bold.ttf");
+  }
 }
 
-Cell::Cell(int x, int y, int newWidth, int newHeight, ALLEGRO_COLOR outlineColor, ALLEGRO_COLOR cellColor,
-           ALLEGRO_COLOR fontColor, Font font, int justification, std::string text) {
-  this -> x = x;
-  this -> y = y;
-  this -> width = newWidth;
-  this -> height = newHeight;
+// Get id
+std::string Cell::getId() const {
+  return this -> id;
+}
+
+// LAYOUT
+void Cell::setX(int x, const std::string& positioning) {
+  if(x == 0) {
+    this -> x = 0;
+  }
+
+  if(!positioning.compare("percent")) {
+    this -> x = (x / 100.0f) * constants::screen::WIDTH;
+  } else {
+    this -> x = x;
+  }
+}
+
+void Cell::setY(int y, const std::string& positioning) {
+  if(y == 0) {
+    this -> y = 0;
+  }
+
+  if(!positioning.compare("percent")) {
+    this -> y = (y / 100.0f) * constants::screen::HEIGHT;
+  } else {
+    this -> y = y;
+  }
+}
+
+void Cell::setWidth(int width, const std::string& positioning) {
+  if(width == 0) {
+    this -> width = 0;
+  }
+
+  if(!positioning.compare("percent")) {
+    this -> width = (width / 100.0f) * constants::screen::WIDTH;
+  } else {
+    this -> width = width;
+  }
+}
+
+void Cell::setHeight(int height, const std::string& positioning) {
+  if(height == 0) {
+    this -> height = 0;
+  }
+
+  if(!positioning.compare("percent")) {
+    this -> height = (height / 100.0f) * constants::screen::HEIGHT;
+  } else {
+    this -> height = height;
+  }
+}
+
+void Cell::setPadding(int x, int y) {
+  this -> xPadding = x;
+  this -> yPadding = y;
+}
+
+
+// FORMATTING
+// Border
+void Cell::setBorderColor(const std::string& color) {
+  this -> outlineColour = helpers::color::hexToAllegro(color);
+}
+
+void Cell::setBorderWidth(int thickness) {
+  this -> lineThickness = thickness;
+}
+
+// Cell
+void Cell::setCellColor(const std::string& color) {
+  this -> cellColour = helpers::color::hexToAllegro(color);
+}
+
+// Font
+void Cell::setFontColor(const std::string& color) {
+  this -> fontColour = helpers::color::hexToAllegro(color);
+}
+
+void Cell::setJustification(const std::string& align) {
+  std::string alignLow = align;
+  std::transform(alignLow.begin(), alignLow.end(), alignLow.begin(), ::tolower);
+
+  if(!alignLow.compare("right"))
+    this -> justification = justification::RIGHT;
+  else if(!alignLow.compare("center"))
+    this -> justification = justification::CENTER;
+  else if(!alignLow.compare("default") || !alignLow.compare("left"))
+    this -> justification = justification::LEFT;
+}
+
+// CONTENT
+// Text
+void Cell::setText(const std::string& text) {
   this -> text = text;
-  this -> outline_colour = outlineColor;
-  this -> cell_colour = cellColor;
-  this -> font_colour = fontColor;
-  this -> font = font;
-  this -> justification = justification;
-  this -> line_thickness = 1;
 }
 
-void Cell::setText(std::string text) {
-  this -> text = text;
+void Cell::setText(int text) {
+  this -> text = std::to_string(text);
 }
 
-void Cell::setX(int x) {
-  this -> x = x;
-}
 
-void Cell::setY(int y) {
-  this -> y = y;
-}
-
-void Cell::setWidth(int width) {
-  this -> width = width;
-}
-
-void Cell::setHeight(int height) {
-  this -> height = height;
-}
-
-void Cell::setOutlineColour(ALLEGRO_COLOR color) {
-  this -> outline_colour = color;
-}
-
-void Cell::setCellColour(ALLEGRO_COLOR color) {
-  this -> cell_colour = color;
-}
-
-void Cell::setFontColour(ALLEGRO_COLOR color) {
-  this -> font_colour = color;
-}
-
-void Cell::setLineThickness(int thickness) {
-  this -> line_thickness = thickness;
-}
-
+// Draw cell routine
 void Cell::draw() {
-  al_draw_filled_rectangle(x, y, x + width, y + height, cell_colour);
-  al_draw_rectangle(x + line_thickness / 2, y + line_thickness / 2, x + width - line_thickness / 2, y + height - line_thickness / 2, outline_colour, line_thickness);
+  // Cell body
+  al_draw_filled_rectangle(x, y, x + width, y + height, cellColour);
 
-  if(font.numSizes() > 0) {
-    int text_size = font.getLargestFitting(width - x_padding * 2, height - y_padding * 2, text);
-    int text_x = 0;
-    int text_y = 0;
+  // Cell border
+  if(lineThickness > 0) {
+    al_draw_rectangle(x + lineThickness / 2, y + lineThickness / 2, x + width - lineThickness / 2, y + height - lineThickness / 2, outlineColour, lineThickness);
+  }
+
+  // Text
+  if(defaultFont.numSizes() > 0) {
+    int textSize = defaultFont.getLargestFitting(width - xPadding * 2, height - yPadding * 2, text);
+    int textX = 0;
+    int textY = 0;
 
     // Position text
     switch(justification) {
       case justification::RIGHT:
-        text_x = x + width - x_padding;
-        text_y = y + y_padding;
+        textX = x + width - xPadding;
+        textY = y + yPadding;
         break;
 
       case justification::CENTER:
-        text_x = x + width / 2;
-        text_y = y + y_padding - (font.getTextHeight(text_size, text) - height) / 2;
+        textX = x + width / 2;
+        textY = y + yPadding - (defaultFont.getTextHeight(textSize, text) - height) / 2;
         break;
 
       default:
       case justification::LEFT:
-        text_x = x + x_padding;
-        text_y = y + y_padding;
+        textX = x + xPadding;
+        textY = y + yPadding;
         break;
     }
 
     // Draw text to screen
-    al_draw_textf(font.getFont(text_size), font_colour, text_x, (text_y - font.getTextOffsetY(text_size, text)), justification, text.c_str());
+    al_draw_textf(defaultFont.getFont(textSize), fontColour, textX, (textY - defaultFont.getTextOffsetY(textSize, text)), justification, text.c_str());
   }
 }

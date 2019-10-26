@@ -1,0 +1,206 @@
+[
+  {
+    "id": "fielder_label",
+    "position": {
+      "x": 70,
+      "y": 0,
+      "width": 15,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial",
+        "align": "left"
+      }
+    },
+    "content": {
+      "text": "Fielder"
+    }
+  },
+  {
+    "id": "fielder",
+    "position": {
+      "x": 70,
+      "y": 2,
+      "width": 15,
+      "height": 12,
+      "sizing": "percent"
+    },
+    "style": {
+      "cell": {
+        "color": "#FFFF00"
+      },
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+  {
+    "id": "run_adv_steal_label",
+    "position": {
+      "x": 85,
+      "y": 0,
+      "width": 15,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial",
+        "align": "left"
+      }
+    },
+    "content": {
+      "text": "Run Adv. Steal WP. Error PB"
+    }
+  },
+  {
+    "id": "run_adv_steal",
+    "position": {
+      "x": 85,
+      "y": 2,
+      "width": 15,
+      "height": 12,
+      "sizing": "percent"
+    },
+    "style": {
+      "cell": {
+        "color": "#FFFF00"
+      },
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+  {
+    "id": "steals_label",
+    "position": {
+      "x": 70,
+      "y": 14,
+      "width": 15,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial",
+        "align": "left"
+      }
+    },
+    "content": {
+      "text": "Fielder"
+    }
+  },
+  {
+    "id": "steals",
+    "position": {
+      "x": 70,
+      "y": 16,
+      "width": 15,
+      "height": 12,
+      "sizing": "percent"
+    },
+    "style": {
+      "cell": {
+        "color": "#00FF00"
+      },
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+  {
+    "id": "double_play_label",
+    "position": {
+      "x": 85,
+      "y": 14,
+      "width": 15,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial",
+        "align": "left"
+      }
+    },
+    "content": {
+      "text": "Double Play"
+    }
+  },
+  {
+    "id": "double_play_1",
+    "position": {
+      "x": 85,
+      "y": 16,
+      "width": 15,
+      "height": 12,
+      "sizing": "percent"
+    },
+    "style": {
+      "cell": {
+        "color": "#0000FF"
+      },
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+
+  {
+    "id": "ground_out_label",
+    "position": {
+      "x": 70,
+      "y": 28,
+      "width": 15,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial",
+        "align": "left"
+      }
+    },
+    "content": {
+      "text": "Fielder"
+    }
+  },
+  {
+    "id": "ground_out",
+    "position": {
+      "x": 70,
+      "y": 30,
+      "width": 15,
+      "height": 12,
+      "sizing": "percent"
+    },
+    "style": {
+      "cell": {
+        "color": "#00FF00"
+      },
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+  {
+    "id": "double_play_2",
+    "position": {
+      "x": 85,
+      "y": 28,
+      "width": 15,
+      "height": 14,
+      "sizing": "percent"
+    },
+    "style": {
+      "cell": {
+        "color": "#0000FF"
+      },
+      "font": {
+        "face": "Arial"
+      }
+    }
+  }
+]

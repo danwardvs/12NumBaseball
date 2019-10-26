@@ -12,10 +12,10 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
+					<Add directory="include/loaders" />
 				</Compiler>
 				<Linker>
 					<Add option="-lallegro" />
@@ -25,6 +25,7 @@
 					<Add option="-lallegro_font" />
 					<Add option="-lallegro_color" />
 					<Add option="-lallegro_ttf" />
+					<Add option="-ljsoncpp" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -38,6 +39,7 @@
 					<Add option="-DAL_LIBTYPE_STATIC" />
 					<Add option="-DALLEGRO_STATICLINK" />
 					<Add directory="include" />
+					<Add directory="include/loaders" />
 				</Compiler>
 				<Linker>
 					<Add option="-O3" />
@@ -116,6 +118,8 @@
 		<Unit filename="include/constants/screen.h" />
 		<Unit filename="include/font/Font.h" />
 		<Unit filename="include/font/FontDimensions.h" />
+		<Unit filename="include/helpers/color.h" />
+		<Unit filename="include/helpers/id.h" />
 		<Unit filename="include/helpers/loaders.h" />
 		<Unit filename="include/helpers/random.h" />
 		<Unit filename="include/helpers/time.h" />
@@ -123,6 +127,7 @@
 		<Unit filename="include/input/joystickListener.h" />
 		<Unit filename="include/input/keyListener.h" />
 		<Unit filename="include/input/mouseListener.h" />
+		<Unit filename="include/loaders/layout.h" />
 		<Unit filename="include/menu.h" />
 		<Unit filename="include/rapidxml/rapidxml.hpp" />
 		<Unit filename="include/rapidxml/rapidxml_iterators.hpp" />
@@ -131,9 +136,10 @@
 		<Unit filename="include/state.h" />
 		<Unit filename="src/Cell.cpp" />
 		<Unit filename="src/XML.cpp" />
-		<Unit filename="src/constants/colors.cpp" />
 		<Unit filename="src/font/Font.cpp" />
 		<Unit filename="src/font/FontDimensions.cpp" />
+		<Unit filename="src/helpers/color.cpp" />
+		<Unit filename="src/helpers/id.cpp" />
 		<Unit filename="src/helpers/loaders.cpp" />
 		<Unit filename="src/helpers/random.cpp" />
 		<Unit filename="src/helpers/time.cpp" />
@@ -141,6 +147,7 @@
 		<Unit filename="src/input/joystickListener.cpp" />
 		<Unit filename="src/input/keyListener.cpp" />
 		<Unit filename="src/input/mouseListener.cpp" />
+		<Unit filename="src/loaders/layout.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/menu.cpp" />
 		<Unit filename="src/state.cpp" />

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dashboard_time",
+    "position": {
+      "x": 90,
+      "y": 88,
+      "width": 10,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+  {
+    "id": "dashboard_turn",
+    "position": {
+      "x": 90,
+      "y": 90,
+      "width": 3,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+  {
+    "id": "dashboard_version",
+    "position": {
+      "x": 93,
+      "y": 90,
+      "width": 2,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial"
+      }
+    }
+  },
+  {
+    "id": "dashboard_seed",
+    "position": {
+      "x": 95,
+      "y": 90,
+      "width": 5,
+      "height": 2,
+      "sizing": "percent"
+    },
+    "style": {
+      "font": {
+        "face": "Arial"
+      }
+    }
+  }
+]

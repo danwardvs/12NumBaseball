@@ -19,8 +19,8 @@ class init : public state {
     init();
     ~init() {};
 
-    void update() {};
-    void draw() {}
+    void update() override {};
+    void draw() override {}
 
   protected:
 

@@ -5,22 +5,21 @@
  * 22/10/2019
  */
 
-#ifndef COLORS_H
-#define COLORS_H
+#ifndef CONSTANTS_COLORS_H
+#define CONSTANTS_COLORS_H
 
 #include <allegro5/allegro.h>
 
 namespace colors {
-  extern ALLEGRO_COLOR BLACK;
-  extern ALLEGRO_COLOR WHITE;
-  extern ALLEGRO_COLOR RED;
-  extern ALLEGRO_COLOR GREEN;
-  extern ALLEGRO_COLOR BLUE;
-  extern ALLEGRO_COLOR TRANSPARENT;
-  extern ALLEGRO_COLOR YELLOW;
-  extern ALLEGRO_COLOR GROSS_YELLOW;
+  const char BLACK[] = "#000000";
+  const char WHITE[] =  "#000000";
+  const char RED[] =  "#000000";
+  const char GREEN[] =  "#000000";
+  const char BLUE[] =  "#000000";
+  const char TRANSPARENT[] =  "#000000";
+  const char YELLOW[] =  "#000000";
+  const char GROSS_YELLOW[] =  "#000000";
 
-  extern void init();
 }
 
 #endif

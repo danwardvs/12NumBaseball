@@ -1,43 +1,66 @@
+/*
+ * Cell
+ * Single cell display
+ * Danny Vanstemp and  Allan Legemaate
+ * 25/10/2019
+ */
 #ifndef CELL_H
 #define CELL_H
 
-#include <allegro5/allegro5.h>
-#include <allegro5/allegro_primitives.h>
-#include <allegro5/allegro_font.h>
-
 #include <string>
+
+#include <allegro5/allegro5.h>
+#include <allegro5/allegro_font.h>
 
 #include "font/Font.h"
 #include "constants/justifications.h"
 
 class Cell {
   public:
-    // Ctor / Dtor
-    Cell();
-    Cell(int x, int y, int newWidth, int newHeight, ALLEGRO_COLOR outlineColor, ALLEGRO_COLOR cellColor,
-           ALLEGRO_COLOR fontColor, Font font, int justification, std::string text);
+    // Constructor
+    Cell(const std::string & id);
+
+    // Get id
+    std::string getId() const;
+
+    // LAYOUT
+    // Position
+    void setX(int x, const std::string& positioning = "absolute");
+    void setY(int y, const std::string& positioning = "absolute");
+    void setPadding(int x, int y);
+
+    // Dimensions
+    void setWidth(int width, const std::string& positioning = "absolute");
+    void setHeight(int height, const std::string& positioning = "absolute");
+
+    // FORMATTING
+    // Border
+    void setBorderColor(ALLEGRO_COLOR color);
+    void setBorderColor(const std::string& color);
+    void setBorderWidth(int thickness);
+
+    // Cell
+    void setCellColor(ALLEGRO_COLOR color);
+    void setCellColor(const std::string& color);
+
+    // Font
+    void setFontColor(ALLEGRO_COLOR color);
+    void setFontColor(const std::string& color);
+    void setJustification(const std::string& align);
+
+    // CONTENT
+    // Text
+    void setText(const std::string& text);
+ void setText(int text);
 
     // Draw cell to screen
     void draw();
 
-    // Text
-    void setText(std::string text) ;
-
-    // Position
-    void setX(int x);
-    void setY(int y);
-
-    // Dimensions
-    void setWidth(int width);
-    void setHeight(int height);
-
-    // Formatting
-    void setOutlineColour(ALLEGRO_COLOR color);
-    void setCellColour(ALLEGRO_COLOR color);
-    void setFontColour(ALLEGRO_COLOR color);
-    void setLineThickness(int thickness);
-
   private:
+    // Unique id
+    std::string id;
+
+    // LAYOUT
     // Position
     int x, y;
 
@@ -45,25 +68,27 @@ class Cell {
     int width, height;
 
     // Padding
-    int x_padding = 5;
-    int y_padding = 5;
+    int xPadding;
+    int yPadding;
 
-    // Justification
-    int justification = justification::LEFT;
+    // FORMATTING
+    // Border
+    int lineThickness;
+    ALLEGRO_COLOR outlineColour;
 
-    // Line thickness
-    int line_thickness = 1;
-
-    // Text
-    std::string text;
+    // Cell
+    ALLEGRO_COLOR cellColour;
 
     // Font
     Font font;
+    static Font defaultFont;
+    ALLEGRO_COLOR fontColour;
+    int justification = justification::LEFT;
 
-    // Colors
-    ALLEGRO_COLOR outline_colour;
-    ALLEGRO_COLOR cell_colour;
-    ALLEGRO_COLOR font_colour;
+    // CONTENT
+    // Text
+    std::string text;
+
 };
 
 #endif

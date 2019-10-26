@@ -98,17 +98,17 @@ int Font::getTextWidth(int fontSize, const std::string& text) const {
  *
  */
 int Font::getLargestFitting(int width, int height, const std::string& text) const {
-  int largest = 0;
+  int _largest = fonts.begin()->first;
 
   for(auto tempFont : fonts) {
     const int fontSize = tempFont.first;
 
-    if(fontSize > largest && textWillFit(fontSize, width, height, text)) {
-      largest = fontSize;
+    if(fontSize > _largest && textWillFit(fontSize, width, height, text)) {
+      _largest = fontSize;
     }
   }
 
-  return largest;
+  return _largest;
 }
 
 

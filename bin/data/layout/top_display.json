@@ -1,0 +1,67 @@
+[
+  {
+    "id": "batter_number",
+    "position": {
+      "x": 0,
+      "y": 0,
+      "width": 17,
+      "height": 25,
+      "sizing": "percent"
+    },
+    "style": {
+      "border": {
+        "color": "#00FF00",
+        "width": 2
+      },
+      "font": {
+        "face": "Arial"
+      }
+    },
+    "content": {
+      "text": "1"
+    }
+  },
+  {
+    "id": "pitcher_number",
+    "position": {
+      "x": 17,
+      "y": 0,
+      "width": 17,
+      "height": 25,
+      "sizing": "percent"
+    },
+    "style": {
+      "border": {
+        "width": 2
+      },
+      "font": {
+        "face": "Arial"
+      }
+    },
+    "content": {
+      "text": "1"
+    }
+  },
+  {
+    "id": "third_number",
+    "position": {
+      "x": 34,
+      "y": 0,
+      "width": 30,
+      "height": 25,
+      "sizing": "percent"
+    },
+    "style": {
+      "cell": {
+        "color": "#000000"
+      },
+      "font": {
+        "color": "#FF0000",
+        "face": "Arial"
+      }
+    },
+    "content": {
+      "text": "1"
+    }
+  }
+]

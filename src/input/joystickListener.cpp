@@ -8,26 +8,15 @@ int joystickListener::lastButtonPressed = -1;
 int joystickListener::lastButtonReleased = -1;
 bool joystickListener::anyButtonPressed = false;
 
-
-// Constructor
-joystickListener::joystickListener() {
-
-}
-
-// Destructor
-joystickListener::~joystickListener() {
-
-}
-
 // For allegro 5, we use events
-void joystickListener::on_event(ALLEGRO_EVENT_TYPE event_type, int buttoncode) {
+void joystickListener::on_event(ALLEGRO_EVENT_TYPE event_type, int keyCode) {
   // Button down
   if(event_type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN) {
-    button[buttoncode] = true;
+    button[keyCode] = true;
   }
   // Button up
   else if(event_type == ALLEGRO_EVENT_JOYSTICK_BUTTON_UP) {
-    button[buttoncode] = false;
+    button[keyCode] = false;
   }
 }
 

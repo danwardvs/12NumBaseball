@@ -5,8 +5,8 @@
 
 class XML {
   public:
-    std::string load_xml(std::string newFilePath, int niceint, int evennicerint);
-    std::string load_special(int newnum);
+    std::string load_xml(std::string newFilePath, int newGeneratedNumber, int newPitcherNumber);
+    static std::string load_special(int newGeneratedNumber);
 };
 
 #endif // XML_H

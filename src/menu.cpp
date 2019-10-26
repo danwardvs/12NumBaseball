@@ -190,7 +190,7 @@ void menu::update() {
   findCell("steals").setText(steal_throw_number);
 
   // Ground out
-  if(groundout_type == 1 || true) {
+  if(groundout_type == 1) {
     findCell("ground_out").setCellColor(colors::RED);
     findCell("ground_out").setText("Hard one hop");
   } else if(groundout_type == 2) {

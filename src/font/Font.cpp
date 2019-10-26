@@ -2,6 +2,7 @@
 
 #include <set>
 #include <allegro5/allegro_ttf.h>
+#include <iostream>
 
 /** \brief Initializes font with preset sizes
  *
@@ -100,11 +101,11 @@ int Font::getTextWidth(int fontSize, const std::string& text) const {
 int Font::getLargestFitting(int width, int height, const std::string& text) const {
   int _largest = fonts.begin()->first;
 
-  for(auto tempFont : fonts) {
-    const int fontSize = tempFont.first;
+  for(auto const &font : fonts) {
+    const int fontSize = font.first;
 
     if(fontSize > _largest && textWillFit(fontSize, width, height, text)) {
-      _largest = fontSize;
+      _largest = font.first;
     }
   }
 

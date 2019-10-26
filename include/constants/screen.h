@@ -9,8 +9,8 @@
 
 namespace constants {
   namespace screen {
-    const int WIDTH = 1600;
-    const int HEIGHT = 1000;
+    const int WIDTH = 800;
+    const int HEIGHT = 600;
   }
 }
 

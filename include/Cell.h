@@ -18,7 +18,7 @@
 class Cell {
   public:
     // Constructor
-    Cell(const std::string & id);
+    explicit Cell(const std::string & id);
 
     // Get id
     std::string getId() const;
@@ -51,7 +51,7 @@ class Cell {
     // CONTENT
     // Text
     void setText(const std::string& text);
- void setText(int text);
+    void setText(int text);
 
     // Draw cell to screen
     void draw();

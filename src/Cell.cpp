@@ -5,7 +5,7 @@
 
 #include "helpers/color.h"
 #include "constants/screen.h"
-
+#include <iostream>
 Font Cell::defaultFont;
 
 // Constructor
@@ -152,7 +152,7 @@ void Cell::draw() {
 
   // Text
   if(defaultFont.numSizes() > 0) {
-    int textSize = defaultFont.getLargestFitting(width - xPadding * 2, height - yPadding * 2, text);
+    const int textSize = defaultFont.getLargestFitting(width - xPadding * 2, height - yPadding * 2, text);
     int textX = 0;
     int textY = 0;
 

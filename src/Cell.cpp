@@ -5,7 +5,8 @@
 
 #include "helpers/color.h"
 #include "constants/screen.h"
-#include <iostream>
+#include "constants/colors.h"
+
 Font Cell::defaultFont;
 
 // Constructor
@@ -23,9 +24,9 @@ Cell::Cell(const std::string& id) {
 
   //  Formatting
   this -> setBorderWidth(1);
-  this -> setBorderColor("#000000");
-  this -> setCellColor("#FFFFFF");
-  this -> setFontColor("#000000");
+  this -> setBorderColor(colors::BLACK);
+  this -> setCellColor(colors::WHITE);
+  this -> setFontColor(colors::BLACK);
   this -> setJustification("center");
 
   // Content
@@ -43,52 +44,20 @@ std::string Cell::getId() const {
 }
 
 // LAYOUT
-void Cell::setX(int x, const std::string& positioning) {
-  if(x == 0) {
-    this -> x = 0;
-  }
-
-  if(!positioning.compare("percent")) {
-    this -> x = (x / 100.0f) * constants::screen::WIDTH;
-  } else {
-    this -> x = x;
-  }
+void Cell::setX(int x) {
+  this -> x = x;
 }
 
-void Cell::setY(int y, const std::string& positioning) {
-  if(y == 0) {
-    this -> y = 0;
-  }
-
-  if(!positioning.compare("percent")) {
-    this -> y = (y / 100.0f) * constants::screen::HEIGHT;
-  } else {
-    this -> y = y;
-  }
+void Cell::setY(int y) {
+  this -> y = y;
 }
 
-void Cell::setWidth(int width, const std::string& positioning) {
-  if(width == 0) {
-    this -> width = 0;
-  }
-
-  if(!positioning.compare("percent")) {
-    this -> width = (width / 100.0f) * constants::screen::WIDTH;
-  } else {
-    this -> width = width;
-  }
+void Cell::setWidth(int width) {
+  this -> width = width;
 }
 
-void Cell::setHeight(int height, const std::string& positioning) {
-  if(height == 0) {
-    this -> height = 0;
-  }
-
-  if(!positioning.compare("percent")) {
-    this -> height = (height / 100.0f) * constants::screen::HEIGHT;
-  } else {
-    this -> height = height;
-  }
+void Cell::setHeight(int height) {
+  this -> height = height;
 }
 
 void Cell::setPadding(int x, int y) {

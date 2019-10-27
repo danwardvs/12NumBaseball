@@ -13,125 +13,146 @@
 
 // Init menu
 menu::menu() {
-  calibri_bold.init("font/calibri_bold.ttf");
-  calibri.init("font/calibri.ttf");
-  generate_cells();
+  generateCells();
   input_step = 0;
 }
 
 // Update animation and wait for input
 void menu::update() {
   // Exit game
-  if(keyListener::keyReleased[ALLEGRO_KEY_ESCAPE])
+  if(keyListener::keyReleased[ALLEGRO_KEY_ESCAPE]) {
     set_next_state(STATE_EXIT);
+  }
 
-  // Num key related operations
+  // Input batter and pitcher numbers
   if(keyListener::numKeyReleased) {
-    if(input_step == 0) {
-      for(int i = 27; i < 36; i++) {
-        batter_number = keyListener::lastKeyReleased - 27;
-      }
-
-      if(batter_number == 1) {
-        input_step = 1;
-      } else {
-        input_step = 3;
-      }
-    }
-    else if(input_step == 1) {
-      if(batter_number == 1) {
-        if(keyListener::keyReleased[ALLEGRO_KEY_0] || keyListener::keyReleased[ALLEGRO_KEY_PAD_0]) {
-          batter_number = 10;
-          input_step = 3;
+    switch(input_step) {
+      // BATTER NUMBER DIGIT 1
+      case 0:
+        for(int i = 27; i < 36; i++) {
+          batter_number = keyListener::lastKeyReleased - 27;
         }
 
-        if(keyListener::keyReleased[ALLEGRO_KEY_1] || keyListener::keyReleased[ALLEGRO_KEY_PAD_1]) {
-          batter_number = 11;
-          input_step = 3;
+        input_step = batter_number == 1 ? 1 : 3;
+        break;
+
+      // BATTER NUMBER DIGIT 2
+      case 1:
+        if(batter_number == 1) {
+          if(keyListener::keyReleased[ALLEGRO_KEY_0] || keyListener::keyReleased[ALLEGRO_KEY_PAD_0]) {
+            batter_number = 10;
+            input_step = 3;
+          }
+
+          if(keyListener::keyReleased[ALLEGRO_KEY_1] || keyListener::keyReleased[ALLEGRO_KEY_PAD_1]) {
+            batter_number = 11;
+            input_step = 3;
+          }
+
+          if(keyListener::keyReleased[ALLEGRO_KEY_2] || keyListener::keyReleased[ALLEGRO_KEY_PAD_2]) {
+            batter_number = 12;
+            input_step = 3;
+          }
         }
 
-        if(keyListener::keyReleased[ALLEGRO_KEY_2] || keyListener::keyReleased[ALLEGRO_KEY_PAD_2]) {
-          batter_number = 12;
-          input_step = 3;
-        }
-      }
-    }
-    else if(input_step == 3) {
-      for(int i = 27; i < 36; i++) {
-        pitcher_number = keyListener::lastKeyReleased - 27;
-      }
+        break;
 
-      if(pitcher_number == 1) {
-        input_step = 4;
-      } else {
-        input_step = 5;
-      }
-    }
-    else if(input_step == 4) {
-      if(pitcher_number == 1) {
-        if(keyListener::keyReleased[ALLEGRO_KEY_0] || keyListener::keyReleased[ALLEGRO_KEY_PAD_0]) {
-          pitcher_number = 10;
-          input_step = 5;
+      // PITCHER NUMBER DIGIT 1
+      case 3:
+        for(int i = 27; i < 36; i++) {
+          pitcher_number = keyListener::lastKeyReleased - 27;
         }
 
-        if(keyListener::keyReleased[ALLEGRO_KEY_1] || keyListener::keyReleased[ALLEGRO_KEY_PAD_1]) {
-          pitcher_number = 11;
-          input_step = 5;
-        }
+        input_step = pitcher_number == 1 ? 4 : 5;
+        break;
 
-        if(keyListener::keyReleased[ALLEGRO_KEY_2] || keyListener::keyReleased[ALLEGRO_KEY_PAD_2]) {
-          pitcher_number = 12;
-          input_step = 5;
+      // PITCHER NUMBER DIGIT 2
+      case 4:
+        if(pitcher_number == 1) {
+          if(keyListener::keyReleased[ALLEGRO_KEY_0] || keyListener::keyReleased[ALLEGRO_KEY_PAD_0]) {
+            pitcher_number = 10;
+            input_step = 5;
+          }
+
+          if(keyListener::keyReleased[ALLEGRO_KEY_1] || keyListener::keyReleased[ALLEGRO_KEY_PAD_1]) {
+            pitcher_number = 11;
+            input_step = 5;
+          }
+
+          if(keyListener::keyReleased[ALLEGRO_KEY_2] || keyListener::keyReleased[ALLEGRO_KEY_PAD_2]) {
+            pitcher_number = 12;
+            input_step = 5;
+          }
+
+        default:
+          break;
         }
-      }
     }
   }
 
   // Submit entry
   if(keyListener::keyPressed[ALLEGRO_KEY_ENTER] || keyListener::keyPressed[ALLEGRO_KEY_PAD_ENTER]) {
-    if(input_step == 1 || input_step == 0)
-      input_step = 3;
-    else if(input_step == 3 || input_step == 4)
-      input_step = 5;
-    else if(input_step == 5) {
-      result_number = helpers::random::randomInt(1, 130);
+    switch(input_step) {
+      case 0:
+      case 1:
+        input_step = 3;
+        break;
 
-      for(int i = 0; i < 9; i++) {
-        extra_number[i] = helpers::random::randomInt(1, 100);
-      }
+      case 3:
+      case 4:
+        input_step = 5;
+        break;
 
-      steal_throw_number = helpers::random::randomInt(1, 122);
-      groundout_type = helpers::random::randomInt(1, 3);
-      total_numbers_generated++;
+      case 5:
+        // Increment turn counter
+        turnNumber++;
 
-      if(result_number < 101) {
-        std::string newPath = "data/" + std::to_string(batter_number) + "b.xml";
-        result[0] = xml_handler.load_xml(newPath, result_number, pitcher_number);
+        // Generate result
+        result_number = helpers::random::randomInt(1, 130);
 
-        if(result_number > 83) {
-          result[1] = xml_handler.load_xml("data/1sl.xml", result_number, pitcher_number);
-          result[2] = xml_handler.load_xml("data/ssl.xml", result_number, pitcher_number);
-          result[3] = xml_handler.load_xml("data/3sl.xml", result_number, pitcher_number);
-          result[4] = xml_handler.load_xml("data/gsl.xml", result_number, pitcher_number);
-          result[5] = xml_handler.load_xml("data/5sl.xml", result_number, pitcher_number);
-          result[6] = xml_handler.load_xml("data/asl.xml", result_number, pitcher_number);
-          result[7] = xml_handler.load_xml("data/7sl.xml", result_number, pitcher_number);
-          result[8] = xml_handler.load_xml("data/fsl.xml", result_number, pitcher_number);
+        // Generate extra numbers
+        for(int i = 0; i < 9; i++) {
+          extra_number[i] = helpers::random::randomInt(1, 100);
+        }
+
+        // Generate steal throw
+        steal_throw_number = helpers::random::randomInt(1, 122);
+
+        // Generate groundout
+        groundout_type = helpers::random::randomInt(1, 3);
+
+        if(result_number < 101) {
+          std::string newPath = "data/" + std::to_string(batter_number) + "b.xml";
+          result[0] = xml_handler.load_xml(newPath, result_number, pitcher_number);
+
+          if(result_number > 83) {
+            result[1] = xml_handler.load_xml("data/1sl.xml", result_number, pitcher_number);
+            result[2] = xml_handler.load_xml("data/ssl.xml", result_number, pitcher_number);
+            result[3] = xml_handler.load_xml("data/3sl.xml", result_number, pitcher_number);
+            result[4] = xml_handler.load_xml("data/gsl.xml", result_number, pitcher_number);
+            result[5] = xml_handler.load_xml("data/5sl.xml", result_number, pitcher_number);
+            result[6] = xml_handler.load_xml("data/asl.xml", result_number, pitcher_number);
+            result[7] = xml_handler.load_xml("data/7sl.xml", result_number, pitcher_number);
+            result[8] = xml_handler.load_xml("data/fsl.xml", result_number, pitcher_number);
+          }
+          else {
+            for(int i = 1; i < 9; i++) {
+              result[i] = "";
+            }
+          }
         }
         else {
+          result[0] = xml_handler.load_special(result_number);
+
           for(int i = 1; i < 9; i++) {
             result[i] = "";
           }
-
         }
-      }
-      else {
-        result[0] = xml_handler.load_special(result_number);
 
-        for(int i = 1; i < 9; i++) {
-          result[i] = "";
-        }
-      }
+        break;
+
+      default:
+        break;
     }
   }
 
@@ -205,7 +226,7 @@ void menu::update() {
   std::string newTime = helpers::time::getCurrentTime();
   newTime.pop_back();
   findCell("dashboard_time").setText(newTime);
-  findCell("dashboard_seed").setText(std::to_string(total_numbers_generated));
+  findCell("dashboard_seed").setText(std::to_string(turnNumber));
 }
 
 // Draw images to screen
@@ -235,7 +256,7 @@ Cell& menu::findCell(const std::string& id) {
 }
 
 // Load cells from file
-void menu::generate_cells() {
+void menu::generateCells() {
   // Load in all screens
   auto cells_md = loaders::layout::readLayout("data/layout/main_display.json");
   auto cells_sd = loaders::layout::readLayout("data/layout/sub_display.json");

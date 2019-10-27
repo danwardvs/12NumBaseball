@@ -1,58 +1,63 @@
-[
-  {
-    "id": "batter_number",
-    "position": {
-      "x": 0,
-      "y": 0,
-      "width": 17,
-      "height": 25,
-      "sizing": "percent"
-    },
-    "style": {
-      "border": {
-        "color": "#00FF00",
-        "width": 2
-      },
-      "font": {
-        "face": "Arial"
-      }
-    }
+{
+  "module": {
+    "x": 0,
+    "y": 0,
+    "width": 50,
+    "height": 25
   },
-  {
-    "id": "pitcher_number",
-    "position": {
-      "x": 17,
-      "y": 0,
-      "width": 17,
-      "height": 25,
-      "sizing": "percent"
-    },
-    "style": {
-      "border": {
-        "width": 2
+  "cells": [
+    {
+      "id": "batter_number",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 33,
+        "height": 100
       },
-      "font": {
-        "face": "Arial"
+      "style": {
+        "border": {
+          "color": "#27ae60",
+          "width": 2
+        },
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "pitcher_number",
+      "position": {
+        "x": 33,
+        "y": 0,
+        "width": 33,
+        "height": 100
+      },
+      "style": {
+        "border": {
+          "width": 2
+        },
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "third_number",
+      "position": {
+        "x": 66,
+        "y": 0,
+        "width": 34,
+        "height": 100
+      },
+      "style": {
+        "cell": {
+          "color": "#000000"
+        },
+        "font": {
+          "color": "#c0392b",
+          "face": "Arial"
+        }
       }
     }
-  },
-  {
-    "id": "third_number",
-    "position": {
-      "x": 34,
-      "y": 0,
-      "width": 30,
-      "height": 25,
-      "sizing": "percent"
-    },
-    "style": {
-      "cell": {
-        "color": "#000000"
-      },
-      "font": {
-        "color": "#FF0000",
-        "face": "Arial"
-      }
-    }
-  }
-]
+  ]
+}

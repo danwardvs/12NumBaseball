@@ -1,206 +1,202 @@
-[
-  {
-    "id": "fielder_label",
-    "position": {
-      "x": 70,
-      "y": 0,
-      "width": 15,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    },
-    "content": {
-      "text": "Fielder"
-    }
+{
+  "module": {
+    "x": 50,
+    "y": 0,
+    "width": 30,
+    "height": 85
   },
-  {
-    "id": "fielder",
-    "position": {
-      "x": 70,
-      "y": 2,
-      "width": 15,
-      "height": 12,
-      "sizing": "percent"
-    },
-    "style": {
-      "cell": {
-        "color": "#FFFF00"
+  "cells": [
+    {
+      "id": "fielder_label",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 50,
+        "height": 5
       },
-      "font": {
-        "face": "Arial"
-      }
-    }
-  },
-  {
-    "id": "run_adv_steal_label",
-    "position": {
-      "x": 85,
-      "y": 0,
-      "width": 15,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    },
-    "content": {
-      "text": "Run Adv. Steal WP. Error PB"
-    }
-  },
-  {
-    "id": "run_adv_steal",
-    "position": {
-      "x": 85,
-      "y": 2,
-      "width": 15,
-      "height": 12,
-      "sizing": "percent"
-    },
-    "style": {
-      "cell": {
-        "color": "#FFFF00"
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
       },
-      "font": {
-        "face": "Arial"
-      }
-    }
-  },
-  {
-    "id": "steals_label",
-    "position": {
-      "x": 70,
-      "y": 14,
-      "width": 15,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
+      "content": {
+        "text": "Fielder"
       }
     },
-    "content": {
-      "text": "Steals"
-    }
-  },
-  {
-    "id": "steals",
-    "position": {
-      "x": 70,
-      "y": 16,
-      "width": 15,
-      "height": 12,
-      "sizing": "percent"
-    },
-    "style": {
-      "cell": {
-        "color": "#00FF00"
+    {
+      "id": "fielder",
+      "position": {
+        "x": 0,
+        "y": 5,
+        "width": 50,
+        "height": 28
       },
-      "font": {
-        "face": "Arial"
-      }
-    }
-  },
-  {
-    "id": "double_play_label",
-    "position": {
-      "x": 85,
-      "y": 14,
-      "width": 15,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
+      "style": {
+        "cell": {
+          "color": "#f1c40f"
+        },
+        "font": {
+          "face": "Arial"
+        }
       }
     },
-    "content": {
-      "text": "Double Play"
-    }
-  },
-  {
-    "id": "double_play_1",
-    "position": {
-      "x": 85,
-      "y": 16,
-      "width": 15,
-      "height": 12,
-      "sizing": "percent"
-    },
-    "style": {
-      "cell": {
-        "color": "#0000FF"
+    {
+      "id": "run_adv_steal_label",
+      "position": {
+        "x": 50,
+        "y": 0,
+        "width": 50,
+        "height": 5
       },
-      "font": {
-        "face": "Arial"
-      }
-    }
-  },
-
-  {
-    "id": "ground_out_label",
-    "position": {
-      "x": 70,
-      "y": 28,
-      "width": 15,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    },
-    "content": {
-      "text": "Fielder"
-    }
-  },
-  {
-    "id": "ground_out",
-    "position": {
-      "x": 70,
-      "y": 30,
-      "width": 15,
-      "height": 12,
-      "sizing": "percent"
-    },
-    "style": {
-      "cell": {
-        "color": "#00FF00"
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
       },
-      "font": {
-        "face": "Arial"
+      "content": {
+        "text": "Run Adv. Steal WP. Error PB"
       }
-    }
-  },
-  {
-    "id": "double_play_2",
-    "position": {
-      "x": 85,
-      "y": 28,
-      "width": 15,
-      "height": 14,
-      "sizing": "percent"
     },
-    "style": {
-      "cell": {
-        "color": "#0000FF"
+    {
+      "id": "run_adv_steal",
+      "position": {
+        "x": 50,
+        "y": 5,
+        "width": 50,
+        "height": 28
       },
-      "font": {
-        "face": "Arial"
+      "style": {
+        "cell": {
+          "color": "#f1c40f"
+        },
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "steals_label",
+      "position": {
+        "x": 0,
+        "y": 33,
+        "width": 50,
+        "height": 5
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
+      },
+      "content": {
+        "text": "Steals"
+      }
+    },
+    {
+      "id": "steals",
+      "position": {
+        "x": 0,
+        "y": 38,
+        "width": 50,
+        "height": 28
+      },
+      "style": {
+        "cell": {
+          "color": "#27ae60"
+        },
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "ground_out_label",
+      "position": {
+        "x": 50,
+        "y": 33,
+        "width": 50,
+        "height": 5
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
+      },
+      "content": {
+        "text": "Fielder"
+      }
+    },
+    {
+      "id": "ground_out",
+      "position": {
+        "x": 50,
+        "y": 38,
+        "width": 50,
+        "height": 28
+      },
+      "style": {
+        "cell": {
+          "color": "#27ae60"
+        },
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "double_play_label",
+      "position": {
+        "x": 0,
+        "y": 66,
+        "width": 100,
+        "height": 5
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
+      },
+      "content": {
+        "text": "Double Play"
+      }
+    },
+    {
+      "id": "double_play_1",
+      "position": {
+        "x": 0,
+        "y": 71,
+        "width": 50,
+        "height": 28
+      },
+      "style": {
+        "cell": {
+          "color": "#2980b9"
+        },
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "double_play_2",
+      "position": {
+        "x": 50,
+        "y": 71,
+        "width": 50,
+        "height": 28
+      },
+      "style": {
+        "cell": {
+          "color": "#2980b9"
+        },
+        "font": {
+          "face": "Arial"
+        }
       }
     }
-  }
-]
+  ]
+}

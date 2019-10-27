@@ -1,274 +1,266 @@
-[
-  {
-    "id": "slugger_1_label",
-    "position": {
-      "x": 0,
-      "y": 40,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
-      }
-    },
-    "content": {
-      "text": "1SL"
-    }
+{
+  "module": {
+    "x": 0,
+    "y": 40,
+    "width": 50,
+    "height": 60
   },
-  {
-    "id": "slugger_1",
-    "position": {
-      "x": 5,
-      "y": 40,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    }
-  },
-  {
-    "id": "slugger_2_label",
-    "position": {
-      "x": 0,
-      "y": 46,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
+  "cells": [
+    {
+      "id": "slugger_1_label",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "1SL"
       }
     },
-    "content": {
-      "text": "SSL"
-    }
-  },
-  {
-    "id": "slugger_2",
-    "position": {
-      "x": 5,
-      "y": 46,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    }
-  },
-  {
-    "id": "slugger_3_label",
-    "position": {
-      "x": 0,
-      "y": 52,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
+    {
+      "id": "slugger_1",
+      "position": {
+        "x": 10,
+        "y": 0,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
       }
     },
-    "content": {
-      "text": "3SL"
-    }
-  },
-  {
-    "id": "slugger_3",
-    "position": {
-      "x": 5,
-      "y": 52,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    }
-  },
-  {
-    "id": "slugger_4_label",
-    "position": {
-      "x": 0,
-      "y": 58,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
+    {
+      "id": "slugger_2_label",
+      "position": {
+        "x": 0,
+        "y": 12,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "SSL"
       }
     },
-    "content": {
-      "text": "GSL"
-    }
-  },
-  {
-    "id": "slugger_4",
-    "position": {
-      "x": 5,
-      "y": 58,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    }
-  },
-  {
-    "id": "slugger_5_label",
-    "position": {
-      "x": 0,
-      "y": 64,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
+    {
+      "id": "slugger_2",
+      "position": {
+        "x": 10,
+        "y": 12,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
       }
     },
-    "content": {
-      "text": "5SL"
-    }
-  },
-  {
-    "id": "slugger_5",
-    "position": {
-      "x": 5,
-      "y": 64,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    }
-  },
-  {
-    "id": "slugger_6_label",
-    "position": {
-      "x": 0,
-      "y": 70,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
+    {
+      "id": "slugger_3_label",
+      "position": {
+        "x": 0,
+        "y": 24,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "3SL"
       }
     },
-    "content": {
-      "text": "ASL"
-    }
-  },
-  {
-    "id": "slugger_6",
-    "position": {
-      "x": 5,
-      "y": 70,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    }
-  },
-  {
-    "id": "slugger_7_label",
-    "position": {
-      "x": 0,
-      "y": 76,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
+    {
+      "id": "slugger_3",
+      "position": {
+        "x": 10,
+        "y": 24,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
       }
     },
-    "content": {
-      "text": "7SL"
-    }
-  },
-  {
-    "id": "slugger_7",
-    "position": {
-      "x": 5,
-      "y": 76,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
-      }
-    }
-  },
-  {
-    "id": "slugger_8_label",
-    "position": {
-      "x": 0,
-      "y": 82,
-      "width": 5,
-      "height": 6,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
+    {
+      "id": "slugger_4_label",
+      "position": {
+        "x": 0,
+        "y": 36,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "GSL"
       }
     },
-    "content": {
-      "text": "FSL"
-    }
-  },
-  {
-    "id": "slugger_8",
-    "position": {
-      "x": 5,
-      "y": 82,
-      "width": 45,
-      "height": 6,
-      "sizing": "percent"
+    {
+      "id": "slugger_4",
+      "position": {
+        "x": 10,
+        "y": 36,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
+      }
     },
-    "style": {
-      "font": {
-        "face": "Arial",
-        "align": "left"
+    {
+      "id": "slugger_5_label",
+      "position": {
+        "x": 0,
+        "y": 48,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "5SL"
+      }
+    },
+    {
+      "id": "slugger_5",
+      "position": {
+        "x": 10,
+        "y": 48,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
+      }
+    },
+    {
+      "id": "slugger_6_label",
+      "position": {
+        "x": 0,
+        "y": 60,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "ASL"
+      }
+    },
+    {
+      "id": "slugger_6",
+      "position": {
+        "x": 10,
+        "y": 60,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
+      }
+    },
+    {
+      "id": "slugger_7_label",
+      "position": {
+        "x": 0,
+        "y": 72,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "7SL"
+      }
+    },
+    {
+      "id": "slugger_7",
+      "position": {
+        "x": 10,
+        "y": 72,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
+      }
+    },
+    {
+      "id": "slugger_8_label",
+      "position": {
+        "x": 0,
+        "y": 84,
+        "width": 10,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      },
+      "content": {
+        "text": "FSL"
+      }
+    },
+    {
+      "id": "slugger_8",
+      "position": {
+        "x": 10,
+        "y": 84,
+        "width": 90,
+        "height": 12
+      },
+      "style": {
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
       }
     }
-  }
-]
+  ]
+}

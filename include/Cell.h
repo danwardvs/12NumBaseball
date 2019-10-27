@@ -18,20 +18,20 @@
 class Cell {
   public:
     // Constructor
-    explicit Cell(const std::string & id);
+    explicit Cell(const std::string& id);
 
     // Get id
     std::string getId() const;
 
     // LAYOUT
     // Position
-    void setX(int x, const std::string& positioning = "absolute");
-    void setY(int y, const std::string& positioning = "absolute");
+    void setX(int x);
+    void setY(int y);
     void setPadding(int x, int y);
 
     // Dimensions
-    void setWidth(int width, const std::string& positioning = "absolute");
-    void setHeight(int height, const std::string& positioning = "absolute");
+    void setWidth(int width);
+    void setHeight(int height);
 
     // FORMATTING
     // Border

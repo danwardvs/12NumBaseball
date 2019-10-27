@@ -12,13 +12,13 @@
 
 namespace colors {
   const char BLACK[] = "#000000";
-  const char WHITE[] =  "#FFFFFF";
-  const char RED[] =  "#FF0000";
-  const char GREEN[] =  "#00FF00";
-  const char BLUE[] =  "#0000FF";
-  const char TRANSPARENT[] =  "#FFFFFF";
-  const char YELLOW[] =  "#FFFF00";
-  const char GROSS_YELLOW[] =  "#999900";
+  const char WHITE[] =  "#ffffff";
+  const char RED[] =  "#c0392b";
+  const char GREEN[] =  "#27ae60";
+  const char BLUE[] =  "#2980b9";
+  const char TRANSPARENT[] =  "#ffffff";
+  const char YELLOW[] =  "#f1c40f";
+  const char GROSS_YELLOW[] =  "#f39c12";
 }
 
 #endif

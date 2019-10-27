@@ -1,21 +1,28 @@
-[
-  {
-    "id": "main_display",
-    "position": {
-      "x": 1,
-      "y": 27,
-      "width": 50,
-      "height": 13,
-      "sizing": "percent"
-    },
-    "style": {
-      "border": {
-        "width": 2
+{
+  "module": {
+    "x": 0,
+    "y": 25,
+    "width": 50,
+    "height": 15
+  },
+  "cells": [
+    {
+      "id": "main_display",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 100
       },
-      "font": {
-        "face": "Arial",
-        "align": "left"
+      "style": {
+        "border": {
+          "width": 2
+        },
+        "font": {
+          "face": "Arial",
+          "align": "left"
+        }
       }
     }
-  }
-]
+  ]
+}

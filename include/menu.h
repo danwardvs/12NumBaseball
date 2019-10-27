@@ -36,7 +36,7 @@ class menu : public state {
     Cell& findCell(const std::string& id);
 
   private:
-    void generate_cells();
+    void generateCells();
 
     XML xml_handler;
 
@@ -47,14 +47,10 @@ class menu : public state {
     int extra_number[9] = {7, 15, 1, 2, 19, 7};
     int groundout_type = 0;
     int steal_throw_number = 0;
-    int total_numbers_generated = 0;
+    int turnNumber = 0;
 
     std::string result[9];
-
-    Font calibri_bold;
-    Font calibri;
     std::vector<Cell> cells;
-
 };
 
 #endif // MENU_H

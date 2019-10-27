@@ -1,62 +1,66 @@
-[
-  {
-    "id": "dashboard_time",
-    "position": {
-      "x": 90,
-      "y": 88,
-      "width": 10,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
-      }
-    }
+{
+  "module": {
+    "x": 50,
+    "y": 85,
+    "width": 30,
+    "height": 15
   },
-  {
-    "id": "dashboard_turn",
-    "position": {
-      "x": 90,
-      "y": 90,
-      "width": 3,
-      "height": 2,
-      "sizing": "percent"
+  "cells": [
+    {
+      "id": "dashboard_time",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 50
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      }
     },
-    "style": {
-      "font": {
-        "face": "Arial"
+    {
+      "id": "dashboard_turn",
+      "position": {
+        "x": 0,
+        "y": 50,
+        "width": 25,
+        "height": 50
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "dashboard_version",
+      "position": {
+        "x": 25,
+        "y": 50,
+        "width": 25,
+        "height": 50
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
+      }
+    },
+    {
+      "id": "dashboard_seed",
+      "position": {
+        "x": 50,
+        "y": 50,
+        "width": 50,
+        "height": 50
+      },
+      "style": {
+        "font": {
+          "face": "Arial"
+        }
       }
     }
-  },
-  {
-    "id": "dashboard_version",
-    "position": {
-      "x": 93,
-      "y": 90,
-      "width": 2,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
-      }
-    }
-  },
-  {
-    "id": "dashboard_seed",
-    "position": {
-      "x": 95,
-      "y": 90,
-      "width": 5,
-      "height": 2,
-      "sizing": "percent"
-    },
-    "style": {
-      "font": {
-        "face": "Arial"
-      }
-    }
-  }
-]
+  ]
+}

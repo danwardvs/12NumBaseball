@@ -1,0 +1,87 @@
+[
+  {
+    "min": 0,
+    "max": 104,
+    "value": "WP  (Wildness for Pitcher)"
+  },
+  {
+    "min": 105,
+    "max": 105,
+    "value": "HBP (Wildness for Pitcher)"
+  },
+  {
+    "min": 106,
+    "max": 106,
+    "value": "Balk  (AHR for Pitcher)"
+  },
+  {
+    "min": 107,
+    "max": 108,
+    "value": "PO  (see Pick-Off Move chart)"
+  },
+  {
+    "min": 109,
+    "max": 112,
+    "value": "PB (Error chart for catcher)"
+  },
+  {
+    "min": 113,
+    "max": 113,
+    "value": "INJ"
+  },
+  {
+    "min": 114,
+    "max": 114,
+    "value": "Fan interference"
+  },
+  {
+    "min": 115,
+    "max": 116,
+    "value": "Pitcher's Specialty"
+  },
+  {
+    "min": 117,
+    "max": 118,
+    "value": "K if Fireballer or Junkballer"
+  },
+  {
+    "min": 119,
+    "max": 120,
+    "value": "Batter's Specialty"
+  },
+  {
+    "min": 121,
+    "max": 122,
+    "value": "Long ball if fastball hitter"
+  },
+  {
+    "min": 123,
+    "max": 123,
+    "value": "1B/2B unless 2+F"
+  },
+  {
+    "min": 124,
+    "max": 124,
+    "value": "1B/2B unless 4+F"
+  },
+  {
+    "min": 125,
+    "max": 125,
+    "value": "1B/2B unless 6+F"
+  },
+  {
+    "min": 126,
+    "max": 126,
+    "value": "1B/2B unless 8+F"
+  },
+  {
+    "min": 127,
+    "max": 128,
+    "value": "K/BB if Junkballer"
+  },
+  {
+    "min": 129,
+    "max": 130,
+    "value": "GO/FO if Flyballer"
+  }
+]
